@@ -1,27 +1,34 @@
-SIGOUT = ARGF.read.lines.map do |signal|
-  signal = signal.scan(/\w+/).map(&:chars)
+SIGOUT = ARGF.read.lines.map do |line|
+  sigout = line.scan(/\w+/).map(&:chars)
 
-  [signal.shift(10), signal]
+  [sigout.shift(10), sigout]
 end
 
-DIGITS = ['abcefg', 'cf', 'acdeg', 'acdfg', 'bcdf', 'abdfg', 'abdefg', 'acf', 'abcdefg', 'abcdfg']
+DIGITS = %w[abcefg cf acdeg acdfg bcdf abdfg abdefg acf abcdefg abcdfg]
 
 def deduce signal, output
   m = {}
-  d = signal.group_by(&:size)
 
-  m[?d] = d[4].concat(d[5]).inject(:&).first
-  m[?f] = d[2].concat(d[6]).inject(:&).first
-  m[?c] = (d[2].first - [m[?f]]).first
-  m[?a] = (d[3].first - [m[?f], m[?c]]).first
-  m[?b] = (d[4].first - [m[?f], m[?c], m[?d]]).first
-  m[?g] = (d[6].inject(:&) - m.values).first
-  m[?e] = ('abcdefg'.chars - m.values).first
+  s = signal.sort_by &:size
+  s2, s3, s4 = s.shift 3
+  s5 = s.shift(3).reduce :&
+  s6 = s.shift(3).reduce :&
+  s7 = s.shift
+
+  m[?d] = s4 & s5
+  m[?f] = s2 & s6
+  m[?c] = s2 - m[?f]
+  m[?a] = s3 - m[?f] - m[?c]
+  m[?b] = s4 - m[?f] - m[?c] - m[?d]
+  m[?g] = s6 - m.values.flatten
+  m[?e] = s7 - m.values.flatten
+
+  m = m.transform_values(&:first).invert
 
   output.map do |s|
-    DIGITS.index(s.map(&m.invert).sort.join)
+    DIGITS.index(s.map(&m).sort.join)
   end
 end
 
-p SIGOUT.map { |sigout| deduce *sigout }.flatten.count { |d| [1, 4, 7, 8].include? d }
-p SIGOUT.map { |sigout| deduce *sigout }.map { |d| d.map(&:to_s).join.to_i }.sum
+p SIGOUT.map { |sigout| deduce *sigout }.flatten.count { [1, 4, 7, 8].include? _1 }
+p SIGOUT.map { |sigout| deduce *sigout }.map { _1.map(&:to_s).join.to_i }.sum
