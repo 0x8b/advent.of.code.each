@@ -1,21 +1,10 @@
-SIGNALS = ARGF.read.lines.map do |signal|
+SIGOUT = ARGF.read.lines.map do |signal|
   signal = signal.scan(/\w+/).map(&:chars)
 
   [signal.shift(10), signal]
 end
 
-MAPPING = {
-  'abcefg' => 0,
-  'cf' => 1,
-  'acdeg' => 2,
-  'acdfg' => 3,
-  'bcdf' => 4,
-  'abdfg' => 5,
-  'abdefg' => 6,
-  'acf' => 7,
-  'abcdefg' => 8,
-  'abcdfg' => 9,
-}
+DIGITS = ['abcefg', 'cf', 'acdeg', 'acdfg', 'bcdf', 'abdfg', 'abdefg', 'acf', 'abcdefg', 'abcdfg']
 
 def deduce signal, output
   m = {}
@@ -29,10 +18,10 @@ def deduce signal, output
   m[?g] = (d[6].inject(:&) - m.values).first
   m[?e] = ('abcdefg'.chars - m.values).first
 
-  output.map do |d|
-    MAPPING[d.map(&m.invert).sort.join]
+  output.map do |s|
+    DIGITS.index(s.map(&m.invert).sort.join)
   end
 end
 
-p SIGNALS.map { |signal| deduce *signal }.flatten.count { |d| [1, 4, 7, 8].include? d }
-p SIGNALS.map { |signal| deduce *signal }.map { |d| d.map(&:to_s).join.to_i }.sum
+p SIGOUT.map { |sigout| deduce *sigout }.flatten.count { |d| [1, 4, 7, 8].include? d }
+p SIGOUT.map { |sigout| deduce *sigout }.map { |d| d.map(&:to_s).join.to_i }.sum
