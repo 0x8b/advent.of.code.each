@@ -1,16 +1,12 @@
 MAP = ARGF.read.lines.map { _1.chomp.chars.map &:to_i }.transpose
 
-X, Y = MAP.first.size, MAP.size
-
 def adjacent x, y
-  [[0, 1], [1, 0], [0, -1], [-1, 0]].map { |dx, dy|
-    [x + dx, y + dy]
-  }.select { |ax, ay|
-    (0...X) === ax and (0...Y) === ay
+  [[x, y + 1], [x, y - 1], [x + 1, y], [x - 1, y]].select { |x, y|
+    x in 0...100 and y in 0...100
   }
 end
 
-LOW_POINTS = [*0...X].product([*0...Y]).filter_map { |x, y|
+LOW_POINTS = [*0...100].to_a.product([*0...100]).filter_map { |x, y|
   [x, y] if adjacent(x, y).all? { |ax, ay| MAP[x][y] < MAP[ax][ay] }
 }
 
