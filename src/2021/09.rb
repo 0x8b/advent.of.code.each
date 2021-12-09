@@ -1,47 +1,31 @@
-MAP = ARGF.read.lines.map do |line|
-  line.chomp.chars.map &:to_i
-end
+MAP = ARGF.read.lines.map { _1.chomp.chars.map &:to_i }.transpose
 
-H, W = MAP.size, MAP[0].size
+X, Y = MAP.first.size, MAP.size
 
-def adj y, x
-  [[0, 1], [1, 0], [0, -1], [-1, 0]].map { |dy, dx|
-    [y + dy, x + dx]
-  }.select { |ny, nx|
-    (0...H) === ny and (0...W) === nx
+def adjacent x, y
+  [[0, 1], [1, 0], [0, -1], [-1, 0]].map { |dx, dy|
+    [x + dx, y + dy]
+  }.select { |ax, ay|
+    (0...X) === ax and (0...Y) === ay
   }
 end
 
-LOW_POINTS = []
-risk_level = 0
-
-[*0...H].product([*0...W]).each { |y, x|
-  is_low_point = adj(y, x).all? { |ny, nx|
-    MAP[y][x] < MAP[ny][nx]
-  }
-
-  if is_low_point
-    risk_level += MAP[y][x] + 1
-    LOW_POINTS << [y, x]
-  end
+LOW_POINTS = [*0...X].product([*0...Y]).filter_map { |x, y|
+  [x, y] if adjacent(x, y).all? { |ax, ay| MAP[x][y] < MAP[ax][ay] }
 }
 
-p risk_level
+p LOW_POINTS.sum { |x, y| MAP[x][y] + 1 } # part 1
 
 def expand_basin basin
-  basin.concat(basin.flat_map { |y, x|
-    adj(y, x).select { |ny, nx|
-      MAP[ny][nx] != 9 and MAP[ny][nx] >= MAP[y][x]
-    }
-  }).uniq
-end
-
-p LOW_POINTS.map { |ly, lx|
-  basin = [[ly, lx]]
-
   10.times { # 10 was chosen arbitrarily
-    basin = expand_basin basin
+    basin = basin.concat(basin.flat_map { |x, y|
+      adjacent(x, y).select { |ax, ay|
+        MAP[ax][ay] != 9 and MAP[ax][ay] >= MAP[x][y]
+      }
+    }).uniq
   }
 
-  basin.size
-}.max(3).reduce(:*)
+  basin
+end
+
+p LOW_POINTS.map { |x, y| expand_basin [[x, y]] }.map(&:size).max(3).reduce(:*) # part 2
