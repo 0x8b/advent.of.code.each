@@ -1,12 +1,9 @@
-VEINS = ARGF.read.lines.map &:chomp
-
 GROUND = {}
-
 GROUND.default = :sand
 
-VEINS.each { |vein|
+ARGF.read.lines.each { |vein|
   GROUND.instance_eval <<~END
-    #{vein.tr ',', ';'}
+    #{vein.chomp.tr ',', ';'}
 
     case [x, y]
     in Integer, Range
