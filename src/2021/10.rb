@@ -1,60 +1,77 @@
-LINES = ARGF.read.lines.map { _1.chomp.chars }
+LINES = ARGF.read.lines.map { |line| line.chomp.chars }
 
-SYNTAX_ERROR_SCORE = {
-  ?) => 3,
-  ?] => 57,
-  ?} => 1197,
-  ?> => 25137,
-}
+LBRACKETS = %w| ( [ { < |
+RBRACKETS = %w| ) ] } > |
 
+SYNTAX_ERROR_SCORE = RBRACKETS.zip([3, 57, 1197, 25137]).to_h
 SYNTAX_ERROR_SCORE.default = 0
 
-O2C = %w|[ ] ( ) { } < >|.each_slice(2).to_h
+SCORE = RBRACKETS.zip([1, 2, 3, 4]).to_h
 
-def find_first_illegal line
+LEFT_TO_RIGHT = LBRACKETS.zip(RBRACKETS).to_h
+
+def diagnose line
   stack = []
 
-  for paren in line
-    if O2C.keys.include? paren
-      stack << paren
+  line.each do |c|
+    if LBRACKETS.include? c
+      stack.push c
     else
-      return paren if not O2C[stack.pop] == paren
+      unless LEFT_TO_RIGHT[stack.pop] == c
+        return { status: :corrupted, character: c }
+      end
     end
   end
 
-  return
+  return { status: :incomplete }
 end
 
-p LINES.map { find_first_illegal _1 }.map(&SYNTAX_ERROR_SCORE).sum # part 1
+def is_corrupted? line
+  diagnose(line)[:status] == :corrupted
+end
 
-INCOMPLETE = LINES.reject { find_first_illegal _1 }
+def get_first_illegal_character corrupted_line
+  diagnose(corrupted_line)[:character]
+end
 
-SCORE = {
-  ?) => 1,
-  ?] => 2,
-  ?} => 3,
-  ?> => 4,
-}
+corrupted_lines = LINES.select { |line| is_corrupted? line }
 
-MEDIAN = INCOMPLETE.map { |line|
-  stack = []
+syntax_error_scores = corrupted_lines.map { |line| get_first_illegal_character line }.map(&SYNTAX_ERROR_SCORE)
+
+puts syntax_error_scores.sum # part 1
+
+
+def get_completion_of line
   completion = []
+  stack = []
 
   until line.empty?
-    paren = line.pop
+    c = line.pop
 
-    if %w|) ] } >|.include? paren
-      stack.push paren
+    if RBRACKETS.include? c
+      stack.push c
     else
-      if not stack.empty?
-        stack.pop
+      if stack.empty?
+        completion << LEFT_TO_RIGHT[c]
       else
-        completion << O2C[paren]
+        stack.pop
       end
     end
   end
 
   completion
-}.map { |a| a.inject(0) { |s, paren| 5 * s + SCORE[paren] } }.sort.yield_self { _1[_1.size / 2] }
+end
 
-p MEDIAN # part 2
+incomplete_lines = LINES.reject { |line| is_corrupted? line }
+
+completions = incomplete_lines.map do |line|
+  get_completion_of line
+end
+
+scores = completions.map do |completion|
+  completion.reduce(0) { |sum, character| 5 * sum + SCORE[character] }
+end
+
+middle_score = scores.sort.yield_self { |scores| scores[scores.size / 2] }
+
+puts middle_score # part 2
