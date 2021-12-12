@@ -17,7 +17,7 @@ CONNECTIONS.each do |connection|
   end
 end
 
-def traverse track
+def caveman track, &block
   if track.last == "end"
     TRACKS << track
     return
@@ -25,42 +25,17 @@ def traverse track
 
   MAP[track.last].each do |cave|
     if cave.upcase == cave
-      traverse track.dup + [cave]
-    elsif cave.downcase == cave
-      if track.count(cave) == 0
-        traverse track.dup + [cave]
-      end
+      caveman track + [cave], &block
+    elsif block.call(track, cave)
+      caveman track + [cave], &block
     end
   end
 end
 
 TRACKS = []
-traverse ["start"]
+caveman(["start"]) { |track, cave| track.count(cave) == 0 }
 puts TRACKS.size
 
-# part 2
-
-def traverse track
-  if track.last == "end"
-    TRACKS << track
-    return
-  end
-
-  MAP[track.last].each do |cave|
-    if cave.upcase == cave
-      traverse track.dup + [cave]
-    elsif cave.downcase == cave
-      if track.count(cave) == 0
-        traverse track.dup + [cave]
-      elsif track.count(cave) == 1
-        if track.select { _1.downcase == _1 }.yield_self { _1.size == _1.uniq.size }
-          traverse track.dup + [cave]
-        end
-      end
-    end
-  end
-end
-
 TRACKS.clear
-traverse ["start"]
+caveman(["start"]) { |track, cave| track.count(cave) == 0 or (track.count(cave) == 1 and track.select { _1.downcase == _1 }.yield_self { _1.size == _1.uniq.size })}
 puts TRACKS.size
