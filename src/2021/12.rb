@@ -1,33 +1,30 @@
-CONNECTIONS = ARGF.read.lines.map do |line|
-  line.chomp.split ?-
-end
-
 MAP = {}
 MAP.default_proc = proc { |h, k| h[k] = [] }
 
-CONNECTIONS.each do |connection|
-  if connection.include? "start"
-    MAP["start"] << (connection - ["start"]).first
-  elsif connection.include? "end"
-    MAP[(connection - ["end"]).first] << "end"
-  else
-    a, b = connection
-    MAP[a] << b
-    MAP[b] << a
+ARGF.read.lines.each do |line|
+  case line.chomp.split(?-)
+  in "start", c
+    MAP["start"] << c
+  in c, "start"
+    MAP["start"] << c
+  in "end", c
+    MAP[c] << "end"
+  in c, "end"
+    MAP[c] << "end"
+  in c, cc
+    MAP[cc] << c
+    MAP[c] << cc
   end
 end
 
-def caveman track, &block
+def caveman track, &can_visit_small_cave
   if track.last == "end"
     TRACKS << track
-    return
-  end
-
-  MAP[track.last].each do |cave|
-    if cave.upcase == cave
-      caveman track + [cave], &block
-    elsif block.call(track, cave)
-      caveman track + [cave], &block
+  else
+    MAP[track.last].each do |cave|
+      if cave.upcase == cave or can_visit_small_cave.call(track, cave)
+        caveman track + [cave], &can_visit_small_cave
+      end
     end
   end
 end
