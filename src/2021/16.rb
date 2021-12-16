@@ -1,86 +1,71 @@
-BITS = ARGF.read.chomp.chars.flat_map { |c|
-  c.to_i(16).to_s(2).rjust(4, "0").chars.map &:to_i
-}
+BITS = ARGF.read.chomp.chars.flat_map do |c|
+  c.to_i(16).to_s(2).rjust(4, "0").chars.map(&:to_i)
+end
 
+def parse bits
+  version = bits.shift(3).join.to_i(2)
+  type    = bits.shift(3).join.to_i(2)
 
-def parse bits, n = Float::INFINITY
-  values = []
+  if type == 4
+    groups = []
 
-  loop do
-    break if bits.size <= 6
-    version = bits.shift(3).join.to_i(2)
-    type_id = bits.shift(3).join.to_i(2)
+    loop do
+      groups << bits.shift(5)
 
-    case type_id
-    when 4
-      groups = []
+      break if groups.last.shift == 0
+    end
 
-      loop do
-        prefix, *group = bits.shift(5)
-        groups << group
-        break if prefix == 0
-      end
+    return [version, type, groups.flatten.join.to_i(2)]
+  else
+    mode = bits.shift.to_i
+    operator = type
 
-      values << [version, type_id, groups.flatten.join.to_i(2)]
+    if mode == 0
+      binary_length = bits.shift(15).join.to_i(2)
+      binary = bits.shift(binary_length)
+
+      subpackets = []
+      subpackets << parse(binary) until binary.empty?
+
+      return [version, operator, subpackets]
     else
-      length_type_id = bits.shift.to_i
-      operator = type_id
+      no_of_subpackets = bits.shift(11).join.to_i(2)
 
-      if length_type_id == 0
-        total_length_in_bits = bits.shift(15).join.to_i(2)
-
-        values << [version, operator, parse(bits.shift(total_length_in_bits))]
-      else
-        num_of_subpackets = bits.shift(11).join.to_i(2)
-
-        values << [version, operator, parse(bits, num_of_subpackets)]
-      end
+      return [version, operator, (1..no_of_subpackets).map { parse(bits) }]
     end
-
-    n -= 1
-
-    if n == 0
-      return values
-    end
-  end
-
-  values
-end
-
-def sum_operators a_or_i
-  case a_or_i
-  in Array
-    a_or_i.sum { |a| a.first + sum_operators(a.last) }
-  in Integer
-    0
   end
 end
 
-p sum_operators(parse(BITS.dup))
+def sum packet
+  case packet
+  in [version, _, Integer]
+    version
+  in [version, _, Array => a]
+    version + a.sum { |packet| sum packet }
+  end
+end
 
-def eval_lisp ast
-  case ast
-  in [a, b]
-    eval_lisp(a)
-  in [a]
-    eval_lisp(a)
-  in [_, 4, value]
-    value
-  in [_, 0, [*operands]]
-    operands.map { eval_lisp(_1) }.sum
-  in [_, 1, [*operands]]
-    operands.map { eval_lisp(_1) }.reduce(:*)
-  in [_, 2, [*operands]]
-    operands.map { eval_lisp(_1) }.min
-  in [_, 3, [*operands]]
-    operands.map { eval_lisp(_1) }.max
+puts sum(parse(BITS.clone)) # part 1
+
+def evaluate node
+  case node
+  in [_, 4, val]
+    val
+  in [_, 0, operands]
+    operands.map { |o| evaluate(o) }.reduce(:+)
+  in [_, 1, operands]
+    operands.map { |o| evaluate(o) }.reduce(:*)
+  in [_, 2, operands]
+    operands.map { |o| evaluate(o) }.min
+  in [_, 3, operands]
+    operands.map { |o| evaluate(o) }.max
   in [_, 5, [left, right]]
-    if eval_lisp(left) > eval_lisp(right) then 1 else 0 end
+    evaluate(left) > evaluate(right) ? 1 : 0
   in [_, 6, [left, right]]
-    if eval_lisp(left) < eval_lisp(right) then 1 else 0 end
+    evaluate(left) < evaluate(right) ? 1 : 0
   in [_, 7, [left, right]]
-    if eval_lisp(left) == eval_lisp(right) then 1 else 0 end
+    evaluate(left) == evaluate(right) ? 1 : 0
   end
 end
 
-p eval_lisp(parse(BITS.dup))
+puts evaluate(parse(BITS.clone)) # part 2
