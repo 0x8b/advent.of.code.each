@@ -17,7 +17,7 @@ def parse bits
 
     return [version, type, groups.flatten.join.to_i(2)]
   else
-    mode = bits.shift.to_i
+    mode = bits.shift
     operator = type
 
     if mode == 0
@@ -40,8 +40,8 @@ def sum packet
   case packet
   in [version, _, Integer]
     version
-  in [version, _, Array => a]
-    version + a.sum { |packet| sum packet }
+  in [version, _, Array => packets]
+    version + packets.sum { |packet| sum(packet) }
   end
 end
 
@@ -49,22 +49,14 @@ puts sum(parse(BITS.clone)) # part 1
 
 def evaluate node
   case node
-  in [_, 4, val]
-    val
-  in [_, 0, operands]
-    operands.map { |o| evaluate(o) }.reduce(:+)
-  in [_, 1, operands]
-    operands.map { |o| evaluate(o) }.reduce(:*)
-  in [_, 2, operands]
-    operands.map { |o| evaluate(o) }.min
-  in [_, 3, operands]
-    operands.map { |o| evaluate(o) }.max
-  in [_, 5, [left, right]]
-    evaluate(left) > evaluate(right) ? 1 : 0
-  in [_, 6, [left, right]]
-    evaluate(left) < evaluate(right) ? 1 : 0
-  in [_, 7, [left, right]]
-    evaluate(left) == evaluate(right) ? 1 : 0
+  in [_, 0, args]       then args.map { |a| evaluate(a) }.reduce(:+)
+  in [_, 1, args]       then args.map { |a| evaluate(a) }.reduce(:*)
+  in [_, 2, args]       then args.map { |a| evaluate(a) }.min
+  in [_, 3, args]       then args.map { |a| evaluate(a) }.max
+  in [_, 4, val]        then val
+  in [_, 5, [lhs, rhs]] then evaluate(lhs)  > evaluate(rhs) ? 1 : 0
+  in [_, 6, [lhs, rhs]] then evaluate(lhs)  < evaluate(rhs) ? 1 : 0
+  in [_, 7, [lhs, rhs]] then evaluate(lhs) == evaluate(rhs) ? 1 : 0
   end
 end
 
