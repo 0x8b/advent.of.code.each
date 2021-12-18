@@ -1,62 +1,50 @@
 SNAILFISH_NUMS = ARGF.read.lines.map { |line| eval(line.chomp) }
 
-def explode list
-  found = list.map(&:last).each_cons(2).find { |a, b| a == 5 and a == b }
-
-  if found
-    found = found.first
-    case list
-    in [[left, ^found], [right, ^found], [rregular, rlvl], *post]
-      [[0, found - 1], [right + rregular, rlvl], *post]
-    in [*pre, [lregular, llvl], [left, ^found], [right, ^found], [rregular, rlvl], *post]
-      [*pre, [lregular + left, llvl], [0, found - 1], [right + rregular, rlvl], *post]
-    in [*pre, [lregular, llvl], [left, ^found], [right, ^found]]
-      [*pre, [lregular + left, llvl], [0, found - 1]]
-    end
+def explode flat
+  case flat
+  in [[left, 5], [right, 5], [right_regular, level], *nxt]
+    [[0, 4], [right + right_regular, level], *nxt]
+  in [*prv, [left_regular, left_level], [left, 5], [right, 5], [right_regular, right_level], *nxt]
+    [*prv, [left_regular + left, left_level], [0, 4], [right + right_regular, right_level], *nxt]
+  in [*prv, [left_regular, level], [left, 5], [right, 5]]
+    [*prv, [left_regular + left, level], [0, 4]]
   else
-    list
+    flat
   end
 end
 
-def split list
-  index = list.index { |number, level| number >= 10 }
-
-  if index
-    number, level = list.delete_at(index)
-    list.insert(index, [number / 2, level + 1], [number - number / 2, level + 1])
-    list
+def split flat
+  case flat
+  in [*prv, [10.. => v, lvl], *nxt]
+    [*prv, [v / 2, lvl + 1], [v - v / 2, lvl + 1], *nxt]
   else
-    list
+    flat
   end
 end
 
-def breakdown pair, level=1
+def flatten pair, level=1
   case pair
-  in [Integer => left, Integer => right]
-    [[left, level], [right, level]]
-  in [Integer => left, Array => right]
-    [[left, level], *breakdown(right, level + 1)]
-  in [Array => left, Integer => right]
-    [*breakdown(left, level + 1), [right, level]]
-  in [Array => left, Array => right]
-    [*breakdown(left, level + 1), *breakdown(right, level + 1)]
+  in [Integer => left, Integer => right] then [[left, level], [right, level]]
+  in [Integer => left, Array =>   right] then [[left, level], *flatten(right, level + 1)]
+  in [Array =>   left, Integer => right] then [*flatten(left, level + 1), [right, level]]
+  in [Array =>   left, Array =>   right] then [*flatten(left, level + 1), *flatten(right, level + 1)]
   end
 end
 
-def buildup list
-  maxlvl = list.map(&:last).max
+def pairs flat
+  maxlvl = flat.map(&:last).max
 
-  return list.map(&:first) if maxlvl == 1
+  return flat.map(&:first) if maxlvl == 1
 
-  case list
+  case flat
   in [a]
-    buildup(a)
+    pairs(a)
   in [a, 1]
     a
   in [a, Integer => n]
-    buildup([a, n - 1])
+    pairs([a, n - 1])
   in [*pre, [a, ^maxlvl], [b, ^maxlvl], *post]
-    buildup([*pre, [[a, b], maxlvl - 1], *post])
+    pairs([*pre, [[a, b], maxlvl - 1], *post])
   end
 end
 
@@ -75,12 +63,12 @@ def reduce pair
   before = pair
 
   loop do
-    after = buildup(explode(breakdown(before)))
+    after = pairs(explode(flatten(before)))
     if after != before
       before.replace after
       next
     else
-      after.replace buildup(split(breakdown(after)))
+      after.replace pairs(split(flatten(after)))
     end
 
     break if after == before
@@ -97,8 +85,8 @@ def add numbers
   end
 end
 
-puts magnitude(add(SNAILFISH_NUMS))
+puts magnitude(add(SNAILFISH_NUMS)) # part 1
 
-puts SNAILFISH_NUMS.permutation(2).map { |a, b|
+puts SNAILFISH_NUMS.permutation(2).map { |a, b| # part 2
   magnitude(add([a, b]))
 }.max
