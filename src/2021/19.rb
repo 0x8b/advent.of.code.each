@@ -1,6 +1,6 @@
 MAP = ARGF.read.split("\n\n").map do |scanner|
-  scanner.lines.drop(1).map do |position|
-    position.chomp.split(",").map(&:to_i)
+  scanner.lines.drop(1).map do |bacon|
+    bacon.chomp.split(",").map(&:to_i)
   end
 end
 
@@ -13,12 +13,12 @@ end
 
 def pitch ((x, y, z))
   zx = 1i * Complex(z, x)
-  return zx.real, y, zx.imag
+  return zx.imag, y, zx.real
 end
 
 def yaw ((x, y, z))
   xy = 1i * Complex(x, y)
-  return xy.real, xy.imag, z
+  return xy.imag, xy.real, z
 end
 
 TRANSFORMATIONS = [
