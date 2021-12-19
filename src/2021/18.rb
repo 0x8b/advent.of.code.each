@@ -2,12 +2,12 @@ SNAILFISH_NUMS = ARGF.read.lines.map { |line| eval(line.chomp) }
 
 def explode flat
   case flat
-  in [[left, 5], [right, 5], [right_regular, level], *nxt]
-    [[0, 4], [right + right_regular, level], *nxt]
-  in [*prv, [left_regular, left_level], [left, 5], [right, 5], [right_regular, right_level], *nxt]
-    [*prv, [left_regular + left, left_level], [0, 4], [right + right_regular, right_level], *nxt]
-  in [*prv, [left_regular, level], [left, 5], [right, 5]]
-    [*prv, [left_regular + left, level], [0, 4]]
+  in [[_, 5], [b, 5], [c, d], *tail]
+    explode [[0, 4], [b + c, d], *tail]
+  in [*head, [a, b], [c, 5], [d, 5], [e, f], *tail]
+    explode [*head, [a + c, b], [0, 4], [d + e, f], *tail]
+  in [*head, [a, b], [c, 5], [_, 5]]
+    explode [*head, [a + c, b], [0, 4]]
   else
     flat
   end
@@ -15,8 +15,8 @@ end
 
 def split flat
   case flat
-  in [*prv, [10.. => v, lvl], *nxt]
-    [*prv, [v / 2, lvl + 1], [v - v / 2, lvl + 1], *nxt]
+  in [*head, [10.. => v, lvl], *tail]
+    [*head, [v / 2, lvl + 1], [v - v / 2, lvl + 1], *tail]
   else
     flat
   end
@@ -34,17 +34,11 @@ end
 def pairs flat
   maxlvl = flat.map(&:last).max
 
-  return flat.map(&:first) if maxlvl == 1
-
   case flat
-  in [a]
-    pairs(a)
-  in [a, 1]
-    a
-  in [a, Integer => n]
-    pairs([a, n - 1])
-  in [*pre, [a, ^maxlvl], [b, ^maxlvl], *post]
-    pairs([*pre, [[a, b], maxlvl - 1], *post])
+  in [[a, 1], [b, 1]]
+    [a, b]
+  in [*head, [a, ^maxlvl], [b, ^maxlvl], *tail]
+    pairs([*head, [[a, b], maxlvl - 1], *tail])
   end
 end
 
@@ -59,24 +53,12 @@ def magnitude pair
   end
 end
 
-def reduce pair
-  before = pair
+def reduce before
+  after = pairs(split(explode(flatten(before))))
 
-  loop do
-    after = pairs(explode(flatten(before)))
-    if after != before
-      before.replace after
-      next
-    else
-      after.replace pairs(split(flatten(after)))
-    end
+  return after if before == after
 
-    break if after == before
-
-    before.replace after
-  end
-
-  before
+  reduce(after)
 end
 
 def add numbers
