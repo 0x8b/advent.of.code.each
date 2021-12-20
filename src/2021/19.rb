@@ -8,51 +8,59 @@ end
 
 SCANNERS = (0...MAP.size).zip(MAP).to_h
 
-def roll ((x, y, z))
-  yz = 1i * Complex(y, z)
+def roll ((x, y, z), n=1)
+  yz = 1i ** n * Complex(y, z)
   return x, yz.real, yz.imag
 end
 
-def pitch ((x, y, z))
-  zx = 1i * Complex(z, x)
+def pitch ((x, y, z), n=1)
+  zx = 1i ** n * Complex(z, x)
   return zx.imag, y, zx.real
 end
 
-def yaw ((x, y, z))
-  xy = 1i * Complex(x, y)
+def yaw ((x, y, z), n=1)
+  xy = 1i ** n * Complex(x, y)
   return xy.real, xy.imag, z
+end
+
+def method_missing method, *args, &block
+  if /^(?<name>pitch|roll|yaw)(?<n>\d+)?$/ =~ method
+    send(name.to_sym, *args, n && n.to_i || 1, &block)
+  else
+    super
+  end
 end
 
 TRANSFORMATIONS = [
   -> (b) { b },
   -> (b) { yaw b },
-  -> (b) { yaw yaw b },
-  -> (b) { yaw yaw yaw b },
+  -> (b) { yaw2 b },
+  -> (b) { yaw3 b },
 
   -> (b) { roll b },
   -> (b) { yaw roll b },
-  -> (b) { yaw yaw roll b },
-  -> (b) { yaw yaw yaw roll b },
+  -> (b) { yaw2 roll b },
+  -> (b) { yaw3 roll b },
 
-  -> (b) { roll roll b },
-  -> (b) { yaw roll roll b },
-  -> (b) { yaw yaw roll roll b },
-  -> (b) { yaw yaw yaw roll roll b },
+  -> (b) { roll2 b },
+  -> (b) { yaw roll2 b },
+  -> (b) { yaw2 roll2 b },
+  -> (b) { yaw3 roll2 b },
 
-  -> (b) { roll roll roll b },
-  -> (b) { yaw roll roll roll b },
-  -> (b) { yaw yaw roll roll roll b },
-  -> (b) { yaw yaw yaw roll roll roll b },
+  -> (b) { roll3 b },
+  -> (b) { yaw roll3 b },
+  -> (b) { yaw2 roll3 b },
+  -> (b) { yaw3 roll3 b },
 
   -> (b) { pitch b },
   -> (b) { yaw pitch b },
-  -> (b) { yaw yaw pitch b },
-  -> (b) { yaw yaw yaw pitch b },
+  -> (b) { yaw2 pitch b },
+  -> (b) { yaw3 pitch b },
 
-  -> (b) { pitch pitch pitch b },
-  -> (b) { yaw pitch pitch pitch b },
-  -> (b) { yaw yaw pitch pitch pitch b },
-  -> (b) { yaw yaw yaw pitch pitch pitch b },
+  -> (b) { pitch3 b },
+  -> (b) { yaw pitch3 b },
+  -> (b) { yaw2 pitch3 b },
+  -> (b) { yaw3 pitch3 b },
 ]
 
 def relative_position from, to
