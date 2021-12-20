@@ -1,24 +1,26 @@
-ALGORITHM, *IMAGE = ARGF.read.gsub("\n\n", "\n").lines.map do |line|
+ALGORITHM, *INITIAL = ARGF.read.gsub("\n\n", "\n").lines.map do |line|
   line.chomp.chars.map { |c| c == "#" ? 1 : 0 }
 end
 
-H = {}
-H.default = 0
+IMAGE = {}
+IMAGE.default = 0
 
-IMAGE.size.times { |y|
-  IMAGE.first.size.times { |x|
-    H[[x, y]] = IMAGE[y][x]
+IS_ALTERNATING = ALGORITHM.first == 1
+
+INITIAL.size.times { |y|
+  INITIAL.first.size.times { |x|
+    IMAGE[[x, y]] = INITIAL[y][x]
   }
 }
 
-ADJ = [
+ADJACENT = [
   [-1, -1], [0, -1], [1, -1],
   [-1,  0], [0,  0], [1,  0],
   [-1,  1], [0,  1], [1,  1],
 ]
 
 def adjacent x, y
-  ADJ.map { |dx, dy| [x + dx, y + dy] }
+  ADJACENT.map { |dx, dy| [x + dx, y + dy] }
 end
 
 def index hash, x, y
@@ -26,7 +28,7 @@ def index hash, x, y
 end
 
 [2, 50].each do |n|
-  parent = H.clone
+  parent = IMAGE.clone
 
   n.times do
     minx, maxx, miny, maxy = parent.keys.transpose.map(&:minmax).flatten
@@ -35,7 +37,11 @@ end
       [[x, y], ALGORITHM[index(parent, x, y)]]
     }.to_h
 
-    child.default = parent.default == 1 ? 0 : 1
+    if IS_ALTERNATING
+      child.default = parent.default == 1 ? 0 : 1
+    else
+      child.default = 0
+    end
 
     parent = child
   end
