@@ -24,6 +24,7 @@ def yaw ((x, y, z), n=1)
 end
 
 def method_missing method, *args, &block
+  # now I can write `yaw3 beacon` instead of `yaw yaw yaw beacon`
   if /^(?<name>pitch|roll|yaw)(?<n>\d+)?$/ =~ method
     send(name.to_sym, *args, n && n.to_i || 1, &block)
   else
@@ -64,7 +65,7 @@ ROTATIONS = [
 ]
 
 def relative_position from, to
-  from.zip(to).map { |a, b| b - a }
+  from.zip(to).map { |f, t| t - f }
 end
 
 BEACONS = SCANNERS.delete(0).to_set
@@ -73,7 +74,7 @@ SCANNERS_POSITIONS = [[0, 0]]
 until SCANNERS.empty?
   scanner, rotation, most_common_translation = catch :found do
     SCANNERS.each do |scanner, beacons|
-      ROTATIONS.each.with_index do |rotation, rindex|
+      ROTATIONS.each do |rotation|
         translated = beacons.map { |b| rotation.call(b) }
 
         most_common_translation, count = BEACONS.to_a.product(translated).map do |b1, b2|
@@ -81,7 +82,7 @@ until SCANNERS.empty?
         end.tally.max_by { |translation, count| count }
 
         if count >= 12
-          throw :found, [scanner, rindex, most_common_translation.map { |v| -v }]
+          throw :found, [scanner, rotation, most_common_translation.map { |v| -v }]
         end
       end
     end
@@ -90,7 +91,7 @@ until SCANNERS.empty?
   SCANNERS_POSITIONS << most_common_translation
 
   SCANNERS[scanner].each do |beacon|
-    BEACONS << ROTATIONS[rotation].call(beacon).zip(most_common_translation).map(&:sum)
+    BEACONS << rotation.call(beacon).zip(most_common_translation).map(&:sum)
   end
 
   SCANNERS.delete(scanner)
