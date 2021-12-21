@@ -31,7 +31,7 @@ def method_missing method, *args, &block
   end
 end
 
-TRANSFORMATIONS = [
+ROTATIONS = [
   -> (b) { b },
   -> (b) { yaw b },
   -> (b) { yaw2 b },
@@ -70,33 +70,27 @@ end
 BEACONS = SCANNERS.delete(0).to_set
 SCANNERS_POSITIONS = [[0, 0]]
 
-TRANSLATE = 3000
-
 until SCANNERS.empty?
-  scores = []
+  scanner, rotation, most_common_translation = catch :found do
+    SCANNERS.each do |scanner, beacons|
+      ROTATIONS.each.with_index do |rotation, rindex|
+        translated = beacons.map { |b| rotation.call(b) }
 
-  SCANNERS.each do |scanner, beacons|
-    TRANSFORMATIONS.each.with_index do |transformation, tindex|
-      translated = beacons.map { |b| transformation.call(b).map { |v| v + TRANSLATE } }
+        most_common_translation, count = BEACONS.to_a.product(translated).map do |b1, b2|
+          relative_position(b1, b2)
+        end.tally.max_by { |translation, count| count }
 
-      most_common_distance, count = BEACONS.to_a.product(translated).map do |b1, b2|
-        relative_position(b1, b2)
-      end.tally.max_by { |distance, count| count }
-
-      scores << [scanner, tindex, most_common_distance.map { |v| v - TRANSLATE }.map { |v| -v }, count]
+        if count >= 12
+          throw :found, [scanner, rindex, most_common_translation.map { |v| -v }]
+        end
+      end
     end
   end
 
-  scanner, transformation, most_common_distance, _ = scores.max_by(&:last)
+  SCANNERS_POSITIONS << most_common_translation
 
-  SCANNERS_POSITIONS << most_common_distance
-
-  SCANNERS[scanner].map do |beacon|
-    TRANSFORMATIONS[transformation].call(beacon)
-  end.map do |beacon|
-    beacon.zip(most_common_distance).map(&:sum)
-  end.each do |beacon|
-    BEACONS << beacon
+  SCANNERS[scanner].each do |beacon|
+    BEACONS << ROTATIONS[rotation].call(beacon).zip(most_common_translation).map(&:sum)
   end
 
   SCANNERS.delete(scanner)
