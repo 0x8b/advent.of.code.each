@@ -20,30 +20,12 @@ end
 puts space.values.count(:on) # part one
 
 class Range
-  def intersects? other
-    self.intersection(other) != nil
-  end
+  def intersection range
+    if self.include?(range.begin) or range.include?(self.begin)
+      _, b, e, _ = [self.begin, self.end, range.begin, range.end].sort
 
-  def intersection other
-    intersection_begin = case
-    when self.include?(other.begin)
-      other.begin
-    when other.include?(self.begin)
-      self.begin
-    else
-      return nil
+      b..e
     end
-
-    intersection_end = case self.end <=> other.end
-    when -1
-      self.end
-    when 0
-      self.end
-    when 1
-      other.end
-    end
-
-    self.class.new(intersection_begin, intersection_end)
   end
 
   alias_method :&, :intersection
@@ -71,9 +53,9 @@ class Cuboid
   end
 
   def intersect? other
-    intersection = self.intersection(other)
+    cuboid = self.intersection(other)
 
-    return intersection.x && intersection.y && intersection.z
+    return cuboid.x && cuboid.y && cuboid.z
   end
 
   def intersection other
@@ -85,22 +67,13 @@ CUBOIDS = steps.map { |type, x, y, z| Cuboid.new(type, x, y, z) }
 
 puts CUBOIDS.inject([]) { |prev, cuboid| # part two
   nxt = prev.flat_map { |c|
-    results = []
-
     if c.intersect?(cuboid)
-      intersection = c.intersection(cuboid).oftype(:on)
-      results << c
+      intersection = c.intersection(cuboid)
 
-      if cuboid.type == :on
-        results << intersection.oftype(c.type == :on ? :off : :on)
-      else
-        results << intersection.oftype(c.type == :on ? :off : :on)
-      end
+      [c, intersection.oftype(c.type == :on ? :off : :on)]
     else
-      results << c
+      [c]
     end
-
-    results
   }
 
   nxt << cuboid if cuboid.type == :on
