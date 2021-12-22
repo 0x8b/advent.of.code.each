@@ -59,7 +59,7 @@ class Cuboid
     @z = z
   end
 
-  def change_type(type)
+  def oftype(type)
     @type = type
     self
   end
@@ -76,34 +76,25 @@ class Cuboid
     return intersection.x && intersection.y && intersection.z
   end
 
-  def inspect
-    "Cuboid[#{self.type}, #{self.x}, #{self.y}, #{self.z}"
-  end
-
   def intersection other
     self.class.new(:on, self.x & other.x, self.y & other.y, self.z & other.z)
   end
 end
 
-cuboids = steps.map { |type, x, y, z| Cuboid.new(type, x, y, z) }
+CUBOIDS = steps.map { |type, x, y, z| Cuboid.new(type, x, y, z) }
 
-puts cuboids.inject([]) { |acc, cuboid| # part two
-  newacc = acc.flat_map { |c|
+puts CUBOIDS.inject([]) { |prev, cuboid| # part two
+  nxt = prev.flat_map { |c|
     results = []
+
     if c.intersect?(cuboid)
+      intersection = c.intersection(cuboid).oftype(:on)
       results << c
+
       if cuboid.type == :on
-        if c.type == :on
-          results << c.intersection(cuboid).change_type(:off)
-        else
-          results << c.intersection(cuboid).change_type(:on)
-        end
+        results << intersection.oftype(c.type == :on ? :off : :on)
       else
-        if c.type == :on
-          results << c.intersection(cuboid).change_type(:off)
-        else
-          results << c.intersection(cuboid).change_type(:on)
-        end
+        results << intersection.oftype(c.type == :on ? :off : :on)
       end
     else
       results << c
@@ -112,6 +103,6 @@ puts cuboids.inject([]) { |acc, cuboid| # part two
     results
   }
 
-  newacc << cuboid if cuboid.type == :on
-  newacc
+  nxt << cuboid if cuboid.type == :on
+  nxt
 }.map(&:volume).sum
