@@ -1,11 +1,9 @@
 steps = []
 space = {}
 
-aux = [steps, space]
-
-ARGF.read.gsub("on", "true").gsub("off", "false").lines.each do |line|
-  aux.instance_eval <<~END
-    turn=#{line.chomp.tr(", ", ";")}
+ARGF.read.lines.each do |line|
+  [steps, space].instance_eval <<~END
+    turn=:#{line.chomp.tr(", ", ";")}
 
     self[0] << [turn, x, y, z]
 
@@ -21,4 +19,4 @@ ARGF.read.gsub("on", "true").gsub("off", "false").lines.each do |line|
   END
 end
 
-puts space.values.count(true) # part one
+puts space.values.count(:on) # part one
