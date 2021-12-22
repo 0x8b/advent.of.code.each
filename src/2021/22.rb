@@ -1,8 +1,8 @@
-steps = []
-space = {}
+STEPS = []
+SPACE = {}
 
 ARGF.read.lines.each do |line|
-  [steps, space].instance_eval <<~END
+  [STEPS, SPACE].instance_eval <<~END
     turn=:#{line.chomp.tr(", ", ";")}
     self[0] << [turn, x, y, z]
     if [x, y, z].all? { |range| (-50..50).cover? range }
@@ -17,7 +17,7 @@ ARGF.read.lines.each do |line|
   END
 end
 
-puts space.values.count(:on) # part one
+puts SPACE.values.count(:on) # part one
 
 class Range
   def intersection range
@@ -32,50 +32,46 @@ class Range
 end
 
 class Cuboid
-  attr_reader :type, :x, :y, :z
+  attr_reader :type, :ranges
 
   def initialize type, x, y, z
     @type = type
-    @x = x
-    @y = y
-    @z = z
+    @ranges = [x, y, z]
   end
 
-  def oftype(type)
+  def of_type type
     @type = type
     self
   end
 
   def volume
-    vol = self.x.count * self.y.count * self.z.count
-    vol *= -1 if self.type == :off
-    vol
+    vol = self.ranges.map(&:size).reduce(:*)
+
+    self.type == :on ? vol : -vol
   end
 
   def intersect? other
-    cuboid = self.intersection(other)
-
-    return cuboid.x && cuboid.y && cuboid.z
+    self.intersection(other).ranges.all?
   end
 
   def intersection other
-    self.class.new(:on, self.x & other.x, self.y & other.y, self.z & other.z)
+    self.class.new(:on, *self.ranges.zip(other.ranges).map { |r, r2| r & r2 })
   end
 end
 
-CUBOIDS = steps.map { |type, x, y, z| Cuboid.new(type, x, y, z) }
+CUBOIDS = STEPS.map { |type, x, y, z| Cuboid.new(type, x, y, z) }
 
-puts CUBOIDS.inject([]) { |prev, cuboid| # part two
-  nxt = prev.flat_map { |c|
-    if c.intersect?(cuboid)
-      intersection = c.intersection(cuboid)
+puts CUBOIDS.inject([]) { |processed, unseen_cuboid| # part two
+  next_processed = processed.flat_map { |cuboid|
+    if cuboid.intersect?(unseen_cuboid)
+      intersection = cuboid.intersection(unseen_cuboid)
 
-      [c, intersection.oftype(c.type == :on ? :off : :on)]
+      [cuboid, intersection.of_type(cuboid.type == :on ? :off : :on)]
     else
-      [c]
+      [cuboid]
     end
   }
 
-  nxt << cuboid if cuboid.type == :on
-  nxt
+  next_processed << unseen_cuboid if unseen_cuboid.type == :on
+  next_processed
 }.map(&:volume).sum
