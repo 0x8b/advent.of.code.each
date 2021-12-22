@@ -62,7 +62,8 @@ end
 CUBOIDS = STEPS.map { |type, x, y, z| Cuboid.new(type, x, y, z) }
 
 puts CUBOIDS.inject([]) { |processed, unseen_cuboid| # part two
-  next_processed = processed.flat_map { |cuboid|
+  next_processed = processed.group_by(&:ranges).reject { |k, v| v.size % 2 == 0 }.values.flatten.flat_map { |cuboid|
+  #next_processed = processed.flat_map { |cuboid|
     if cuboid.intersect?(unseen_cuboid)
       intersection = cuboid.intersection(unseen_cuboid)
 
