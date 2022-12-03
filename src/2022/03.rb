@@ -6,10 +6,10 @@ rucksacks = ARGF
   .map { |line| line.strip.chars }
 
 priority = -> (char) {
-  if char.ord < 97
-    char.ord - 64 + 26
+  if char in "a".."z"
+    char.ord - "a".ord + 1
   else
-    char.ord - 96
+    char.ord - "A".ord + 1 + 26
   end
 }
 
