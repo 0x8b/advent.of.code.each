@@ -15,24 +15,16 @@ priority = -> (char) {
 
 p rucksacks
   .map { |rucksack|
-    [
-      rucksack[...rucksack.size / 2],
-      rucksack[(rucksack.size / 2)..]
-    ]
-      .map(&:to_set)
-      .inject(&:intersection)
-      .to_a
-      .map(&priority) }
+    rucksack
+      .each_slice(rucksack.size / 2)
+      .inject(&:&) }
   .flatten
+  .map(&priority)
   .sum
 
 p rucksacks
   .each_slice(3)
-  .map { |group|
-    group
-      .map(&:to_set)
-      .inject(&:intersection)
-      .to_a }
+  .map { |group| group.inject(&:&) }
   .flatten
   .map(&priority)
   .sum
