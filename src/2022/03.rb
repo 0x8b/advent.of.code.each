@@ -1,6 +1,6 @@
 require 'set'
 
-items = ARGF
+rucksacks = ARGF
   .read
   .lines
   .map { |line| line.strip.chars }
@@ -13,11 +13,11 @@ priority = -> (char) {
   end
 }
 
-part1 = items
-  .map { |compartments|
+p rucksacks
+  .map { |rucksack|
     [
-      compartments[...compartments.size / 2],
-      compartments[(compartments.size / 2)..]
+      rucksack[...rucksack.size / 2],
+      rucksack[(rucksack.size / 2)..]
     ]
       .map(&:to_set)
       .inject(&:intersection)
@@ -26,12 +26,13 @@ part1 = items
   .flatten
   .sum
 
-part2 = items
+p rucksacks
   .each_slice(3)
-  .map { |group| group.map(&:to_set).inject(&:intersection).to_a }
+  .map { |group|
+    group
+      .map(&:to_set)
+      .inject(&:intersection)
+      .to_a }
   .flatten
   .map(&priority)
   .sum
-
-puts part1
-puts part2
