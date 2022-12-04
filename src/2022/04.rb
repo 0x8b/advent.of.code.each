@@ -1,7 +1,11 @@
-d = ARGF
+pairs = ARGF
   .read
   .lines
-  .map { |line| line.strip.gsub("-", "..").split(",").map { |r| eval(r) } }
+  .map { |line| line
+    .strip
+    .gsub('-', '..')
+    .split(',')
+    .map { |range| eval(range) } }
 
-  p d.count { |a, b| a.cover?(b) or b.cover?(a) }
-  p d.count { |a, b| (a.to_a & b.to_a).size > 0 }
+puts pairs.count { |a, b| a.cover?(b) or b.cover?(a) }
+puts pairs.count { |a, b| (a.to_a & b.to_a).size > 0 }
