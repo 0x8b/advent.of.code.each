@@ -1,5 +1,3 @@
-require 'set'
-
 rucksacks = ARGF
   .read
   .lines
