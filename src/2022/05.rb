@@ -24,9 +24,7 @@ def procedure(stacks, instructions, same_order = false)
 
   instructions.each do |n, from, to|
     crates = stacks[from - 1].pop(n)
-    
     crates = crates.reverse unless same_order
-    
     stacks[to - 1].push(*crates)
   end
   
