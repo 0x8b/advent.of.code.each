@@ -1,4 +1,4 @@
-stacks, _, instructions = ARGF.read.partition "\n\n"
+stacks, instructions = ARGF.read.split "\n\n"
 
 stacks = stacks
   .lines
@@ -6,8 +6,11 @@ stacks = stacks
     .chomp
     .chars }
   .transpose
-  .filter { |c| c.last =~ /[1-9]/ }
-  .map { |a| a.reject { |e| e == " " }.reverse.drop(1) }
+  .filter { |column| column.last =~ /[1-9]/ }
+  .map { |column| column
+    .reject { |ch| ch == " " }
+    .reverse
+    .drop(1) }
 
 instructions = instructions
   .split("\n")
@@ -15,17 +18,21 @@ instructions = instructions
     .scan(/\d+/)
     .map(&:to_i) }
 
-stacks_copy = stacks.map(&:clone)
 
-instructions.each do |n, from, to|
-  stacks[to - 1].push(*stacks[from - 1].pop(n).reverse)
+def procedure(stacks, instructions, same_order = false)
+  stacks = stacks.map(&:clone)
+
+  instructions.each do |n, from, to|
+    crates = stacks[from - 1].pop(n)
+    
+    crates = crates.reverse unless same_order
+    
+    stacks[to - 1].push(*crates)
+  end
+  
+  stacks.map(&:last).join
 end
 
-puts stacks.map(&:last).join
 
-instructions.each do |n, from, to|
-  stacks_copy[to - 1].push(*stacks_copy[from - 1].pop(n))
-end
-
-puts stacks_copy.map(&:last).join
-
+puts procedure(stacks, instructions)
+puts procedure(stacks, instructions, true)
