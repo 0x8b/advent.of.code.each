@@ -1,22 +1,31 @@
 stacks, _, instructions = ARGF.read.partition "\n\n"
 
-instructions = instructions.split("\n").map { |line| line.scan(/\d+/).map(&:to_i) }
+stacks = stacks
+  .lines
+  .map { |line| line
+    .chomp
+    .chars }
+  .transpose
+  .filter { |c| c.last =~ /[1-9]/ }
+  .map { |a| a.reject { |e| e == " " }.reverse.drop(1) }
 
-stacks = [
-  %w(N S D C V Q T),
-  %w(M F V),
-  %w(F Q W D P N H M),
-  %w(D Q R T F),
-  %w(R F M N Q H V B),
-  %w(C F G N P W Q),
-  %w(W F R L C T),
-  %w(T Z N S),
-  %w(M S D J R Q H N)
-]
+instructions = instructions
+  .split("\n")
+  .map { |line| line
+    .scan(/\d+/)
+    .map(&:to_i) }
 
-instructions.each { |x, from, to|
-  stacks[to - 1].push(*stacks[from - 1].pop(x))
-}
+stacks_copy = stacks.map(&:clone)
 
-p stacks.map(&:last).join
+instructions.each do |n, from, to|
+  stacks[to - 1].push(*stacks[from - 1].pop(n).reverse)
+end
+
+puts stacks.map(&:last).join
+
+instructions.each do |n, from, to|
+  stacks_copy[to - 1].push(*stacks_copy[from - 1].pop(n))
+end
+
+puts stacks_copy.map(&:last).join
 
