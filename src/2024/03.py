@@ -1,4 +1,4 @@
-import functools
+import operator
 import pathlib
 import re
 
@@ -13,20 +13,15 @@ def get_answer(memory, pattern):
     answer = 0
 
     for instr in re.findall(pattern, memory):
-        match instr:
-            case _ if instr.startswith("don't"):
-                enabled = False
-            case _ if instr.startswith("do"):
-                enabled = True
-            case _ if instr.startswith("mul"):
-                if enabled:
-                    answer += functools.reduce(
-                        lambda product, m: product * m,
-                        [int(s) for s in re.findall(r"\d+", instr)],
-                        1,
-                    )
-            case _:
-                raise ValueError(f"unsupported instruction {instr}")
+        if instr.startswith("don't"):
+            enabled = False
+        elif instr.startswith("do"):
+            enabled = True
+        elif instr.startswith("mul"):
+            if enabled:
+                answer += operator.mul(*[int(s) for s in re.findall(r"\d+", instr)])
+        else:
+            raise ValueError(f"unsupported instruction {instr}")
 
     return answer
 
