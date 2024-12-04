@@ -12,8 +12,8 @@ def search_xmas(grid, matches, traces):
     gw = len(grid[0])
     gh = len(grid)
 
-    for y in range(len(grid)):
-        for x in range(len(grid[0])):
+    for y in range(gh):
+        for x in range(gw):
             for trace in traces:
                 trace = [[x + t[0], y + t[1]] for t in trace]
                 trace = [t for t in trace if 0 <= t[0] < gw and 0 <= t[1] < gh]
