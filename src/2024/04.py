@@ -24,19 +24,20 @@ def search_xmas(grid, matches, traces):
     return count
 
 
+def generate_trace(radius, direction):
+    return [[r * direction[0], r * direction[1]] for r in range(radius)]
+
+
+def generate_traces(radius, directions):
+    return [generate_trace(radius, direction=d) for d in directions]
+
+
 part_1 = search_xmas(
     grid,
     ["XMAS"],
-    [
-        [[0, 0], [1, 0], [2, 0], [3, 0]],
-        [[0, 0], [-1, 0], [-2, 0], [-3, 0]],
-        [[0, 0], [0, 1], [0, 2], [0, 3]],
-        [[0, 0], [0, -1], [0, -2], [0, -3]],
-        [[0, 0], [1, 1], [2, 2], [3, 3]],
-        [[0, 0], [-1, -1], [-2, -2], [-3, -3]],
-        [[0, 0], [1, -1], [2, -2], [3, -3]],
-        [[0, 0], [-1, 1], [-2, 2], [-3, 3]],
-    ],
+    generate_traces(
+        4, [[1, 0], [-1, 0], [0, 1], [0, -1], [1, -1], [-1, 1], [1, 1], [-1, -1]]
+    ),
 )
 
 part_2 = search_xmas(
