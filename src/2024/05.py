@@ -1,16 +1,13 @@
 import pathlib
 from graphlib import TopologicalSorter
 
+import utils
+
 data = pathlib.Path("../../data/2024/05.txt").read_text(encoding="utf-8")
 rules, pages = data.strip().split("\n\n")
 
-rules = [
-    [int(n) for n in rule.split("|")] for rule in rules.split("\n")
-]
-
-pages = [
-    [int(n) for n in page.split(",")] for page in pages.split("\n")
-]
+rules = [utils.ints(rule) for rule in rules.split("\n")]
+pages = [utils.ints(page) for page in pages.split("\n")]
 
 part_1 = 0
 part_2 = 0
@@ -18,10 +15,10 @@ part_2 = 0
 for order in pages:
     ts = TopologicalSorter()
 
-    for rule in [
+    for [predecessor, node] in [
         rule for rule in rules if len(set(rule) & set(order)) == 2
     ]:
-        ts.add(rule[1], rule[0])
+        ts.add(node, predecessor)
 
     topological_order = list(ts.static_order())
 
