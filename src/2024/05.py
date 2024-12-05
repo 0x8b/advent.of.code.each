@@ -1,4 +1,3 @@
-import math
 import pathlib
 from graphlib import TopologicalSorter
 
@@ -26,7 +25,7 @@ for order in pages:
 
     topological_order = list(ts.static_order())
 
-    middle_page = topological_order[math.floor(len(topological_order) / 2)]
+    middle_page = topological_order[len(topological_order) >> 1]
 
     if order == topological_order:
         part_1 += middle_page
