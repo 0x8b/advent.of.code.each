@@ -26,12 +26,12 @@ for order in pages:
 
     topological_order = list(ts.static_order())
 
-    middle_index = math.floor(len(order) / 2)
+    middle_page = topological_order[math.floor(len(topological_order) / 2)]
 
     if order == topological_order:
-        part_1 += order[middle_index]
+        part_1 += middle_page
     else:
-        part_2 += topological_order[middle_index]
+        part_2 += middle_page
 
 print(part_1)
 print(part_2)
