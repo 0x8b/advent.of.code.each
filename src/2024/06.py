@@ -17,9 +17,6 @@ for i, row in enumerate(puzzle):
     except Exception:
         pass
 
-print(guard_col, guard_row)
-
-
 visited = {(guard_row, guard_col)}
 direction = "up"
 
@@ -37,7 +34,7 @@ vectors = {
     "left": [0, -1],
 }
 
-while 0 <= guard_row < len(puzzle) and 0 <= guard_col < len(puzzle[0]):
+while True:
     try:
         if (
             puzzle[guard_row + vectors[direction][0]][guard_col + vectors[direction][1]]
