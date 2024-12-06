@@ -201,4 +201,4 @@ if __name__ == "__main__":
 
         part_2 = sum(results)
 
-        print(part_2)
+        print(part_2)  # Niepoprawne: 1476, 1925, 2252
