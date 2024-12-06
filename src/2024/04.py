@@ -34,7 +34,10 @@ def generate_traces(radius, directions):
 
 part_1 = search_xmas(
     grid,
-    ["XMAS", "SAMX"],  # EDIT: By adding the SAMX sequence, half of the directions can be eliminated.
+    [
+        "XMAS",
+        "SAMX",
+    ],  # EDIT: By adding the SAMX sequence, half of the directions can be eliminated.
     generate_traces(
         4,
         [
@@ -46,7 +49,7 @@ part_1 = search_xmas(
             # [-1, 1],
             # [-1, 0],
             # [-1, -1]
-        ]
+        ],
     ),
 )
 
