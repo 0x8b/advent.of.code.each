@@ -62,7 +62,7 @@ def calculate(puzzle, guard_row, guard_col):
 
                 trace.append(current_guard_position)
 
-                if visited[current_guard_position] > 10:
+                if visited[current_guard_position] > 100:
                     return {
                         "visited": visited,
                         "cycle": False,
@@ -103,24 +103,22 @@ part_1 = len(
 
 print(part_1)
 
-part_2 = 0
+part_2 = 0  # TODO: Zarównolegić obliczenia lub przygotować optymalny algorytm.
 
 for row in range(len(puzzle)):
     for col in range(len(puzzle[0])):
-        print((row, col))
-
-        if row == guard_row and col == guard_col:
+        if (row, col) == (guard_row, guard_col):
             continue
 
         if puzzle[row][col] == ".":
-            cloned_puzzle = [[c for c in r] for r in puzzle]
-            cloned_puzzle[row][col] = "#"
+            puzzle_copy = [[c for c in r] for r in puzzle]
+            puzzle_copy[row][col] = "#"
 
-            if calculate(cloned_puzzle, guard_row, guard_col).get("cycle"):
-                print("CYCLE", (row, col))
-
+            if calculate(puzzle_copy, guard_row, guard_col).get("cycle"):
                 part_2 += 1
 
-                print("TOTAL", part_2)
+                print((row, col), "CYCLE")
+            else:
+                print((row, col))
 
 print(part_2)  # 962 too low; 2252 too high
