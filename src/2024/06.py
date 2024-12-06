@@ -35,13 +35,15 @@ vectors = {
 }
 
 
-def calculate(puzzle, guard_row, guard_col):
+def calculate(puzzle, guard_row, guard_col, obstacle_row=-1, obstacle_col=-1):
     direction = "up"
 
     visited = defaultdict(int)
     visited[(guard_row, guard_col)] += 1
 
     trace = [(guard_row, guard_col)]
+
+    # count = 0
 
     while True:
         try:
@@ -63,6 +65,7 @@ def calculate(puzzle, guard_row, guard_col):
                 trace.append(current_guard_position)
 
                 if visited[current_guard_position] > 100:
+                    # print("COŚ JEST NIE TAK. PRZYPADEK (1, 49)")
                     return {
                         "visited": visited,
                         "cycle": False,
@@ -79,6 +82,8 @@ def calculate(puzzle, guard_row, guard_col):
                         trace[penultimate_index - length + 1 : penultimate_index + 1]
                         == trace[penultimate_index + 1 : last_index + 1]
                     ):
+                        # TODO: Rysować macierze z zaznaczonymi trasami.
+
                         return {
                             "visited": visited,
                             "cycle": True,
@@ -87,38 +92,78 @@ def calculate(puzzle, guard_row, guard_col):
         except Exception:
             break
 
+        # count += 1
+
+        # if count > 20000:
+        #     import sys
+
+        #     for r in range(len(puzzle)):
+        #         for c in range(len(puzzle[0])):
+        #             if (r, c) in visited:
+        #                 puzzle[r][c] = str(1 if visited[(r, c)] > 10 else ".")
+
+        #     puzzle[obstacle_row][obstacle_col] = "@"
+
+        #     print("\n".join("".join(row) for row in puzzle))
+
+        #     sys.exit(0)
+
     return {
         "visited": visited,
         "cycle": False,
     }
 
 
-part_1 = len(
-    list(
-        value
-        for value in calculate(puzzle, guard_row, guard_col).get("visited").values()
-        if value != 0
+# part_1 = len(
+#     list(
+#         value
+#         for value in calculate(puzzle, guard_row, guard_col).get("visited").values()
+#         if value != 0
+#     )
+# )
+
+# print(part_1)
+
+
+import itertools
+import os
+from multiprocessing import Pool
+
+
+def analyze(puzzle, guard_row, guard_col, rows):
+    count = 0
+
+    for row in rows:
+        for col in range(len(puzzle[0])):
+            if (row, col) == (guard_row, guard_col):
+                continue
+
+            if puzzle[row][col] == ".":
+                puzzle_copy = [[c for c in r] for r in puzzle]
+                puzzle_copy[row][col] = "#"
+
+                if calculate(puzzle_copy, guard_row, guard_col, row, col).get("cycle"):
+                    count += 1
+
+                    print((row, col), "CYCLE")
+                else:
+                    print((row, col))
+
+    return count
+
+
+if __name__ == "__main__":
+    rows = list(
+        itertools.batched(list(range(len(puzzle))), len(puzzle) // os.cpu_count() + 1)
     )
-)
 
-print(part_1)
+    input_data = [(puzzle, guard_row, guard_col, row) for row in rows]
 
-part_2 = 0  # TODO: Zarównolegić obliczenia lub przygotować optymalny algorytm.
+    with Pool() as pool:
+        results = pool.starmap(analyze, input_data)
 
-for row in range(len(puzzle)):
-    for col in range(len(puzzle[0])):
-        if (row, col) == (guard_row, guard_col):
-            continue
+        print(results)
 
-        if puzzle[row][col] == ".":
-            puzzle_copy = [[c for c in r] for r in puzzle]
-            puzzle_copy[row][col] = "#"
+        part_2 = sum(results)
 
-            if calculate(puzzle_copy, guard_row, guard_col).get("cycle"):
-                part_2 += 1
-
-                print((row, col), "CYCLE")
-            else:
-                print((row, col))
-
-print(part_2)  # 962 too low; 2252 too high
+        print(part_2)
