@@ -1,4 +1,5 @@
 import pathlib
+from collections import defaultdict
 
 from utils import *
 
@@ -17,7 +18,6 @@ for i, row in enumerate(puzzle):
     except Exception:
         pass
 
-visited = {(guard_row, guard_col)}
 direction = "up"
 
 direction_change = {
@@ -28,27 +28,99 @@ direction_change = {
 }
 
 vectors = {
-    "up": [-1, 0],
-    "right": [0, 1],
-    "down": [1, 0],
-    "left": [0, -1],
+    "up": {"row": -1, "col": 0},
+    "right": {"row": 0, "col": 1},
+    "down": {"row": 1, "col": 0},
+    "left": {"row": 0, "col": -1},
 }
 
-while True:
-    try:
-        if (
-            puzzle[guard_row + vectors[direction][0]][guard_col + vectors[direction][1]]
-            == "#"
-        ):
-            direction = direction_change[direction]
-        else:
-            guard_row = guard_row + vectors[direction][0]
-            guard_col = guard_col + vectors[direction][1]
 
-            visited.add((guard_row, guard_col))
-    except Exception:
-        break
+def calculate(puzzle, guard_row, guard_col):
+    direction = "up"
 
-part_1 = len(visited)
+    visited = defaultdict(int)
+    visited[(guard_row, guard_col)] += 1
+
+    trace = [(guard_row, guard_col)]
+
+    while True:
+        try:
+            if (
+                puzzle[guard_row + vectors[direction]["row"]][
+                    guard_col + vectors[direction]["col"]
+                ]
+                == "#"
+            ):
+                direction = direction_change[direction]
+            else:
+                guard_row = guard_row + vectors[direction]["row"]
+                guard_col = guard_col + vectors[direction]["col"]
+
+                current_guard_position = (guard_row, guard_col)
+
+                visited[current_guard_position] += 1
+
+                trace.append(current_guard_position)
+
+                if visited[current_guard_position] > 10:
+                    return {
+                        "visited": visited,
+                        "cycle": False,
+                    }
+
+                if trace.count(current_guard_position) > 1:
+                    last_index = len(trace) - 1
+                    penultimate_index = trace.index(
+                        trace[last_index], 0, last_index - 1
+                    )
+                    length = last_index - penultimate_index
+
+                    if (
+                        trace[penultimate_index - length + 1 : penultimate_index + 1]
+                        == trace[penultimate_index + 1 : last_index + 1]
+                    ):
+                        return {
+                            "visited": visited,
+                            "cycle": True,
+                        }
+
+        except Exception:
+            break
+
+    return {
+        "visited": visited,
+        "cycle": False,
+    }
+
+
+part_1 = len(
+    list(
+        value
+        for value in calculate(puzzle, guard_row, guard_col).get("visited").values()
+        if value != 0
+    )
+)
 
 print(part_1)
+
+part_2 = 0
+
+for row in range(len(puzzle)):
+    for col in range(len(puzzle[0])):
+        print((row, col))
+
+        if row == guard_row and col == guard_col:
+            continue
+
+        if puzzle[row][col] == ".":
+            cloned_puzzle = [[c for c in r] for r in puzzle]
+            cloned_puzzle[row][col] = "#"
+
+            if calculate(cloned_puzzle, guard_row, guard_col).get("cycle"):
+                print("CYCLE", (row, col))
+
+                part_2 += 1
+
+                print("TOTAL", part_2)
+
+print(part_2)  # 962 too low; 2252 too high
