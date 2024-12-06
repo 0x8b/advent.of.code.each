@@ -37,9 +37,11 @@
 .......:-:*%@@@@@@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 """
 
-
+import itertools
+import os
 import pathlib
 from collections import defaultdict
+from multiprocessing import Pool
 
 from utils import *
 
@@ -75,7 +77,7 @@ vectors = {
 }
 
 
-def calculate(puzzle, guard_row, guard_col):
+def calculate(puzzle, guard_row, guard_col, obstacle_row=-1, obstacle_col=-1):
     direction = "up"
 
     visited = defaultdict(int)
@@ -85,6 +87,12 @@ def calculate(puzzle, guard_row, guard_col):
 
     while True:
         try:
+            if not (
+                0 <= guard_row + vectors[direction]["row"] < len(puzzle)
+                and 0 <= guard_col + vectors[direction]["col"] < len(puzzle[0])
+            ):
+                break
+
             if (
                 puzzle[guard_row + vectors[direction]["row"]][
                     guard_col + vectors[direction]["col"]
@@ -118,11 +126,24 @@ def calculate(puzzle, guard_row, guard_col):
                     if (
                         trace[penultimate_index - length + 1 : penultimate_index + 1]
                         == trace[penultimate_index + 1 : last_index + 1]
+                        and length >= 4
                     ):
                         return {
                             "visited": visited,
                             "cycle": True,
                         }
+
+            # if False:
+            #     puzzle_copy = [[c for c in r] for r in puzzle]
+            #     for r in range(len(puzzle_copy)):
+            #         for c in range(len(puzzle_copy[0])):
+            #             if (r, c) in visited:
+            #                 puzzle_copy[r][c] = str(visited[(r, c)])
+            #     puzzle_copy[obstacle_row][obstacle_col] = "@"
+
+            #     print(len(trace), direction)
+            #     print("\n".join("".join(row) for row in puzzle_copy))
+            #     print("")
 
         except Exception:
             break
@@ -142,11 +163,6 @@ def calculate(puzzle, guard_row, guard_col):
 # )
 
 # print(part_1)
-
-
-import itertools
-import os
-from multiprocessing import Pool
 
 
 def analyze(puzzle, guard_row, guard_col, rows):
