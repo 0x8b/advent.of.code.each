@@ -1,6 +1,7 @@
-import copy
+import concurrent.futures
 import itertools
 import operator
+import os
 import pathlib
 
 from utils import *
@@ -10,8 +11,16 @@ lines = data.strip().split("\n")
 
 equations = [ints(line) for line in lines]
 
+OPERATOR_MAP = {
+    "add": operator.add,
+    "mul": operator.mul,
+    "concat": lambda a, b: int(str(a) + str(b)),
+}
 
-def get_calibration_result(equations, operators):
+
+def get_calibration_result(equations, operator_names):
+    operators = [OPERATOR_MAP[name] for name in operator_names]
+
     calibration_result = 0
 
     for [result, *operands] in equations:
@@ -31,11 +40,26 @@ def get_calibration_result(equations, operators):
     return calibration_result
 
 
-part_1 = get_calibration_result(equations, [operator.add, operator.mul])
-part_2 = get_calibration_result(
-    equations, [operator.add, operator.mul, lambda a, b: int(str(a) + str(b))]
-)
+def get_calibration_result_parallel(equations, operators):
+    with concurrent.futures.ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
+        batched_equations = list(
+            itertools.batched(equations, len(equations) // os.cpu_count() + 1)
+        )
 
+        total = 0
+
+        for partial in executor.map(
+            get_calibration_result,
+            batched_equations,
+            [operators] * len(batched_equations),
+        ):
+            total += partial
+
+        return total
+
+
+part_1 = get_calibration_result_parallel(equations, ["add", "mul"])
+part_2 = get_calibration_result_parallel(equations, ["add", "mul", "concat"])
 
 print(part_1)
 print(part_2)
