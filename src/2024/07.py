@@ -1,3 +1,4 @@
+import copy
 import itertools
 import operator
 import pathlib
@@ -15,12 +16,10 @@ def get_calibration_result(equations, operators):
 
     for [result, *operands] in equations:
         for operator_sequence in itertools.product(operators, repeat=len(operands) - 1):
-            operands_copy = [o for o in operands]
+            partial_result = operands[0]
 
-            partial_result = operands_copy.pop(0)
-
-            for op in operator_sequence:
-                partial_result = op(partial_result, operands_copy.pop(0))
+            for i, op in enumerate(operator_sequence):
+                partial_result = op(partial_result, operands[i + 1])
 
             if partial_result == result:
                 calibration_result += result
