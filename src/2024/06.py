@@ -139,49 +139,43 @@ def calculate(puzzle, guard_row, guard_col):
     }
 
 
-# part_1 = len(
-#     list(
-#         value
-#         for value in calculate(puzzle, guard_row, guard_col).get("visited").values()
-#         if value != 0
-#     )
-# )
+result = calculate(puzzle, guard_row, guard_col).get("visited")
 
-# print(part_1)
+part_1 = len(list(value for value in result.values() if value != 0))
+
+print(part_1)
+
+obstructions = set(result.keys())
 
 
-def analyze(puzzle, guard_row, guard_col, rows):
+def analyze(puzzle, guard_row, guard_col, obstructions):
     count = 0
 
-    for row in rows:
-        for col in range(len(puzzle[0])):
-            if (row, col) == (guard_row, guard_col):
-                continue
+    for row, col in obstructions:
+        if (row, col) == (guard_row, guard_col):
+            continue
 
-            if puzzle[row][col] == ".":
-                puzzle_copy = [[c for c in r] for r in puzzle]
-                puzzle_copy[row][col] = "#"
+        puzzle_copy = [[c for c in r] for r in puzzle]
+        puzzle_copy[row][col] = "#"
 
-                if calculate(puzzle_copy, guard_row, guard_col).get("cycle"):
-                    count += 1
-
-        print("ROW", row)
+        if calculate(puzzle_copy, guard_row, guard_col).get("cycle"):
+            count += 1
 
     return count
 
 
 with concurrent.futures.ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
-    batched_rows = list(
-        itertools.batched(list(range(len(puzzle))), len(puzzle) // os.cpu_count() + 1)
+    batched_obstructions = list(
+        itertools.batched(list(obstructions), len(obstructions) // os.cpu_count() + 1)
     )
 
     part_2 = sum(
         executor.map(
             analyze,
-            [puzzle] * len(batched_rows),
-            [guard_row] * len(batched_rows),
-            [guard_col] * len(batched_rows),
-            batched_rows,
+            [puzzle] * len(batched_obstructions),
+            [guard_row] * len(batched_obstructions),
+            [guard_col] * len(batched_obstructions),
+            batched_obstructions,
         )
     )
 
