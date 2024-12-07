@@ -21,6 +21,9 @@ def get_calibration_result(equations, operators):
             for i, op in enumerate(operator_sequence):
                 partial_result = op(partial_result, operands[i + 1])
 
+                if partial_result > result:
+                    break
+
             if partial_result == result:
                 calibration_result += result
                 break
