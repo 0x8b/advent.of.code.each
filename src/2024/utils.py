@@ -2,6 +2,10 @@ import json
 import re
 
 
+def rindex(lst, value):
+    return len(lst) - 1 - lst[::-1].index(value)
+
+
 def ints(line):
     return list(int(s) for s in re.findall(r"(?:\-|\+)?\d+", line))
 

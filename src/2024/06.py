@@ -37,6 +37,7 @@
 .......:-:*%@@@@@@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 """
 
+import concurrent.futures
 import itertools
 import os
 import pathlib
@@ -77,8 +78,11 @@ vectors = {
 }
 
 
-def calculate(puzzle, guard_row, guard_col, obstacle_row=-1, obstacle_col=-1):
+def calculate(puzzle, guard_row, guard_col):
     direction = "up"
+
+    rows = len(puzzle)
+    cols = len(puzzle[0])
 
     visited = defaultdict(int)
     visited[(guard_row, guard_col)] += 1
@@ -87,22 +91,17 @@ def calculate(puzzle, guard_row, guard_col, obstacle_row=-1, obstacle_col=-1):
 
     while True:
         try:
-            if not (
-                0 <= guard_row + vectors[direction]["row"] < len(puzzle)
-                and 0 <= guard_col + vectors[direction]["col"] < len(puzzle[0])
-            ):
+            guard_new_row = guard_row + vectors[direction]["row"]
+            guard_new_col = guard_col + vectors[direction]["col"]
+
+            if not (0 <= guard_new_row < rows and 0 <= guard_new_col < cols):
                 break
 
-            if (
-                puzzle[guard_row + vectors[direction]["row"]][
-                    guard_col + vectors[direction]["col"]
-                ]
-                == "#"
-            ):
+            if puzzle[guard_new_row][guard_new_col] == "#":
                 direction = direction_change[direction]
             else:
-                guard_row = guard_row + vectors[direction]["row"]
-                guard_col = guard_col + vectors[direction]["col"]
+                guard_row = guard_new_row
+                guard_col = guard_new_col
 
                 current_guard_position = (guard_row, guard_col)
 
@@ -118,9 +117,7 @@ def calculate(puzzle, guard_row, guard_col, obstacle_row=-1, obstacle_col=-1):
 
                 if trace.count(current_guard_position) > 1:
                     last_index = len(trace) - 1
-                    penultimate_index = trace.index(
-                        trace[last_index], 0, last_index - 1
-                    )
+                    penultimate_index = rindex(trace[:-1], trace[last_index])
                     length = last_index - penultimate_index
 
                     if (
@@ -132,18 +129,6 @@ def calculate(puzzle, guard_row, guard_col, obstacle_row=-1, obstacle_col=-1):
                             "visited": visited,
                             "cycle": True,
                         }
-
-            # if False:
-            #     puzzle_copy = [[c for c in r] for r in puzzle]
-            #     for r in range(len(puzzle_copy)):
-            #         for c in range(len(puzzle_copy[0])):
-            #             if (r, c) in visited:
-            #                 puzzle_copy[r][c] = str(visited[(r, c)])
-            #     puzzle_copy[obstacle_row][obstacle_col] = "@"
-
-            #     print(len(trace), direction)
-            #     print("\n".join("".join(row) for row in puzzle_copy))
-            #     print("")
 
         except Exception:
             break
@@ -177,28 +162,27 @@ def analyze(puzzle, guard_row, guard_col, rows):
                 puzzle_copy = [[c for c in r] for r in puzzle]
                 puzzle_copy[row][col] = "#"
 
-                if calculate(puzzle_copy, guard_row, guard_col, row, col).get("cycle"):
+                if calculate(puzzle_copy, guard_row, guard_col).get("cycle"):
                     count += 1
 
-                    print((row, col), "CYCLE")
-                else:
-                    print((row, col))
+        print("ROW", row)
 
     return count
 
 
-if __name__ == "__main__":
-    rows = list(
+with concurrent.futures.ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
+    batched_rows = list(
         itertools.batched(list(range(len(puzzle))), len(puzzle) // os.cpu_count() + 1)
     )
 
-    input_data = [(puzzle, guard_row, guard_col, row) for row in rows]
+    part_2 = sum(
+        executor.map(
+            analyze,
+            [puzzle] * len(batched_rows),
+            [guard_row] * len(batched_rows),
+            [guard_col] * len(batched_rows),
+            batched_rows,
+        )
+    )
 
-    with Pool() as pool:
-        results = pool.starmap(analyze, input_data)
-
-        print(results)
-
-        part_2 = sum(results)
-
-        print(part_2)  # Niepoprawne: 1476, 1925, 2252
+    print(part_2)

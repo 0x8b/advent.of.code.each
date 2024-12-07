@@ -46,16 +46,13 @@ def get_calibration_result_parallel(equations, operators):
             itertools.batched(equations, len(equations) // os.cpu_count() + 1)
         )
 
-        total = 0
-
-        for partial in executor.map(
-            get_calibration_result,
-            batched_equations,
-            [operators] * len(batched_equations),
-        ):
-            total += partial
-
-        return total
+        return sum(
+            executor.map(
+                get_calibration_result,
+                batched_equations,
+                [operators] * len(batched_equations),
+            )
+        )
 
 
 part_1 = get_calibration_result_parallel(equations, ["add", "mul"])
