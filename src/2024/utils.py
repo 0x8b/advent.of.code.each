@@ -36,6 +36,10 @@ def matrix(data, *, separator=",", try_parse=False):
     return data
 
 
+def print_matrix(matrix, separator=""):
+    print("\n".join(separator.join(str(c) for c in row) for row in matrix)) 
+
+
 def transpose(matrix):
     assert (
         len(matrix)
