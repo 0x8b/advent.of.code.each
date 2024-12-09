@@ -84,16 +84,17 @@ while current_file_id > 0:
             if isinstance(blocks, FreeSpace):
                 space_index = blocks_index
 
-                if disk[file_index].blocks <= disk[space_index].blocks:
-                    if disk[file_index].blocks < disk[space_index].blocks:
+                space_blocks = disk[space_index].blocks
+                file_blocks = disk[file_index].blocks
+
+                if file_blocks <= space_blocks:
+                    if file_blocks < space_blocks:
                         moved_file = disk[file_index].as_moved()
 
-                        disk[file_index] = FreeSpace(blocks=moved_file.blocks)
+                        disk[file_index] = FreeSpace(blocks=file_blocks)
                         disk[space_index : space_index + 1] = [
                             moved_file,
-                            FreeSpace(
-                                blocks=disk[space_index].blocks - moved_file.blocks
-                            ),
+                            FreeSpace(blocks=space_blocks - file_blocks),
                         ]
                     else:
                         [disk[space_index], disk[file_index]] = [
