@@ -1,43 +1,50 @@
 import pathlib
+from dataclasses import dataclass
 
 from utils import *
 
 data = pathlib.Path("../../data/2024/09.txt").read_text(encoding="utf-8")
 lines = data.strip().split("\n")
 
-disk_map = [
+
+@dataclass
+class File:
+    id: int
+    blocks: int
+    moved: bool
+
+    def as_moved(self):
+        return File(id=self.id, blocks=self.blocks, moved=True)
+
+
+@dataclass
+class FreeSpace:
+    blocks: int
+
+
+disk = [
     (
-        {"type": "file", "blocks": n, "moved": False}
+        File(id=(i // 2), blocks=blocks, moved=False)
         if i % 2 == 0
-        else {"type": "free-space", "blocks": n}
+        else FreeSpace(blocks=blocks)
     )
-    for i, n in enumerate(digits(lines[0]))
+    for i, blocks in enumerate(digits(lines[0]))
 ]
 
-file_id = 0
 
-for fragment in disk_map:
-    if fragment["type"] == "file":
-        fragment["id"] = file_id
-
-        file_id += 1
-
-
-def get_real_disk(disk_map):
+def get_real_disk(disk):
     real_disk = []
 
-    for blocks in disk_map:
-        if blocks["type"] == "file":
-            real_disk.extend([blocks["id"]] * blocks["blocks"])
+    for fragment in disk:
+        if isinstance(fragment, File):
+            real_disk.extend([fragment.id] * fragment.blocks)
         else:
-            real_disk.extend([None] * blocks["blocks"])
+            real_disk.extend([None] * fragment.blocks)
 
     return real_disk
 
 
-real_disk = get_real_disk(disk_map)
-
-
+real_disk = get_real_disk(disk)
 left = 0
 right = len(real_disk) - 1
 
@@ -58,56 +65,51 @@ part_1 = sum(i * id for i, id in enumerate(real_disk) if id is not None)
 
 print(part_1)
 
+current_file_id = disk[-1].id
 
-last_file_id = disk_map[-1]["id"]
-
-while last_file_id > 0:
-    file = next(
+while current_file_id > 0:
+    file_index = next(
         (
             i
-            for i, blocks in enumerate(disk_map)
-            if "id" in blocks and blocks["id"] == last_file_id and not blocks["moved"]
+            for i, blocks in enumerate(disk)
+            if isinstance(blocks, File)
+            and blocks.id == current_file_id
+            and not blocks.moved
         ),
         -1,
     )
 
-    for space, blocks in enumerate(disk_map):
-        if space < file:
-            if blocks["type"] == "free-space":
-                if disk_map[file]["blocks"] <= disk_map[space]["blocks"]:
-                    if disk_map[file]["blocks"] == disk_map[space]["blocks"]:
-                        disk_map[space] = {**disk_map[file], "moved": True}
-                        disk_map[file] = {
-                            "type": "free-space",
-                            "blocks": disk_map[file]["blocks"],
-                        }
-                    else:
-                        disk_map[space] = {
-                            "type": "free-space",
-                            "blocks": disk_map[space]["blocks"]
-                            - disk_map[file]["blocks"],
-                        }
+    for blocks_index, blocks in enumerate(disk):
+        if blocks_index < file_index:
+            if isinstance(blocks, FreeSpace):
+                space_index = blocks_index
 
-                        moved_file = {
-                            "type": "file",
-                            "blocks": disk_map[file]["blocks"],
-                            "id": disk_map[file]["id"],
-                            "moved": True,
-                        }
-                        disk_map[file] = {
-                            "type": "free-space",
-                            "blocks": disk_map[file]["blocks"],
-                        }
-                        disk_map.insert(space, moved_file)  # file
+                if disk[file_index].blocks <= disk[space_index].blocks:
+                    if disk[file_index].blocks < disk[space_index].blocks:
+                        moved_file = disk[file_index].as_moved()
+
+                        disk[file_index] = FreeSpace(blocks=moved_file.blocks)
+                        disk[space_index : space_index + 1] = [
+                            moved_file,
+                            FreeSpace(
+                                blocks=disk[space_index].blocks - moved_file.blocks
+                            ),
+                        ]
+                    else:
+                        [disk[space_index], disk[file_index]] = [
+                            disk[file_index].as_moved(),
+                            disk[space_index],
+                        ]
 
                     break
         else:
             break
 
-    last_file_id -= 1
+    current_file_id -= 1
 
-real_disk = get_real_disk(disk_map)
 
-part_2 = sum(i * file_id for i, file_id in enumerate(real_disk) if file_id is not None)
+part_2 = sum(
+    i * file_id for i, file_id in enumerate(get_real_disk(disk)) if file_id is not None
+)
 
 print(part_2)
