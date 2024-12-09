@@ -1,3 +1,4 @@
+import itertools
 import pathlib
 from dataclasses import dataclass
 
@@ -22,29 +23,28 @@ class FreeSpace:
     blocks: int
 
 
-disk = [
-    (
-        File(id=(i // 2), blocks=blocks, moved=False)
-        if i % 2 == 0
-        else FreeSpace(blocks=blocks)
+def get_copy_of_disk():
+    disk = [
+        (
+            File(id=(i // 2), blocks=blocks, moved=False)
+            if i % 2 == 0
+            else FreeSpace(blocks=blocks)
+        )
+        for i, blocks in enumerate(digits(lines[0]))
+    ]
+
+    return disk
+
+
+def disk_to_blocks(disk):
+    return list(
+        itertools.chain.from_iterable(
+            [getattr(fragment, "id", None)] * fragment.blocks for fragment in disk
+        )
     )
-    for i, blocks in enumerate(digits(lines[0]))
-]
 
 
-def blocks(disk):
-    all_blocks = []
-
-    for fragment in disk:
-        if isinstance(fragment, File):
-            all_blocks.extend([fragment.id] * fragment.blocks)
-        else:
-            all_blocks.extend([None] * fragment.blocks)
-
-    return all_blocks
-
-
-def compact_blocks(blocks):
+def defragment_blocks(blocks):
     left = 0
     right = len(blocks) - 1
 
@@ -58,25 +58,23 @@ def compact_blocks(blocks):
         if left >= right:
             break
 
-        blocks[left] = blocks[right]
-        blocks[right] = None
+        [
+            blocks[left],
+            blocks[right],
+        ] = [blocks[right], None]
 
     return blocks
 
 
-def compact_files(disk):
+def defragment_files(disk):
     current_file_id = disk[-1].id
 
     while current_file_id > 0:
-        file_index = next(
-            (
-                i
-                for i, blocks in enumerate(disk)
-                if isinstance(blocks, File)
-                and blocks.id == current_file_id
-                and not blocks.moved
-            ),
-            -1,
+        file_index = find_index(
+            disk,
+            lambda file: isinstance(file, File)
+            and file.id == current_file_id
+            and not file.moved,
         )
 
         for blocks_index, blocks in enumerate(disk):
@@ -117,10 +115,10 @@ def checksum(real_disk):
     )
 
 
-part_1 = checksum(compact_blocks(blocks(disk)))
+part_1 = checksum(defragment_blocks(disk_to_blocks(get_copy_of_disk())))
 
 print(part_1)
 
-part_2 = checksum(blocks(compact_files(disk)))
+part_2 = checksum(disk_to_blocks(defragment_files(get_copy_of_disk())))
 
 print(part_2)

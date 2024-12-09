@@ -14,6 +14,15 @@ def digits(line):
     return list(int(s) for s in re.findall(r"\d", line))
 
 
+def find_index(collection, predicate):
+    return next(
+        (
+            i for i, obj in enumerate(collection) if predicate(obj)
+        ),
+        -1,
+    )
+
+
 def matrix(data, *, separator=",", try_parse=False):
     if isinstance(data, str):
         data = data.split("\n")
