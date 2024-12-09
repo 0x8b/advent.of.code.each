@@ -32,85 +32,95 @@ disk = [
 ]
 
 
-def get_real_disk(disk):
-    real_disk = []
+def blocks(disk):
+    all_blocks = []
 
     for fragment in disk:
         if isinstance(fragment, File):
-            real_disk.extend([fragment.id] * fragment.blocks)
+            all_blocks.extend([fragment.id] * fragment.blocks)
         else:
-            real_disk.extend([None] * fragment.blocks)
+            all_blocks.extend([None] * fragment.blocks)
 
-    return real_disk
+    return all_blocks
 
 
-real_disk = get_real_disk(disk)
-left = 0
-right = len(real_disk) - 1
+def compact_blocks(blocks):
+    left = 0
+    right = len(blocks) - 1
 
-while left < right:
-    while real_disk[left] is not None and left < right:
-        left += 1
+    while left < right:
+        while blocks[left] is not None and left < right:
+            left += 1
 
-    while real_disk[right] is None and left < right:
-        right -= 1
+        while blocks[right] is None and left < right:
+            right -= 1
 
-    if left >= right:
-        break
+        if left >= right:
+            break
 
-    real_disk[left] = real_disk[right]
-    real_disk[right] = None
+        blocks[left] = blocks[right]
+        blocks[right] = None
 
-part_1 = sum(i * id for i, id in enumerate(real_disk) if id is not None)
+    return blocks
+
+
+def compact_files(disk):
+    current_file_id = disk[-1].id
+
+    while current_file_id > 0:
+        file_index = next(
+            (
+                i
+                for i, blocks in enumerate(disk)
+                if isinstance(blocks, File)
+                and blocks.id == current_file_id
+                and not blocks.moved
+            ),
+            -1,
+        )
+
+        for blocks_index, blocks in enumerate(disk):
+            if blocks_index < file_index:
+                if isinstance(blocks, FreeSpace):
+                    space_index = blocks_index
+
+                    space_blocks = disk[space_index].blocks
+                    file_blocks = disk[file_index].blocks
+
+                    if file_blocks <= space_blocks:
+                        if file_blocks < space_blocks:
+                            moved_file = disk[file_index].as_moved()
+
+                            disk[file_index] = FreeSpace(blocks=file_blocks)
+                            disk[space_index : space_index + 1] = [
+                                moved_file,
+                                FreeSpace(blocks=space_blocks - file_blocks),
+                            ]
+                        else:
+                            [disk[space_index], disk[file_index]] = [
+                                disk[file_index].as_moved(),
+                                disk[space_index],
+                            ]
+
+                        break
+            else:
+                break
+
+        current_file_id -= 1
+
+    return disk
+
+
+def checksum(real_disk):
+    return sum(
+        i * file_id for i, file_id in enumerate(real_disk) if file_id is not None
+    )
+
+
+part_1 = checksum(compact_blocks(blocks(disk)))
 
 print(part_1)
 
-current_file_id = disk[-1].id
-
-while current_file_id > 0:
-    file_index = next(
-        (
-            i
-            for i, blocks in enumerate(disk)
-            if isinstance(blocks, File)
-            and blocks.id == current_file_id
-            and not blocks.moved
-        ),
-        -1,
-    )
-
-    for blocks_index, blocks in enumerate(disk):
-        if blocks_index < file_index:
-            if isinstance(blocks, FreeSpace):
-                space_index = blocks_index
-
-                space_blocks = disk[space_index].blocks
-                file_blocks = disk[file_index].blocks
-
-                if file_blocks <= space_blocks:
-                    if file_blocks < space_blocks:
-                        moved_file = disk[file_index].as_moved()
-
-                        disk[file_index] = FreeSpace(blocks=file_blocks)
-                        disk[space_index : space_index + 1] = [
-                            moved_file,
-                            FreeSpace(blocks=space_blocks - file_blocks),
-                        ]
-                    else:
-                        [disk[space_index], disk[file_index]] = [
-                            disk[file_index].as_moved(),
-                            disk[space_index],
-                        ]
-
-                    break
-        else:
-            break
-
-    current_file_id -= 1
-
-
-part_2 = sum(
-    i * file_id for i, file_id in enumerate(get_real_disk(disk)) if file_id is not None
-)
+part_2 = checksum(blocks(compact_files(disk)))
 
 print(part_2)
