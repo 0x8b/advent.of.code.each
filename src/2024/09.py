@@ -12,10 +12,6 @@ lines = data.strip().split("\n")
 class File:
     id: int
     blocks: int
-    moved: bool
-
-    def as_moved(self):
-        return File(id=self.id, blocks=self.blocks, moved=True)
 
 
 @dataclass
@@ -25,11 +21,7 @@ class FreeSpace:
 
 def get_copy_of_disk():
     disk = [
-        (
-            File(id=(i // 2), blocks=blocks, moved=False)
-            if i % 2 == 0
-            else FreeSpace(blocks=blocks)
-        )
+        (File(id=(i // 2), blocks=blocks) if i % 2 == 0 else FreeSpace(blocks=blocks))
         for i, blocks in enumerate(digits(lines[0]))
     ]
 
@@ -72,9 +64,7 @@ def defragment_files(disk):
     while current_file_id > 0:
         file_index = find_index(
             disk,
-            lambda file: isinstance(file, File)
-            and file.id == current_file_id
-            and not file.moved,
+            lambda file: isinstance(file, File) and file.id == current_file_id,
         )
 
         for blocks_index, blocks in enumerate(disk):
@@ -87,7 +77,7 @@ def defragment_files(disk):
 
                     if file_blocks <= space_blocks:
                         if file_blocks < space_blocks:
-                            moved_file = disk[file_index].as_moved()
+                            moved_file = disk[file_index]
 
                             disk[file_index] = FreeSpace(blocks=file_blocks)
                             disk[space_index : space_index + 1] = [
@@ -96,7 +86,7 @@ def defragment_files(disk):
                             ]
                         else:
                             [disk[space_index], disk[file_index]] = [
-                                disk[file_index].as_moved(),
+                                disk[file_index],
                                 disk[space_index],
                             ]
 
