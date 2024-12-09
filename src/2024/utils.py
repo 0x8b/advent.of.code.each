@@ -10,6 +10,10 @@ def ints(line):
     return list(int(s) for s in re.findall(r"(?:\-|\+)?\d+", line))
 
 
+def digits(line):
+    return list(int(s) for s in re.findall(r"\d", line))
+
+
 def matrix(data, *, separator=",", try_parse=False):
     if isinstance(data, str):
         data = data.split("\n")
@@ -37,7 +41,7 @@ def matrix(data, *, separator=",", try_parse=False):
 
 
 def print_matrix(matrix, separator=""):
-    print("\n".join(separator.join(str(c) for c in row) for row in matrix)) 
+    print("\n".join(separator.join(str(c) for c in row) for row in matrix))
 
 
 def transpose(matrix):
