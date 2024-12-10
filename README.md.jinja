@@ -1,0 +1,11 @@
+# 🎄 Advent of Code {{ events }}🎄
+{% for year, days in years.items() %}
+# [{{ year }}](https://adventofcode.com/{{ year }})
+
+|Day|Puzzle|Stars|Solutions|
+|---|---|---|---|
+{% for day, details in days.items() %}
+{{- "|" + day + "|" + details["title"] + "|" + ["", "⭐", "⭐⭐"][details["progress"]] + "|" + details["solutions_rendered"] + "|" }}
+{% endfor %}
+{% endfor %}
+

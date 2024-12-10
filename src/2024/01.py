@@ -12,8 +12,12 @@ pairs = [line.split() for line in lines]
 left = list(sorted(left))
 right = list(sorted(right))
 
-print(sum(abs(int(l) - int(r)) for l, r in zip(left, right)))
+part_1 = sum(abs(int(l) - int(r)) for l, r in zip(left, right))
+
+print(part_1)
 
 counter = Counter(right)
 
-print(sum([(counter[n] * int(n) if n in counter else 0) for n in left]))
+part_2 = sum([(counter[n] * int(n) if n in counter else 0) for n in left])
+
+print(part_2)
