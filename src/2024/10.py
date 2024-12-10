@@ -23,7 +23,7 @@ def count_all_trails(topo, trailhead_row, trailhead_col):
 
     trails = []
 
-    def traverse(row, col, height, trail):
+    def hike(row, col, height, trail):
         if not (0 <= row < rows and 0 <= col < cols):
             return 0
 
@@ -35,11 +35,11 @@ def count_all_trails(topo, trailhead_row, trailhead_col):
             return 1
 
         return sum(
-            traverse(row + dr, col + dc, height + 1, trail + [(row + dr, col + dc)])
+            hike(row + dr, col + dc, height + 1, trail + [(row + dr, col + dc)])
             for dr, dc in [[-1, 0], [0, 1], [1, 0], [0, -1]]
         )
 
-    traverse(trailhead_row, trailhead_col, 0, [(trailhead_row, trailhead_col)])
+    hike(trailhead_row, trailhead_col, 0, [(trailhead_row, trailhead_col)])
 
     return trails
 
