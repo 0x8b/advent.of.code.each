@@ -16,9 +16,7 @@ def digits(line):
 
 def find_index(collection, predicate):
     return next(
-        (
-            i for i, obj in enumerate(collection) if predicate(obj)
-        ),
+        (i for i, obj in enumerate(collection) if predicate(obj)),
         -1,
     )
 
