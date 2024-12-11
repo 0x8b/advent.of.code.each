@@ -114,11 +114,11 @@
 
 &nbsp;
 
-## [Advent of Code 2020](https://adventofcode.com/2020) 🎅 0/50
+## [Advent of Code 2020](https://adventofcode.com/2020) 🎅 2/50
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|:--|:---:|---|
-|1|[Report Repair](https://adventofcode.com/2020/day/1)|||
+|1|[Report Repair](https://adventofcode.com/2020/day/1)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/01.py)|
 |2|[Password Philosophy](https://adventofcode.com/2020/day/2)|||
 |3|[Toboggan Trajectory](https://adventofcode.com/2020/day/3)|||
 |4|[Passport Processing](https://adventofcode.com/2020/day/4)|||
