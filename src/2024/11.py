@@ -1,4 +1,5 @@
 import pathlib
+from functools import cache
 
 from utils import *
 
@@ -7,15 +8,11 @@ lines = data.strip().split("\n")
 
 stones = ints(lines[0])
 
-CACHE = {}
 
-
+@cache
 def count_stones(stone, blink):
     if blink == 0:
         return 1
-
-    if (stone, blink) in CACHE:
-        return CACHE[(stone, blink)]
 
     match stone:
         case 0:
@@ -29,8 +26,6 @@ def count_stones(stone, blink):
             )
         case value:
             count = count_stones(value * 2024, blink - 1)
-
-    CACHE[(stone, blink)] = count
 
     return count
 
