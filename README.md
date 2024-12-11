@@ -1,6 +1,6 @@
 # 🎄 Advent of Code 2015-2024🎄
 
-# [2024](https://adventofcode.com/2024)
+## [Advent of Code 2024](https://adventofcode.com/2024)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|
@@ -14,9 +14,10 @@
 |8|[Resonant Collinearity](https://adventofcode.com/2024/day/8)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/08.py)|
 |9|[Disk Fragmenter](https://adventofcode.com/2024/day/9)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/09.py)|
 |10|[Hoof It](https://adventofcode.com/2024/day/10)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/10.py)|
+|11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)||[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)|
 
 
-# [2023](https://adventofcode.com/2023)
+## [Advent of Code 2023](https://adventofcode.com/2023)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|
@@ -47,7 +48,7 @@
 |25|[Snowverload](https://adventofcode.com/2023/day/25)|||
 
 
-# [2022](https://adventofcode.com/2022)
+## [Advent of Code 2022](https://adventofcode.com/2022)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|
@@ -78,7 +79,7 @@
 |25|[Full of Hot Air](https://adventofcode.com/2022/day/25)|||
 
 
-# [2021](https://adventofcode.com/2021)
+## [Advent of Code 2021](https://adventofcode.com/2021)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|
@@ -109,7 +110,7 @@
 |25|[Sea Cucumber](https://adventofcode.com/2021/day/25)||[rb](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/25.rb)|
 
 
-# [2020](https://adventofcode.com/2020)
+## [Advent of Code 2020](https://adventofcode.com/2020)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|
@@ -140,7 +141,7 @@
 |25|[Combo Breaker](https://adventofcode.com/2020/day/25)|||
 
 
-# [2019](https://adventofcode.com/2019)
+## [Advent of Code 2019](https://adventofcode.com/2019)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|
@@ -171,7 +172,7 @@
 |25|[Cryostasis](https://adventofcode.com/2019/day/25)|||
 
 
-# [2018](https://adventofcode.com/2018)
+## [Advent of Code 2018](https://adventofcode.com/2018)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|
@@ -202,7 +203,7 @@
 |25|[Four-Dimensional Adventure](https://adventofcode.com/2018/day/25)|||
 
 
-# [2017](https://adventofcode.com/2017)
+## [Advent of Code 2017](https://adventofcode.com/2017)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|
@@ -233,7 +234,7 @@
 |25|[The Halting Problem](https://adventofcode.com/2017/day/25)|||
 
 
-# [2016](https://adventofcode.com/2016)
+## [Advent of Code 2016](https://adventofcode.com/2016)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|
@@ -264,7 +265,7 @@
 |25|[Clock Signal](https://adventofcode.com/2016/day/25)|||
 
 
-# [2015](https://adventofcode.com/2015)
+## [Advent of Code 2015](https://adventofcode.com/2015)
 
 |Day|Puzzle|Stars|Solutions|
 |---|---|---|---|

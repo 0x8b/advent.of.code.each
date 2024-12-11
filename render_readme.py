@@ -2,77 +2,73 @@ import functools
 import json
 import operator
 import os
+import re
 from collections import defaultdict
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
 
 
-def analyze_directory():
-    all_files = [
-        p
-        for p in Path("src").rglob("*")
-        if p.suffix in {".py", ".rb"} and set(p.stem) < set("0123456789")
-    ]
-
+def collect_data():
     meta = json.loads(Path("meta.json").read_text())
 
     days = list(
         sorted(
-            [(*map(int, key.split("/")), value) for key, value in meta["days"].items()],
+            [(*yearday.split("/"), title) for yearday, title in meta["days"].items()],
             key=functools.cmp_to_key(
-                lambda a, b: (a[1] - b[1]) if a[0] == b[0] else b[0] - a[0]
+                lambda a, b: (
+                    (int(a[1]) - int(b[1])) if a[0] == b[0] else int(b[0]) - int(a[0])
+                )
             ),
         )
     )
 
-    available_days = [f"{year}/{str(day).zfill(2)}" for (year, day, _) in days]
+    available_days = set(meta["days"].keys())
 
-    years = defaultdict(lambda: defaultdict(lambda: dict()))
+    events = defaultdict(lambda: defaultdict(lambda: dict()))
 
     for year, day, title in days:
-        years[str(year)][str(day)] = {
-            "title": f"[{title}](https://adventofcode.com/{year}/day/{day})",
+        events[year][day] = {
+            "title": f"[{title}](https://adventofcode.com/{year}/day/{int(day)})",
             "solutions": [],
-            "solutions_rendered": "",
+            "solutions_formatted": "",
             "progress": 0,
         }
 
-    for file in all_files:
-        content = file.read_text(encoding="utf-8")
-
-        progress = 0
-
-        if "part_1" in content:
-            progress += 1
-
-        if "part_2" in content:
-            progress += 1
-
-        [_, year, day] = str(file).split("/")
-
-        [day, ext] = day.split(".")
+    for solution in [
+        p
+        for p in Path("src").rglob("*")
+        if p.suffix in {".py", ".rb"} and "01" <= p.stem <= "25"
+    ]:
+        [year, day, extension] = re.findall(
+            r"src\/(\d{4})\/(\d\d).(.*)", str(solution)
+        ).pop()
 
         if f"{year}/{day}" not in available_days:
             continue
 
-        day = day.lstrip("0")
-
-        years[year][day]["solutions"].append(
+        events[year][day]["solutions"].append(
             [
-                ext,
-                f"https://github.com/0x8b/advent.of.code.each/blob/main/src/{year}/{day.zfill(2)}.{ext}",
+                extension,
+                f"https://github.com/0x8b/advent.of.code.each/blob/main/src/{year}/{day}.{extension}",
             ]
         )
-        years[year][day]["solutions_rendered"] = ", ".join(
-            f"[{ext}]({link})"
-            for ext, link in sorted(
-                years[year][day]["solutions"], key=operator.itemgetter(0)
+
+        events[year][day]["solutions_formatted"] = ", ".join(
+            f"[{extension}]({link})"
+            for extension, link in sorted(
+                events[year][day]["solutions"], key=operator.itemgetter(0)
             )
         )
-        years[year][day]["progress"] = progress
 
-    return {"events": "2015-2024", "years": years}
+        source_code = solution.read_text(encoding="utf-8")
+
+        events[year][day]["progress"] = max(
+            events[year][day]["progress"],
+            sum(("part_1" in source_code, "part_2" in source_code)),
+        )
+
+    return {"range": f"{min(events.keys())}-{max(events.keys())}", "events": events}
 
 
 def generate_report(data, template_file, output_file):
@@ -82,4 +78,4 @@ def generate_report(data, template_file, output_file):
     Path(output_file).write_text(template.render(data), encoding="utf-8")
 
 
-generate_report(analyze_directory(), "README.md.jinja", "README.md")
+generate_report(collect_data(), "README.md.jinja", "README.md")
