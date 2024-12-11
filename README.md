@@ -14,7 +14,7 @@
 |8|[Resonant Collinearity](https://adventofcode.com/2024/day/8)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/08.py)|
 |9|[Disk Fragmenter](https://adventofcode.com/2024/day/9)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/09.py)|
 |10|[Hoof It](https://adventofcode.com/2024/day/10)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/10.py)|
-|11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)||[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)|
+|11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)|
 
 
 ## [Advent of Code 2023](https://adventofcode.com/2023)
