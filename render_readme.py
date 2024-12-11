@@ -13,6 +13,11 @@ from jinja2 import Environment, FileSystemLoader
 def collect_data():
     meta = json.loads(Path("meta.json").read_text())
 
+    extension_to_language = {
+        "py": "Python",
+        "rb": "Ruby",
+    }
+
     days = list(
         sorted(
             [(*yearday.split("/"), title) for yearday, title in meta["days"].items()],
@@ -56,7 +61,7 @@ def collect_data():
         )
 
         events[year][day]["solutions_formatted"] = ", ".join(
-            f"[{extension}]({link})"
+            f"[{extension_to_language[extension]}]({link})"
             for extension, link in sorted(
                 events[year][day]["solutions"], key=operator.itemgetter(0)
             )
