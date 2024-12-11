@@ -18,13 +18,13 @@
 
 &nbsp;
 
-## [Advent of Code 2023](https://adventofcode.com/2023) 🎁 4/50
+## [Advent of Code 2023](https://adventofcode.com/2023) 🎁 6/50
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|:--|:---:|---|
 |1|[Trebuchet?!](https://adventofcode.com/2023/day/1)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/01.py)|
 |2|[Cube Conundrum](https://adventofcode.com/2023/day/2)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/02.py)|
-|3|[Gear Ratios](https://adventofcode.com/2023/day/3)|||
+|3|[Gear Ratios](https://adventofcode.com/2023/day/3)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/03.py)|
 |4|[Scratchcards](https://adventofcode.com/2023/day/4)|||
 |5|[If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)|||
 |6|[Wait For It](https://adventofcode.com/2023/day/6)|||
