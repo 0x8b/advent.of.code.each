@@ -3,7 +3,7 @@
 ## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 22/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[Historian Hysteria](https://adventofcode.com/2024/day/1)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/01.py)|
 |2|[Red-Nosed Reports](https://adventofcode.com/2024/day/2)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/02.py)|
 |3|[Mull It Over](https://adventofcode.com/2024/day/3)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/03.py)|
@@ -21,7 +21,7 @@
 ## [Advent of Code 2023](https://adventofcode.com/2023) 🎁 4/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[Trebuchet?!](https://adventofcode.com/2023/day/1)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/01.py)|
 |2|[Cube Conundrum](https://adventofcode.com/2023/day/2)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/02.py)|
 |3|[Gear Ratios](https://adventofcode.com/2023/day/3)|||
@@ -53,7 +53,7 @@
 ## [Advent of Code 2022](https://adventofcode.com/2022) 🍪 0/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[Calorie Counting](https://adventofcode.com/2022/day/1)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/01.rb)|
 |2|[Rock Paper Scissors](https://adventofcode.com/2022/day/2)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/02.rb)|
 |3|[Rucksack Reorganization](https://adventofcode.com/2022/day/3)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/03.rb)|
@@ -85,7 +85,7 @@
 ## [Advent of Code 2021](https://adventofcode.com/2021) 🦌 0/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[Sonar Sweep](https://adventofcode.com/2021/day/1)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/01.rb)|
 |2|[Dive!](https://adventofcode.com/2021/day/2)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/02.rb)|
 |3|[Binary Diagnostic](https://adventofcode.com/2021/day/3)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/03.rb)|
@@ -117,7 +117,7 @@
 ## [Advent of Code 2020](https://adventofcode.com/2020) 🎅 0/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[Report Repair](https://adventofcode.com/2020/day/1)|||
 |2|[Password Philosophy](https://adventofcode.com/2020/day/2)|||
 |3|[Toboggan Trajectory](https://adventofcode.com/2020/day/3)|||
@@ -149,7 +149,7 @@
 ## [Advent of Code 2019](https://adventofcode.com/2019) 🎄 0/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1)|||
 |2|[1202 Program Alarm](https://adventofcode.com/2019/day/2)|||
 |3|[Crossed Wires](https://adventofcode.com/2019/day/3)|||
@@ -181,7 +181,7 @@
 ## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 0/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[Chronal Calibration](https://adventofcode.com/2018/day/1)|||
 |2|[Inventory Management System](https://adventofcode.com/2018/day/2)|||
 |3|[No Matter How You Slice It](https://adventofcode.com/2018/day/3)|||
@@ -213,7 +213,7 @@
 ## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 0/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[Inverse Captcha](https://adventofcode.com/2017/day/1)|||
 |2|[Corruption Checksum](https://adventofcode.com/2017/day/2)|||
 |3|[Spiral Memory](https://adventofcode.com/2017/day/3)|||
@@ -245,7 +245,7 @@
 ## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 0/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[No Time for a Taxicab](https://adventofcode.com/2016/day/1)|||
 |2|[Bathroom Security](https://adventofcode.com/2016/day/2)|||
 |3|[Squares With Three Sides](https://adventofcode.com/2016/day/3)|||
@@ -277,7 +277,7 @@
 ## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 0/50
 
 |Day|Puzzle|Progress|Solutions|
-|:---:|---|:---:|---|
+|:---:|:--|:---:|---|
 |1|[Not Quite Lisp](https://adventofcode.com/2015/day/1)|||
 |2|[I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2)|||
 |3|[Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3)|||
