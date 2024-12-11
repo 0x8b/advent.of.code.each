@@ -76,10 +76,20 @@ def collect_data():
         )
     )
 
+    stars = defaultdict(int)
+    solved = defaultdict(int)
+
+    for year in events:
+        for day in events[year]:
+            stars[year] += events[year][day]["progress"]
+            solved[year] += 1 if events[year][day]["progress"] == 2 else 0
+
     return {
         "range": f"{min(events.keys())}-{max(events.keys())}",
         "events": events,
         "emojis": emojis,
+        "stars": stars,
+        "solved": solved,
     }
 
 
