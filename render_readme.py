@@ -1,4 +1,5 @@
 import functools
+import itertools
 import json
 import operator
 import os
@@ -68,7 +69,18 @@ def collect_data():
             sum(("part_1" in source_code, "part_2" in source_code)),
         )
 
-    return {"range": f"{min(events.keys())}-{max(events.keys())}", "events": events}
+    emojis = dict(
+        zip(
+            [str(year) for year in range(2015, 2030)],
+            itertools.cycle(["🎅", "🎄", "🎁", "🦌", "🍪"]),
+        )
+    )
+
+    return {
+        "range": f"{min(events.keys())}-{max(events.keys())}",
+        "events": events,
+        "emojis": emojis,
+    }
 
 
 def generate_report(data, template_file, output_file):

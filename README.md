@@ -1,28 +1,28 @@
 # 🎄 Advent of Code 2015-2024🎄
 
-## [Advent of Code 2024](https://adventofcode.com/2024)
+## 🍪 [Advent of Code 2024](https://adventofcode.com/2024) 🍪
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
-|1|[Historian Hysteria](https://adventofcode.com/2024/day/1)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/01.py)|
-|2|[Red-Nosed Reports](https://adventofcode.com/2024/day/2)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/02.py)|
-|3|[Mull It Over](https://adventofcode.com/2024/day/3)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/03.py)|
-|4|[Ceres Search](https://adventofcode.com/2024/day/4)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/04.py)|
-|5|[Print Queue](https://adventofcode.com/2024/day/5)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/05.py)|
-|6|[Guard Gallivant](https://adventofcode.com/2024/day/6)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/06.py)|
-|7|[Bridge Repair](https://adventofcode.com/2024/day/7)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/07.py)|
-|8|[Resonant Collinearity](https://adventofcode.com/2024/day/8)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/08.py)|
-|9|[Disk Fragmenter](https://adventofcode.com/2024/day/9)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/09.py)|
-|10|[Hoof It](https://adventofcode.com/2024/day/10)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/10.py)|
-|11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)|
+|1|[Historian Hysteria](https://adventofcode.com/2024/day/1)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/01.py)|
+|2|[Red-Nosed Reports](https://adventofcode.com/2024/day/2)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/02.py)|
+|3|[Mull It Over](https://adventofcode.com/2024/day/3)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/03.py)|
+|4|[Ceres Search](https://adventofcode.com/2024/day/4)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/04.py)|
+|5|[Print Queue](https://adventofcode.com/2024/day/5)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/05.py)|
+|6|[Guard Gallivant](https://adventofcode.com/2024/day/6)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/06.py)|
+|7|[Bridge Repair](https://adventofcode.com/2024/day/7)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/07.py)|
+|8|[Resonant Collinearity](https://adventofcode.com/2024/day/8)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/08.py)|
+|9|[Disk Fragmenter](https://adventofcode.com/2024/day/9)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/09.py)|
+|10|[Hoof It](https://adventofcode.com/2024/day/10)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/10.py)|
+|11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)|🍪🍪|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)|
 
 
-## [Advent of Code 2023](https://adventofcode.com/2023)
+## 🦌 [Advent of Code 2023](https://adventofcode.com/2023) 🦌
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
-|1|[Trebuchet?!](https://adventofcode.com/2023/day/1)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/01.py)|
-|2|[Cube Conundrum](https://adventofcode.com/2023/day/2)|⭐⭐|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/02.py)|
+|1|[Trebuchet?!](https://adventofcode.com/2023/day/1)|🦌🦌|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/01.py)|
+|2|[Cube Conundrum](https://adventofcode.com/2023/day/2)|🦌🦌|[py](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/02.py)|
 |3|[Gear Ratios](https://adventofcode.com/2023/day/3)|||
 |4|[Scratchcards](https://adventofcode.com/2023/day/4)|||
 |5|[If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)|||
@@ -48,9 +48,9 @@
 |25|[Snowverload](https://adventofcode.com/2023/day/25)|||
 
 
-## [Advent of Code 2022](https://adventofcode.com/2022)
+## 🎁 [Advent of Code 2022](https://adventofcode.com/2022) 🎁
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
 |1|[Calorie Counting](https://adventofcode.com/2022/day/1)||[rb](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/01.rb)|
 |2|[Rock Paper Scissors](https://adventofcode.com/2022/day/2)||[rb](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/02.rb)|
@@ -79,9 +79,9 @@
 |25|[Full of Hot Air](https://adventofcode.com/2022/day/25)|||
 
 
-## [Advent of Code 2021](https://adventofcode.com/2021)
+## 🎄 [Advent of Code 2021](https://adventofcode.com/2021) 🎄
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
 |1|[Sonar Sweep](https://adventofcode.com/2021/day/1)||[rb](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/01.rb)|
 |2|[Dive!](https://adventofcode.com/2021/day/2)||[rb](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/02.rb)|
@@ -110,9 +110,9 @@
 |25|[Sea Cucumber](https://adventofcode.com/2021/day/25)||[rb](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/25.rb)|
 
 
-## [Advent of Code 2020](https://adventofcode.com/2020)
+## 🎅 [Advent of Code 2020](https://adventofcode.com/2020) 🎅
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
 |1|[Report Repair](https://adventofcode.com/2020/day/1)|||
 |2|[Password Philosophy](https://adventofcode.com/2020/day/2)|||
@@ -141,9 +141,9 @@
 |25|[Combo Breaker](https://adventofcode.com/2020/day/25)|||
 
 
-## [Advent of Code 2019](https://adventofcode.com/2019)
+## 🍪 [Advent of Code 2019](https://adventofcode.com/2019) 🍪
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
 |1|[The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1)|||
 |2|[1202 Program Alarm](https://adventofcode.com/2019/day/2)|||
@@ -172,9 +172,9 @@
 |25|[Cryostasis](https://adventofcode.com/2019/day/25)|||
 
 
-## [Advent of Code 2018](https://adventofcode.com/2018)
+## 🦌 [Advent of Code 2018](https://adventofcode.com/2018) 🦌
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
 |1|[Chronal Calibration](https://adventofcode.com/2018/day/1)|||
 |2|[Inventory Management System](https://adventofcode.com/2018/day/2)|||
@@ -203,9 +203,9 @@
 |25|[Four-Dimensional Adventure](https://adventofcode.com/2018/day/25)|||
 
 
-## [Advent of Code 2017](https://adventofcode.com/2017)
+## 🎁 [Advent of Code 2017](https://adventofcode.com/2017) 🎁
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
 |1|[Inverse Captcha](https://adventofcode.com/2017/day/1)|||
 |2|[Corruption Checksum](https://adventofcode.com/2017/day/2)|||
@@ -234,9 +234,9 @@
 |25|[The Halting Problem](https://adventofcode.com/2017/day/25)|||
 
 
-## [Advent of Code 2016](https://adventofcode.com/2016)
+## 🎄 [Advent of Code 2016](https://adventofcode.com/2016) 🎄
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
 |1|[No Time for a Taxicab](https://adventofcode.com/2016/day/1)|||
 |2|[Bathroom Security](https://adventofcode.com/2016/day/2)|||
@@ -265,9 +265,9 @@
 |25|[Clock Signal](https://adventofcode.com/2016/day/25)|||
 
 
-## [Advent of Code 2015](https://adventofcode.com/2015)
+## 🎅 [Advent of Code 2015](https://adventofcode.com/2015) 🎅
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
 |1|[Not Quite Lisp](https://adventofcode.com/2015/day/1)|||
 |2|[I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2)|||

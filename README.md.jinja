@@ -1,11 +1,11 @@
 # 🎄 Advent of Code {{ range }}🎄
 {% for year, days in events.items() %}
-## [Advent of Code {{ year }}](https://adventofcode.com/{{ year }})
+## {{ emojis[year] }} [Advent of Code {{ year }}](https://adventofcode.com/{{ year }}) {{ emojis[year] }}
 
-|Day|Puzzle|Stars|Solutions|
+|Day|Puzzle|Progress|Solutions|
 |---|---|---|---|
 {% for day, details in days.items() %}
-{{- "|" + day.lstrip("0") + "|" + details["title"] + "|" + ["", "⭐", "⭐⭐"][details["progress"]] + "|" + details["solutions_formatted"] + "|" }}
+{{- "|" + day.lstrip("0") + "|" + details["title"] + "|" + emojis[year] * details["progress"] + "|" + details["solutions_formatted"] + "|" }}
 {% endfor %}
 {% endfor %}
 
