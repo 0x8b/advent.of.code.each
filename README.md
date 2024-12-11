@@ -1,20 +1,20 @@
-# 🎄 Advent of Code 2015-2024🎄
+# Advent of Code 2015-2024
 
 ## [Advent of Code 2024](https://adventofcode.com/2024) 22/50
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|---|:---:|---|
-|1|[Historian Hysteria](https://adventofcode.com/2024/day/1)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/01.py)|
-|2|[Red-Nosed Reports](https://adventofcode.com/2024/day/2)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/02.py)|
-|3|[Mull It Over](https://adventofcode.com/2024/day/3)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/03.py)|
-|4|[Ceres Search](https://adventofcode.com/2024/day/4)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/04.py)|
-|5|[Print Queue](https://adventofcode.com/2024/day/5)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/05.py)|
-|6|[Guard Gallivant](https://adventofcode.com/2024/day/6)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/06.py)|
-|7|[Bridge Repair](https://adventofcode.com/2024/day/7)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/07.py)|
-|8|[Resonant Collinearity](https://adventofcode.com/2024/day/8)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/08.py)|
-|9|[Disk Fragmenter](https://adventofcode.com/2024/day/9)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/09.py)|
-|10|[Hoof It](https://adventofcode.com/2024/day/10)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/10.py)|
-|11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)|
+|1|[Historian Hysteria](https://adventofcode.com/2024/day/1)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/01.py)|
+|2|[Red-Nosed Reports](https://adventofcode.com/2024/day/2)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/02.py)|
+|3|[Mull It Over](https://adventofcode.com/2024/day/3)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/03.py)|
+|4|[Ceres Search](https://adventofcode.com/2024/day/4)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/04.py)|
+|5|[Print Queue](https://adventofcode.com/2024/day/5)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/05.py)|
+|6|[Guard Gallivant](https://adventofcode.com/2024/day/6)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/06.py)|
+|7|[Bridge Repair](https://adventofcode.com/2024/day/7)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/07.py)|
+|8|[Resonant Collinearity](https://adventofcode.com/2024/day/8)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/08.py)|
+|9|[Disk Fragmenter](https://adventofcode.com/2024/day/9)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/09.py)|
+|10|[Hoof It](https://adventofcode.com/2024/day/10)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/10.py)|
+|11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)|
 
 &nbsp;
 
@@ -22,8 +22,8 @@
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|---|:---:|---|
-|1|[Trebuchet?!](https://adventofcode.com/2023/day/1)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/01.py)|
-|2|[Cube Conundrum](https://adventofcode.com/2023/day/2)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/02.py)|
+|1|[Trebuchet?!](https://adventofcode.com/2023/day/1)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/01.py)|
+|2|[Cube Conundrum](https://adventofcode.com/2023/day/2)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/02.py)|
 |3|[Gear Ratios](https://adventofcode.com/2023/day/3)|||
 |4|[Scratchcards](https://adventofcode.com/2023/day/4)|||
 |5|[If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)|||

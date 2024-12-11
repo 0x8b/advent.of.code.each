@@ -77,7 +77,7 @@ def collect_data():
     emojis = dict(
         zip(
             [str(year) for year in range(2015, 2030)],
-            itertools.cycle(["🎅", "🎄", "🎁", "🦌", "🍪"]),
+            itertools.cycle(["🎅", "🦌", "🍪", "🎁", "🎄"]),
         )
     )
 
