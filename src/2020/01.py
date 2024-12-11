@@ -1,6 +1,6 @@
 import pathlib
-from itertools import combinations
 from functools import reduce
+from itertools import combinations
 
 lines = (
     pathlib.Path("../../data/2020/01.txt")
