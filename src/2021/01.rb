@@ -1,5 +1,7 @@
 d = ARGF.read.lines.map &:to_i
 
-[2, 4].each {
-  p d.each_cons(_1).count { |a, *, b| a < b }
-}
+part_1 = d.each_cons(2).count { |a, *, b| a < b }
+part_2 = d.each_cons(4).count { |a, *, b| a < b }
+
+puts part_1
+puts part_2

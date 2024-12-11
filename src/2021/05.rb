@@ -20,5 +20,8 @@ def count_overlapping_points segments
 end
 
 
-p count_overlapping_points SEGMENTS.select { |x1, y1, x2, y2| x1 == x2 or y1 == y2 }
-p count_overlapping_points SEGMENTS
+part_1 = count_overlapping_points SEGMENTS.select { |x1, y1, x2, y2| x1 == x2 or y1 == y2 }
+part_2 = count_overlapping_points SEGMENTS
+
+puts part_1
+puts part_2

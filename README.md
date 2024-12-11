@@ -50,16 +50,16 @@
 
 &nbsp;
 
-## [Advent of Code 2022](https://adventofcode.com/2022) 🍪 0/50
+## [Advent of Code 2022](https://adventofcode.com/2022) 🍪 12/50
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|:--|:---:|---|
-|1|[Calorie Counting](https://adventofcode.com/2022/day/1)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/01.rb)|
-|2|[Rock Paper Scissors](https://adventofcode.com/2022/day/2)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/02.rb)|
-|3|[Rucksack Reorganization](https://adventofcode.com/2022/day/3)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/03.rb)|
-|4|[Camp Cleanup](https://adventofcode.com/2022/day/4)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/04.rb)|
-|5|[Supply Stacks](https://adventofcode.com/2022/day/5)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/05.rb)|
-|6|[Tuning Trouble](https://adventofcode.com/2022/day/6)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/06.rb)|
+|1|[Calorie Counting](https://adventofcode.com/2022/day/1)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/01.rb)|
+|2|[Rock Paper Scissors](https://adventofcode.com/2022/day/2)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/02.rb)|
+|3|[Rucksack Reorganization](https://adventofcode.com/2022/day/3)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/03.rb)|
+|4|[Camp Cleanup](https://adventofcode.com/2022/day/4)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/04.rb)|
+|5|[Supply Stacks](https://adventofcode.com/2022/day/5)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/05.rb)|
+|6|[Tuning Trouble](https://adventofcode.com/2022/day/6)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/06.rb)|
 |7|[No Space Left On Device](https://adventofcode.com/2022/day/7)|||
 |8|[Treetop Tree House](https://adventofcode.com/2022/day/8)|||
 |9|[Rope Bridge](https://adventofcode.com/2022/day/9)|||
@@ -82,35 +82,35 @@
 
 &nbsp;
 
-## [Advent of Code 2021](https://adventofcode.com/2021) 🦌 0/50
+## [Advent of Code 2021](https://adventofcode.com/2021) 🦌 45/50
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|:--|:---:|---|
-|1|[Sonar Sweep](https://adventofcode.com/2021/day/1)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/01.rb)|
-|2|[Dive!](https://adventofcode.com/2021/day/2)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/02.rb)|
-|3|[Binary Diagnostic](https://adventofcode.com/2021/day/3)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/03.rb)|
-|4|[Giant Squid](https://adventofcode.com/2021/day/4)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/04.rb)|
-|5|[Hydrothermal Venture](https://adventofcode.com/2021/day/5)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/05.rb)|
-|6|[Lanternfish](https://adventofcode.com/2021/day/6)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/06.rb)|
-|7|[The Treachery of Whales](https://adventofcode.com/2021/day/7)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/07.rb)|
-|8|[Seven Segment Search](https://adventofcode.com/2021/day/8)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/08.rb)|
-|9|[Smoke Basin](https://adventofcode.com/2021/day/9)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/09.rb)|
-|10|[Syntax Scoring](https://adventofcode.com/2021/day/10)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/10.rb)|
-|11|[Dumbo Octopus](https://adventofcode.com/2021/day/11)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/11.rb)|
-|12|[Passage Pathing](https://adventofcode.com/2021/day/12)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/12.rb)|
-|13|[Transparent Origami](https://adventofcode.com/2021/day/13)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/13.rb)|
-|14|[Extended Polymerization](https://adventofcode.com/2021/day/14)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/14.rb)|
-|15|[Chiton](https://adventofcode.com/2021/day/15)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/15.rb)|
-|16|[Packet Decoder](https://adventofcode.com/2021/day/16)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/16.rb)|
-|17|[Trick Shot](https://adventofcode.com/2021/day/17)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/17.rb)|
-|18|[Snailfish](https://adventofcode.com/2021/day/18)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/18.rb)|
-|19|[Beacon Scanner](https://adventofcode.com/2021/day/19)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/19.rb)|
-|20|[Trench Map](https://adventofcode.com/2021/day/20)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/20.rb)|
-|21|[Dirac Dice](https://adventofcode.com/2021/day/21)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/21.rb)|
-|22|[Reactor Reboot](https://adventofcode.com/2021/day/22)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/22.rb)|
+|1|[Sonar Sweep](https://adventofcode.com/2021/day/1)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/01.rb)|
+|2|[Dive!](https://adventofcode.com/2021/day/2)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/02.rb)|
+|3|[Binary Diagnostic](https://adventofcode.com/2021/day/3)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/03.rb)|
+|4|[Giant Squid](https://adventofcode.com/2021/day/4)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/04.rb)|
+|5|[Hydrothermal Venture](https://adventofcode.com/2021/day/5)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/05.rb)|
+|6|[Lanternfish](https://adventofcode.com/2021/day/6)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/06.rb)|
+|7|[The Treachery of Whales](https://adventofcode.com/2021/day/7)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/07.rb)|
+|8|[Seven Segment Search](https://adventofcode.com/2021/day/8)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/08.rb)|
+|9|[Smoke Basin](https://adventofcode.com/2021/day/9)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/09.rb)|
+|10|[Syntax Scoring](https://adventofcode.com/2021/day/10)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/10.rb)|
+|11|[Dumbo Octopus](https://adventofcode.com/2021/day/11)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/11.rb)|
+|12|[Passage Pathing](https://adventofcode.com/2021/day/12)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/12.rb)|
+|13|[Transparent Origami](https://adventofcode.com/2021/day/13)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/13.rb)|
+|14|[Extended Polymerization](https://adventofcode.com/2021/day/14)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/14.rb)|
+|15|[Chiton](https://adventofcode.com/2021/day/15)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/15.rb)|
+|16|[Packet Decoder](https://adventofcode.com/2021/day/16)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/16.rb)|
+|17|[Trick Shot](https://adventofcode.com/2021/day/17)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/17.rb)|
+|18|[Snailfish](https://adventofcode.com/2021/day/18)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/18.rb)|
+|19|[Beacon Scanner](https://adventofcode.com/2021/day/19)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/19.rb)|
+|20|[Trench Map](https://adventofcode.com/2021/day/20)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/20.rb)|
+|21|[Dirac Dice](https://adventofcode.com/2021/day/21)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/21.rb)|
+|22|[Reactor Reboot](https://adventofcode.com/2021/day/22)|🦌🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/22.rb)|
 |23|[Amphipod](https://adventofcode.com/2021/day/23)|||
 |24|[Arithmetic Logic Unit](https://adventofcode.com/2021/day/24)|||
-|25|[Sea Cucumber](https://adventofcode.com/2021/day/25)||[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/25.rb)|
+|25|[Sea Cucumber](https://adventofcode.com/2021/day/25)|🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/25.rb)|
 
 &nbsp;
 

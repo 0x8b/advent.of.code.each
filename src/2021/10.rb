@@ -38,8 +38,9 @@ corrupted_lines = LINES.select { |line| is_corrupted? line }
 
 syntax_error_scores = corrupted_lines.map { |line| get_first_illegal_character line }.map(&SYNTAX_ERROR_SCORE)
 
-puts syntax_error_scores.sum # part 1
+part_1 = syntax_error_scores.sum
 
+puts part_1
 
 def get_completion_of line
   completion = []
@@ -74,4 +75,6 @@ end
 
 middle_score = scores.sort.yield_self { |scores| scores[scores.size / 2] }
 
-puts middle_score # part 2
+part_2 = middle_score
+
+puts part_2

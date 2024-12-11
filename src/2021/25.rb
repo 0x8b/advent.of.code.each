@@ -31,4 +31,6 @@ loop do
   state.replace newstate
 end
 
-puts steps # part one
+part_1 = steps
+
+puts part_1

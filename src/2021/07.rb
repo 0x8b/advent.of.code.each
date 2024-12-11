@@ -8,5 +8,8 @@ def fuel
   end.min
 end
 
-p fuel { |d| d }
-p fuel { |d| d * d.succ / 2 }
+part_1 = fuel { |d| d }
+part_2 = fuel { |d| d * d.succ / 2 }
+
+puts part_1
+puts part_2

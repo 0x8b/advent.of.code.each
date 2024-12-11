@@ -30,5 +30,8 @@ def deduce signal, output
   end
 end
 
-p SIGOUT.map { |sigout| deduce *sigout }.flatten.count { [1, 4, 7, 8].include? _1 }
-p SIGOUT.map { |sigout| deduce *sigout }.map { _1.map(&:to_s).join.to_i }.sum
+part_1 = SIGOUT.map { |sigout| deduce *sigout }.flatten.count { [1, 4, 7, 8].include? _1 }
+part_2 = SIGOUT.map { |sigout| deduce *sigout }.map { _1.map(&:to_s).join.to_i }.sum
+
+puts part_1
+puts part_2

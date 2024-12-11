@@ -32,5 +32,8 @@ def procedure(stacks, moves, same_order = false)
 end
 
 
-puts procedure(stacks, moves)
-puts procedure(stacks, moves, true)
+part_1 = procedure(stacks, moves)
+part_2 = procedure(stacks, moves, true)
+
+puts part_1
+puts part_2

@@ -18,5 +18,8 @@ def lanternfish epochs
   state.values.sum
 end
 
-p lanternfish 80
-p lanternfish 256
+part_1 = lanternfish 80
+part_2 = lanternfish 256
+
+puts part_1
+puts part_2

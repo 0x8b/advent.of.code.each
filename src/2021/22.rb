@@ -17,7 +17,8 @@ ARGF.read.lines.each do |line|
   END
 end
 
-puts SPACE.values.count(:on) # part one
+part_1 = SPACE.values.count(:on)
+puts part_1
 
 class Range
   def intersection range
@@ -61,7 +62,7 @@ end
 
 CUBOIDS = STEPS.map { |type, x, y, z| Cuboid.new(type, x, y, z) }
 
-puts CUBOIDS.inject([]) { |processed, unseen_cuboid| # part two
+part_2 = CUBOIDS.inject([]) { |processed, unseen_cuboid| # part two
   next_processed = processed.group_by(&:ranges).reject { |k, v| v.size % 2 == 0 }.values.flatten.flat_map { |cuboid|
   #next_processed = processed.flat_map { |cuboid|
     if cuboid.intersect?(unseen_cuboid)
@@ -76,3 +77,5 @@ puts CUBOIDS.inject([]) { |processed, unseen_cuboid| # part two
   next_processed << unseen_cuboid if unseen_cuboid.type == :on
   next_processed
 }.map(&:volume).sum
+
+puts part_2

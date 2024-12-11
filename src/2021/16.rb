@@ -45,7 +45,8 @@ def sum packet
   end
 end
 
-puts sum(parse(BITS.clone)) # part 1
+part_1 = sum(parse(BITS.clone))
+puts part_1
 
 def evaluate node
   case node
@@ -60,4 +61,5 @@ def evaluate node
   end
 end
 
-puts evaluate(parse(BITS.clone)) # part 2
+part_2 = evaluate(parse(BITS.clone))
+puts part_2

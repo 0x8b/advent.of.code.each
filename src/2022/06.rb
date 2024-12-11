@@ -9,5 +9,8 @@ def find_marker stream, distinct
 end
 
 
-puts find_marker(datastream, 4)
-puts find_marker(datastream, 14)
+part_1 = find_marker(datastream, 4)
+part_2 = find_marker(datastream, 14)
+
+puts part_1
+puts part_2

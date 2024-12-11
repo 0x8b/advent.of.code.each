@@ -11,7 +11,7 @@ priority = -> (char) {
   end
 }
 
-p rucksacks
+part_1 = rucksacks
   .map { |rucksack|
     rucksack
       .each_slice(rucksack.size / 2)
@@ -20,9 +20,12 @@ p rucksacks
   .map(&priority)
   .sum
 
-p rucksacks
+part_2 = rucksacks
   .each_slice(3)
   .map { |group| group.inject(&:&) }
   .flatten
   .map(&priority)
   .sum
+
+puts part_1
+puts part_2

@@ -8,7 +8,10 @@ catch :take_me_out do
     BOARDS.each { |board|
       board.chain(board.transpose).each { |rorc|
         if rorc - NUMBERS[0..s] == []
-          p (board.flatten - NUMBERS[0..s]).sum * NUMBERS[s]
+          part_1 = (board.flatten - NUMBERS[0..s]).sum * NUMBERS[s]
+
+          puts part_1
+
           throw :take_me_out
         end
       }
@@ -21,7 +24,10 @@ NUMBERS.size.times { |s|
     board.chain(board.transpose).each { |rorc|
       if rorc - NUMBERS[0..s] == []
         if BOARDS.size == 1
-          p (board.flatten - NUMBERS[0..s]).sum * NUMBERS[s]
+          part_2 = (board.flatten - NUMBERS[0..s]).sum * NUMBERS[s]
+
+          puts part_2
+
           exit
         else
           BOARDS.delete(board)

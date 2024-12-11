@@ -36,5 +36,8 @@ def answer steps
   e.values.map { |v| v / 2 }.minmax.inject(:-).abs
 end
 
-puts answer 10
-puts answer 40
+part_1 = answer 10
+part_2 = answer 40
+
+puts part_1
+puts part_2

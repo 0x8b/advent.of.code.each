@@ -67,8 +67,11 @@ def add numbers
   end
 end
 
-puts magnitude(add(SNAILFISH_NUMS)) # part 1
+part_1 = magnitude(add(SNAILFISH_NUMS))
 
-puts SNAILFISH_NUMS.permutation(2).map { |a, b| # part 2
+part_2 = SNAILFISH_NUMS.permutation(2).map { |a, b|
   magnitude(add([a, b]))
 }.max
+
+puts part_1
+puts part_2

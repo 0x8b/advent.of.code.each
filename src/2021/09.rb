@@ -10,7 +10,9 @@ LOW_POINTS = [*0...100].to_a.product([*0...100]).filter_map { |x, y|
   [x, y] if adjacent(x, y).all? { |ax, ay| MAP[x][y] < MAP[ax][ay] }
 }
 
-p LOW_POINTS.sum { |x, y| MAP[x][y] + 1 } # part 1
+part_1 = LOW_POINTS.sum { |x, y| MAP[x][y] + 1 }
+
+puts part_1
 
 def expand_basin basin
   10.times { # 10 was chosen arbitrarily
@@ -24,4 +26,6 @@ def expand_basin basin
   basin
 end
 
-p LOW_POINTS.map { |x, y| expand_basin [[x, y]] }.map(&:size).max(3).reduce(:*) # part 2
+part_2 = LOW_POINTS.map { |x, y| expand_basin [[x, y]] }.map(&:size).max(3).reduce(:*)
+
+puts part_2

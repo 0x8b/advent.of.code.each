@@ -97,8 +97,11 @@ until SCANNERS.empty?
   SCANNERS.delete(scanner)
 end
 
-puts BEACONS.size # part one
+part_1 = BEACONS.size
 
-puts SCANNERS_POSITIONS.combination(2).map { |b1, b2| # part two
+part_2 = SCANNERS_POSITIONS.combination(2).map { |b1, b2|
   relative_position(b1, b2).map(&:abs).sum
 }.max
+
+puts part_1
+puts part_2

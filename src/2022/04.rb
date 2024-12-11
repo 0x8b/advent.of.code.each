@@ -7,5 +7,8 @@ pairs = ARGF
     .split(',')
     .map { |range| eval(range) } }
 
-puts pairs.count { |a, b| a.cover?(b) or b.cover?(a) }
-puts pairs.count { |a, b| (a.to_a & b.to_a).size > 0 }
+part_1 = pairs.count { |a, b| a.cover?(b) or b.cover?(a) }
+part_2 = pairs.count { |a, b| (a.to_a & b.to_a).size > 0 }
+
+puts part_1
+puts part_2

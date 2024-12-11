@@ -54,5 +54,8 @@ BIGGRID = []
   end
 end
 
-puts lowest_total_risk(GRID)
-puts lowest_total_risk(BIGGRID)
+part_1 = lowest_total_risk(GRID)
+part_2 = lowest_total_risk(BIGGRID)
+
+puts part_1
+puts part_2

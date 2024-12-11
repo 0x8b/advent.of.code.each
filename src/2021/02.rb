@@ -13,7 +13,9 @@ d.each {
   end
 }
 
-p h * v
+part_1 = h * v
+
+puts part_1
 
 h, v, a = 0, 0, 0
 
@@ -29,4 +31,6 @@ d.each {
   end
 }
 
-p h * v
+part_2 = h * v
+
+puts part_2

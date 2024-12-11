@@ -14,7 +14,8 @@ loop do
   SCORE[player] += POS[player] + 1
 
   if SCORE[player] >= 1000
-    puts SCORE.min * rolls # part one
+    part_1 = SCORE.min * rolls
+    puts part_1
     break
   end
 
@@ -37,4 +38,5 @@ def count p1, p2, s1, s2
   end
 end
 
-puts count(*POS2, 0, 0).max # part two
+part_2 = count(*POS2, 0, 0).max
+puts part_2

@@ -46,5 +46,5 @@ end
     parent = child
   end
 
-  puts parent.values.count(1) # part one and two
+  puts parent.values.count(1) # part_1, part_2
 end

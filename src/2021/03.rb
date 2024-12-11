@@ -6,7 +6,9 @@ gamma = report.transpose.map { 2 * _1.count(?1) > report.size ? ?1 : ?0 }.join
 
 epsilon = gamma.tr "01", "10"
 
-p gamma.to_i(2) * epsilon.to_i(2)
+part_1 = gamma.to_i(2) * epsilon.to_i(2)
+
+puts part_1
 
 ogr = (0...W).inject(report) { |r, i|
   break r if r.size == 1
@@ -24,5 +26,6 @@ csr = (0...W).inject(report) { |r, i|
   }
 }.first.join.to_i 2
 
+part_2 = ogr * csr
 
-p ogr * csr
+puts part_2

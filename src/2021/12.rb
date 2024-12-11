@@ -31,8 +31,10 @@ end
 
 TRACKS = []
 caveman(["start"]) { |track, cave| track.count(cave) == 0 }
-puts TRACKS.size
+part_1 = TRACKS.size
+puts part_1
 
 TRACKS.clear
 caveman(["start"]) { |track, cave| track.count(cave) == 0 or (track.count(cave) == 1 and track.select { _1.downcase == _1 }.yield_self { _1.size == _1.uniq.size })}
-puts TRACKS.size
+part_2 = TRACKS.size
+puts part_2

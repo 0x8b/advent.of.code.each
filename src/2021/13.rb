@@ -22,7 +22,7 @@ axes.each do |axis, v|
     end
   end
 
-  puts sheet.keys.size if first
+  puts sheet.keys.size if first # part_1, part_2
 
   first = false
 end

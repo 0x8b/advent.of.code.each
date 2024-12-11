@@ -37,7 +37,7 @@ def score(guide)
 end
 
 
-part1 = score(guide)
+part_1 = score(guide)
 
 new_guide = guide.map { |a, b|
   if b == "X"
@@ -49,7 +49,7 @@ new_guide = guide.map { |a, b|
   end
 }
 
-part2 = score(new_guide)
+part_2 = score(new_guide)
 
-p part1
-p part2
+puts part_1
+puts part_2

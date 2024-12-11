@@ -59,5 +59,8 @@ if ENV["PREVIEW"] == "true"
   File.write "preview.ppm", ["P3", "#{xs.size} #{ys.size}", "255", ppm.reverse].join("\n")
 end
 
-puts max_y # part 1
-puts total # part 2
+part_1 = max_y
+part_2 = total
+
+puts part_1
+puts part_2

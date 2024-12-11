@@ -62,10 +62,12 @@ flashes = 0
   octopuses = step octopuses.map &:dup
   flashes += octopuses.flatten.count &:zero?
 
-  puts flashes if i == 100 # part 1
+  part_1 = flashes if i == 100
+  puts part_1
 
   if octopuses.flatten.all? { _1.zero? }
-    puts i # part 2
+    part_2 = i
+    puts part_2
     break
   end
 end

@@ -6,5 +6,8 @@ calories = ARGF
     .map(&:to_i)
     .sum }
 
-puts calories.max
-puts calories.max(3).sum
+part_1 = calories.max
+part_2 = calories.max(3).sum
+
+puts part_1
+puts part_2
