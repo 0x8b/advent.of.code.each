@@ -242,11 +242,11 @@
 
 &nbsp;
 
-## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 0/50
+## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 2/50
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|:--|:---:|---|
-|1|[No Time for a Taxicab](https://adventofcode.com/2016/day/1)|||
+|1|[No Time for a Taxicab](https://adventofcode.com/2016/day/1)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/01.py)|
 |2|[Bathroom Security](https://adventofcode.com/2016/day/2)|||
 |3|[Squares With Three Sides](https://adventofcode.com/2016/day/3)|||
 |4|[Security Through Obscurity](https://adventofcode.com/2016/day/4)|||
