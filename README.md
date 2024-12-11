@@ -146,11 +146,11 @@
 
 &nbsp;
 
-## [Advent of Code 2019](https://adventofcode.com/2019) 🎄 0/50
+## [Advent of Code 2019](https://adventofcode.com/2019) 🎄 2/50
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|:--|:---:|---|
-|1|[The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1)|||
+|1|[The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2019/01.py)|
 |2|[1202 Program Alarm](https://adventofcode.com/2019/day/2)|||
 |3|[Crossed Wires](https://adventofcode.com/2019/day/3)|||
 |4|[Secure Container](https://adventofcode.com/2019/day/4)|||
