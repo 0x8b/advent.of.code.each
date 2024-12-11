@@ -16,18 +16,18 @@ def count_stones(stone, blink):
 
     match stone:
         case 0:
-            count = count_stones(1, blink - 1)
+            return count_stones(1, blink - 1)
+
         case value if len(str(value)) % 2 == 0:
             value = str(value)
             mid = len(value) // 2
 
-            count = count_stones(int(value[:mid]), blink - 1) + count_stones(
+            return count_stones(int(value[:mid]), blink - 1) + count_stones(
                 int(value[mid:]), blink - 1
             )
-        case value:
-            count = count_stones(value * 2024, blink - 1)
 
-    return count
+        case value:
+            return count_stones(value * 2024, blink - 1)
 
 
 part_1 = 0
