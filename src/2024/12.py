@@ -6,19 +6,19 @@ from utils import *
 data = pathlib.Path("../../data/2024/12.txt").read_text(encoding="utf-8")
 lines = data.strip().split("\n")
 
-garden = matrix(lines, separator="")
+GARDEN = matrix(lines, separator="")
 
-rows = len(garden)
-cols = len(garden[0])
+ROWS = len(GARDEN)
+COLS = len(GARDEN[0])
 
-coords = set((row, col) for row in range(rows) for col in range(cols))
+coords = set((row, col) for row in range(ROWS) for col in range(COLS))
 
-regions = []
+REGIONS = []
 
 while len(coords):
     first = coords.pop()
 
-    region_name = garden[first[0]][first[1]]
+    region_name = GARDEN[first[0]][first[1]]
 
     queue = deque()
     queue.append(first)
@@ -33,16 +33,16 @@ while len(coords):
             nr, nc = row + dr, col + dc
 
             if (
-                0 <= nr < rows
-                and 0 <= nc < cols
-                and garden[nr][nc] == region_name
+                0 <= nr < ROWS
+                and 0 <= nc < COLS
+                and GARDEN[nr][nc] == region_name
                 and (nr, nc) not in region
             ):
                 queue.append((nr, nc))
                 region.add((nr, nc))
                 coords.remove((nr, nc))
 
-    regions.append((region_name, region))
+    REGIONS.append((region_name, region))
 
 
 def calculate_area(region):
@@ -64,7 +64,7 @@ def calculate_perimeter(region):
 
 part_1 = 0
 
-for region_name, region in regions:
+for region_name, region in REGIONS:
     part_1 += calculate_area(region) * calculate_perimeter(region)
 
 print(part_1)
@@ -116,7 +116,7 @@ def count_sides(region):
 
 part_2 = 0
 
-for _, region in regions:
+for _, region in REGIONS:
     part_2 += calculate_area(region) * count_sides(region)
 
 print(part_2)
