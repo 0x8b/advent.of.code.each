@@ -16,15 +16,15 @@ coords = set((row, col) for row in range(rows) for col in range(cols))
 regions = []
 
 while len(coords):
-    seed = coords.pop()
+    first = coords.pop()
 
-    region_name = garden[seed[0]][seed[1]]
+    region_name = garden[first[0]][first[1]]
 
     queue = deque()
-    queue.append(seed)
+    queue.append(first)
 
     region = set()
-    region.add(seed)
+    region.add(first)
 
     while len(queue):
         row, col = queue.popleft()
@@ -45,6 +45,10 @@ while len(coords):
     regions.append((region_name, region))
 
 
+def calculate_area(region):
+    return len(region)
+
+
 def calculate_perimeter(region):
     perimeter = len(region) * 4
 
@@ -61,26 +65,23 @@ def calculate_perimeter(region):
 part_1 = 0
 
 for region_name, region in regions:
-    area = len(region)
-    perimeter = calculate_perimeter(region)
-
-    part_1 += area * perimeter
+    part_1 += calculate_area(region) * calculate_perimeter(region)
 
 print(part_1)
 
 
-def count_distinct_sides(nums):
-    nums = sorted(nums)
+def count_segments(cut_segments):
+    cut_segments = sorted(cut_segments)
 
-    sides = [[nums.pop(0)]]
+    segments = [[cut_segments.pop(0)]]
 
-    for num in nums:
-        if sides[-1][-1] + 1 == num:
-            sides[-1].append(num)
+    for s in cut_segments:
+        if segments[-1][-1] + 1 == s:
+            segments[-1].append(s)
         else:
-            sides.append([num])
+            segments.append([s])
 
-    return len(sides)
+    return len(segments)
 
 
 def count_sides(region):
@@ -96,36 +97,24 @@ def count_sides(region):
     sides = 0
 
     while len(edges):
-        seed = edges.pop()
+        first = edges.pop()
 
-        match seed:
-            case "t", r, c:
-                s = set([("t", r, c)]) | set(
-                    e for e in edges if e[0] == "t" and e[1] == r
-                )
+        cut_segments = set([first]) | set(
+            (side, row, col)
+            for side, row, col in edges
+            if side == first[0]
+            and (
+                (first[0] in "tb" and row == first[1])
+                or (first[0] in "rl" and col == first[2])
+            )
+        )
 
-                sides += count_distinct_sides([c for (_, _, c) in s])
-            case "r", r, c:
-                s = set([("r", r, c)]) | set(
-                    e for e in edges if e[0] == "r" and e[2] == c
-                )
+        sides += count_segments(
+            [col if side in "tb" else row for (side, row, col) in cut_segments]
+        )
 
-                sides += count_distinct_sides([r for (_, r, _) in s])
-            case "b", r, c:
-                s = set([("b", r, c)]) | set(
-                    e for e in edges if e[0] == "b" and e[1] == r
-                )
-
-                sides += count_distinct_sides([c for (_, _, c) in s])
-            case "l", r, c:
-                s = set([("l", r, c)]) | set(
-                    e for e in edges if e[0] == "l" and e[2] == c
-                )
-
-                sides += count_distinct_sides([r for (_, r, _) in s])
-
-        for e in s:
-            edges.discard(e)
+        for s in cut_segments:
+            edges.discard(s)
 
     return sides
 
@@ -133,9 +122,6 @@ def count_sides(region):
 part_2 = 0
 
 for _, region in regions:
-    area = len(region)
-    sides = count_sides(region)
-
-    part_2 += area * sides
+    part_2 += calculate_area(region) * count_sides(region)
 
 print(part_2)
