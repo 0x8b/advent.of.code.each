@@ -70,20 +70,6 @@ for region_name, region in regions:
 print(part_1)
 
 
-def count_segments(cut_segments):
-    cut_segments = sorted(cut_segments)
-
-    segments = [[cut_segments.pop(0)]]
-
-    for s in cut_segments:
-        if segments[-1][-1] + 1 == s:
-            segments[-1].append(s)
-        else:
-            segments.append([s])
-
-    return len(segments)
-
-
 def count_sides(region):
     edges = set()
 
@@ -94,29 +80,38 @@ def count_sides(region):
             if (nr, nc) not in region:
                 edges.add((side, row, col))
 
-    sides = 0
+    count = 0
 
     while len(edges):
-        first = edges.pop()
+        first_fragment = edges.pop()
 
-        cut_segments = set([first]) | set(
+        cut_sides = set([first_fragment]) | set(
             (side, row, col)
             for side, row, col in edges
-            if side == first[0]
+            if side == first_fragment[0]
             and (
-                (first[0] in "tb" and row == first[1])
-                or (first[0] in "rl" and col == first[2])
+                (first_fragment[0] in "tb" and row == first_fragment[1])
+                or (first_fragment[0] in "rl" and col == first_fragment[2])
             )
         )
 
-        sides += count_segments(
-            [col if side in "tb" else row for (side, row, col) in cut_segments]
+        edges.difference_update(cut_sides)
+
+        cut_sides = sorted(
+            [col if side in "tb" else row for (side, row, col) in cut_sides]
         )
 
-        for s in cut_segments:
-            edges.discard(s)
+        sides = [[cut_sides.pop(0)]]
 
-    return sides
+        for side_fragment in cut_sides:
+            if sides[-1][-1] + 1 == side_fragment:
+                sides[-1].append(side_fragment)
+            else:
+                sides.append([side_fragment])
+
+        count += len(sides)
+
+    return count
 
 
 part_2 = 0
