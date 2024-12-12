@@ -62,14 +62,6 @@ def calculate_perimeter(region):
     return perimeter
 
 
-part_1 = 0
-
-for region_name, region in REGIONS:
-    part_1 += calculate_area(region) * calculate_perimeter(region)
-
-print(part_1)
-
-
 def count_sides(region):
     edges = set()
 
@@ -114,9 +106,12 @@ def count_sides(region):
     return count
 
 
+part_1 = 0
 part_2 = 0
 
 for _, region in REGIONS:
+    part_1 += calculate_area(region) * calculate_perimeter(region)
     part_2 += calculate_area(region) * count_sides(region)
 
+print(part_1)
 print(part_2)
