@@ -13,6 +13,7 @@ masses = [int(line) for line in lines]
 def calculate_fuel(mass):
     return mass // 3 - 2
 
+
 part_1 = 0
 part_2 = 0
 
