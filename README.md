@@ -1,6 +1,6 @@
 # Advent of Code 2015-2024
 
-## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 22/50
+## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 24/50
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|:--|:---:|---|
@@ -15,6 +15,7 @@
 |9|[Disk Fragmenter](https://adventofcode.com/2024/day/9)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/09.py)|
 |10|[Hoof It](https://adventofcode.com/2024/day/10)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/10.py)|
 |11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)|
+|12|[Garden Groups](https://adventofcode.com/2024/day/12)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/12.py)|
 
 &nbsp;
 
