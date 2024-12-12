@@ -8,9 +8,6 @@ lines = data.strip().split("\n")
 
 garden = matrix(lines, separator="")
 
-# print(garden)
-
-
 rows = len(garden)
 cols = len(garden[0])
 
@@ -25,6 +22,7 @@ while len(coords):
 
     queue = deque()
     queue.append(seed)
+
     region = set()
     region.add(seed)
 
@@ -47,7 +45,7 @@ while len(coords):
     regions.append((region_name, region))
 
 
-def calc_perimeter(region):
+def calculate_perimeter(region):
     perimeter = len(region) * 4
 
     for row, col in region:
@@ -64,36 +62,36 @@ part_1 = 0
 
 for region_name, region in regions:
     area = len(region)
-    perimeter = calc_perimeter(region)
+    perimeter = calculate_perimeter(region)
 
     part_1 += area * perimeter
 
 print(part_1)
 
 
-def count_consecutives(nums):
+def count_distinct_sides(nums):
     nums = sorted(nums)
 
-    d = [[nums.pop(0)]]
+    sides = [[nums.pop(0)]]
 
-    for n in nums:
-        if d[-1][-1] + 1 == n:
-            d[-1].append(n)
+    for num in nums:
+        if sides[-1][-1] + 1 == num:
+            sides[-1].append(num)
         else:
-            d.append([n])
+            sides.append([num])
 
-    return len(d)
+    return len(sides)
 
 
-def calc_sides(region):
+def count_sides(region):
     edges = set()
 
     for row, col in region:
-        for direction, dr, dc in [["t", -1, 0], ["r", 0, 1], ["b", 1, 0], ["l", 0, -1]]:
+        for side, dr, dc in [["t", -1, 0], ["r", 0, 1], ["b", 1, 0], ["l", 0, -1]]:
             nr, nc = row + dr, col + dc
 
             if (nr, nc) not in region:
-                edges.add((direction, row, col))
+                edges.add((side, row, col))
 
     sides = 0
 
@@ -102,45 +100,42 @@ def calc_sides(region):
 
         match seed:
             case "t", r, c:
-                s = set(a for a in edges if a[0] == "t" and a[1] == r)
-                s.add(("t", r, c))
+                s = set([("t", r, c)]) | set(
+                    e for e in edges if e[0] == "t" and e[1] == r
+                )
 
-                for m in s:
-                    edges.discard(m)
-
-                sides += count_consecutives([c for (_, _, c) in s])
+                sides += count_distinct_sides([c for (_, _, c) in s])
             case "r", r, c:
-                s = set(a for a in edges if a[0] == "r" and a[2] == c)
-                s.add(("r", r, c))
+                s = set([("r", r, c)]) | set(
+                    e for e in edges if e[0] == "r" and e[2] == c
+                )
 
-                for m in s:
-                    edges.discard(m)
-
-                sides += count_consecutives([r for (_, r, _) in s])
+                sides += count_distinct_sides([r for (_, r, _) in s])
             case "b", r, c:
-                s = set(a for a in edges if a[0] == "b" and a[1] == r)
-                s.add(("b", r, c))
+                s = set([("b", r, c)]) | set(
+                    e for e in edges if e[0] == "b" and e[1] == r
+                )
 
-                for m in s:
-                    edges.discard(m)
-
-                sides += count_consecutives([c for (_, _, c) in s])
+                sides += count_distinct_sides([c for (_, _, c) in s])
             case "l", r, c:
-                s = set(a for a in edges if a[0] == "l" and a[2] == c)
-                s.add(("l", r, c))
+                s = set([("l", r, c)]) | set(
+                    e for e in edges if e[0] == "l" and e[2] == c
+                )
 
-                for m in s:
-                    edges.discard(m)
+                sides += count_distinct_sides([r for (_, r, _) in s])
 
-                sides += count_consecutives([r for (_, r, _) in s])
+        for e in s:
+            edges.discard(e)
 
     return sides
 
 
 part_2 = 0
-for region_name, region in regions:
+
+for _, region in regions:
     area = len(region)
-    sides = calc_sides(region)
+    sides = count_sides(region)
+
     part_2 += area * sides
 
 print(part_2)
