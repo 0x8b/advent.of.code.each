@@ -102,7 +102,7 @@ def download_input(year, day):
 
 
 def copy_solution_template(year, day):
-    template = pathlib.Path("day.template.py")
+    template = pathlib.Path("day.template.py").read_text()
     target = pathlib.Path(f"src/{year}/{str(day).zfill(2)}.py")
 
     if target.is_file() and len(target.read_text()):
@@ -251,11 +251,11 @@ async def main():
     match command:
         case "download":
             match sys.argv[2:]:
-                case "all":
+                case ["all"]:
                     download_all()
                 case year, day if True:
                     download_specific(year, day)
-                case "today":
+                case ["today"]:
                     download_today()
                 case _:
                     raise SystemExit(

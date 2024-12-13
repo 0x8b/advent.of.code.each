@@ -1,6 +1,6 @@
 # Advent of Code 2015-2024
 
-## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 24/50
+## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 25/50
 
 |Day|Puzzle|Progress|Solutions|
 |:---:|:--|:---:|---|
@@ -16,6 +16,7 @@
 |10|[Hoof It](https://adventofcode.com/2024/day/10)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/10.py)|
 |11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)|
 |12|[Garden Groups](https://adventofcode.com/2024/day/12)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/12.py)|
+|13|[Claw Contraption](https://adventofcode.com/2024/day/13)|🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/13.py)|
 
 &nbsp;
 
@@ -27,7 +28,7 @@
 |2|[Cube Conundrum](https://adventofcode.com/2023/day/2)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/02.py)|
 |3|[Gear Ratios](https://adventofcode.com/2023/day/3)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/03.py)|
 |4|[Scratchcards](https://adventofcode.com/2023/day/4)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/04.py)|
-|5|[If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)|||
+|5|[If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/05.py)|
 |6|[Wait For It](https://adventofcode.com/2023/day/6)|||
 |7|[Camel Cards](https://adventofcode.com/2023/day/7)|||
 |8|[Haunted Wasteland](https://adventofcode.com/2023/day/8)|||
