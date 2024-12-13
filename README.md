@@ -16,7 +16,7 @@
 |10|[Hoof It](https://adventofcode.com/2024/day/10)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/10.py)||
 |11|[Plutonian Pebbles](https://adventofcode.com/2024/day/11)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/11.py)||
 |12|[Garden Groups](https://adventofcode.com/2024/day/12)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/12.py)||
-|13|[Claw Contraption](https://adventofcode.com/2024/day/13)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/13.py)|test notatki|
+|13|[Claw Contraption](https://adventofcode.com/2024/day/13)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/13.py)||
 
 &nbsp;
 
