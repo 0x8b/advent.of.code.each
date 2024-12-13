@@ -30,19 +30,27 @@ def find_cheapest_way_naive(ax, ay, an, bx, by, bn, px, py):
     )
 
 
+def find_cheapest_way_optimized(ax, ay, bx, by, px, py):
+    a_presses = (by * px - bx * py) / (ax * by - ay * bx)
+    b_presses = (px - ax * a_presses) / bx
+
+    if a_presses % 1 == 0 and b_presses % 1 == 0:
+        return 3 * a_presses + b_presses
+
+    return None
+
+
 part_1 = 0
 part_2 = 0
 
 for i, [[ax, ay], [bx, by], [px, py]] in enumerate(machines, 1):
-    print(f"{i}/{len(machines)}")
+    if result := find_cheapest_way_optimized(ax, ay, bx, by, px, py):
+        part_1 += int(result)
 
-    if result := find_cheapest_way_naive(ax, ay, 0, bx, by, 0, px, py):
-        part_1 += result
-
-    # if result := find_cheapest_way_naive(
-    #     ax, ay, 0, bx, by, 0, px + 10000000000000, py + 10000000000000
-    # ):
-    #     part_2 += result
+    if result := find_cheapest_way_optimized(
+        ax, ay, bx, by, px + 10000000000000, py + 10000000000000
+    ):
+        part_2 += int(result)
 
 print(part_1)
 print(part_2)
