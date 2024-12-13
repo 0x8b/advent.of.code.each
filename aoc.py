@@ -25,7 +25,7 @@ def download_title(year, day):
     meta_file = pathlib.Path("meta.json")
 
     if not meta_file.is_file():
-        meta_file.write_text(json.dumps({"days": {}}, indent=2))
+        meta_file.write_text(json.dumps({"days": {}, "notes": {}}, indent=2))
 
     try:
         days = json.loads(meta_file.read_text())["days"]
@@ -52,23 +52,17 @@ def download_title(year, day):
     if match:
         puzzle = match.group(1).strip().replace("&apos;", "'")
 
+        meta_file_content = json.loads(meta_file.read_text(encoding="utf-8"))
+
+        meta_file_content["days"][f"{year}/{str(day).zfill(2)}"] = puzzle
+
+        meta_file_content["days"] = dict(
+            sorted(meta_file_content["days"].items(), key=operator.itemgetter(0))
+        )
+
         meta_file.write_text(
             json.dumps(
-                {
-                    "days": dict(
-                        list(
-                            sorted(
-                                list(
-                                    json.loads(meta_file.read_text(encoding="utf-8"))[
-                                        "days"
-                                    ].items()
-                                )
-                                + [(f"{year}/{str(day).zfill(2)}", puzzle)]
-                            )
-                        )
-                        + []
-                    )
-                },
+                meta_file_content,
                 indent=2,
             ),
             encoding="utf-8",
@@ -167,6 +161,8 @@ def collect_data_for_readme():
     )
 
     available_days = set(meta["days"].keys())
+    
+    notes = meta["notes"]
 
     events = defaultdict(lambda: defaultdict(lambda: dict()))
 
@@ -176,6 +172,7 @@ def collect_data_for_readme():
             "solutions": [],
             "solutions_formatted": "",
             "progress": 0,
+            "note": notes.get(f"{year}/{day}", ""),
         }
 
     for solution in [

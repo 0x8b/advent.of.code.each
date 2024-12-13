@@ -2,10 +2,10 @@
 {% for year, days in events.items() %}
 ## [Advent of Code {{ year }}](https://adventofcode.com/{{ year }}) {{ emojis[year] }} {{ stars[year] }}/50
 
-|Day|Puzzle|Progress|Solutions|
-|:---:|:--|:---:|---|
+|Day|Puzzle|Progress|Solutions|Notes|
+|:---:|:--|:---:|---|:--|
 {% for day, details in days.items() %}
-{{- "|" + day.lstrip("0") + "|" + details["title"] + "|" + emojis[year] * details["progress"] + "|" + details["solutions_formatted"] + "|" }}
+{{- "|" + day.lstrip("0") + "|" + details["title"] + "|" + emojis[year] * details["progress"] + "|" + details["solutions_formatted"] + "|" + details["note"] + "|"}}
 {% endfor %}
 &nbsp;
 {% endfor %}
