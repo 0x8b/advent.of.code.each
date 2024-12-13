@@ -7,13 +7,7 @@ from utils import *
 
 data = pathlib.Path("../../data/2024/13.txt").read_text(encoding="utf-8")
 
-machines = [
-    [ints(line) for line in machine.strip().split("\n")]
-    for machine in data.strip().split("\n\n")
-]
-
-tokens_for_a = 3
-tokens_for_b = 1
+machines = [ints(machine) for machine in data.strip().split("\n\n")]
 
 
 @cache
@@ -22,7 +16,7 @@ def find_cheapest_way_naive(ax, ay, an, bx, by, bn, px, py):
         return math.inf
 
     if px == 0 and py == 0:
-        return an * tokens_for_a + bn * tokens_for_b
+        return an * 3 + bn
 
     return min(
         find_cheapest_way_naive(ax, ay, an + 1, bx, by, bn, px - ax, py - ay),
@@ -43,7 +37,7 @@ def find_cheapest_way_optimized(ax, ay, bx, by, px, py):
 part_1 = 0
 part_2 = 0
 
-for i, [[ax, ay], [bx, by], [px, py]] in enumerate(machines, 1):
+for ax, ay, bx, by, px, py in machines:
     if result := find_cheapest_way_optimized(ax, ay, bx, by, px, py):
         part_1 += int(result)
 
