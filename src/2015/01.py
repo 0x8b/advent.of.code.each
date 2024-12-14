@@ -1,6 +1,5 @@
 import pathlib
 
-
 data = pathlib.Path("../../data/2015/01.txt").read_text(encoding="utf-8")
 lines = data.strip().split("\n")
 
