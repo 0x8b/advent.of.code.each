@@ -161,7 +161,7 @@ def collect_data_for_readme():
     )
 
     available_days = set(meta["days"].keys())
-    
+
     notes = meta["notes"]
 
     events = defaultdict(lambda: defaultdict(lambda: dict()))

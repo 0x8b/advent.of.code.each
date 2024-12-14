@@ -277,11 +277,11 @@
 
 &nbsp;
 
-## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 0/50
+## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 2/50
 
 |Day|Puzzle|Progress|Solutions|Notes|
 |:---:|:--|:---:|---|:--|
-|1|[Not Quite Lisp](https://adventofcode.com/2015/day/1)||||
+|1|[Not Quite Lisp](https://adventofcode.com/2015/day/1)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/01.py)||
 |2|[I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2)||||
 |3|[Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3)||||
 |4|[The Ideal Stocking Stuffer](https://adventofcode.com/2015/day/4)||||
