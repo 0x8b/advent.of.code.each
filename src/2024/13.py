@@ -4,7 +4,6 @@ from functools import cache
 
 from utils import *
 
-
 data = pathlib.Path("../../data/2024/13.txt").read_text(encoding="utf-8")
 
 machines = [ints(machine) for machine in data.strip().split("\n\n")]
