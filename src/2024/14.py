@@ -55,7 +55,7 @@ for ty in range(0, TILES_Y):
 
             print(part_1)
 
-        part_2 = 7623  # value manually calculated based on the generated image
+        part_2 = 7623  # value manually calculated based on the generated image: 120 * math.floor(mouse_y / 103) + math.ceil(mouse_x / 101)
 
         if elapsed == 7623:
             for xx in range(WIDTH):
