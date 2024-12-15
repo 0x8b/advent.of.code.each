@@ -1,4 +1,3 @@
-import operator
 import pathlib
 
 from utils import *
@@ -61,13 +60,14 @@ for move in moves:
             rr = new_robot_row + count * mr
             rc = new_robot_col + count * mc
 
-            if warehouse[rr][rc] == "#":
-                count = -1
-                break
-            elif warehouse[rr][rc] == ".":
-                break
-            elif warehouse[rr][rc] == "O":
-                count += 1
+            match warehouse[rr][rc]:
+                case "#":
+                    count = -1
+                    break
+                case ".":
+                    break
+                case "O":
+                    count += 1
 
         if count <= 0:
             continue
@@ -82,12 +82,18 @@ for move in moves:
             warehouse[new_robot_row + c * mr][new_robot_col + c * mc] = "O"
 
 
-part_1 = 0
+def score(warehouse, char):
+    answer = 0
 
-for row in range(len(warehouse)):
-    for col in range(len(warehouse[0])):
-        if warehouse[row][col] == "O":
-            part_1 += 100 * row + col
+    for row in range(len(warehouse)):
+        for col in range(len(warehouse[0])):
+            if warehouse[row][col] == char:
+                answer += 100 * row + col
+
+    return answer
+
+
+part_1 = score(warehouse, "O")
 
 print(part_1)
 
@@ -98,20 +104,20 @@ def can_move_boxes_vertically(warehouse, br, bc, mr):
     def can_move_vertically(warehouse, br, bc, mr):
         movable_boxes.extend([((br, bc), "["), ((br, bc + 1), "]")])
 
-        match [warehouse[br + mr][bc], warehouse[br + mr][bc + 1]]:
-            case [".", "."]:
+        match warehouse[br + mr][bc], warehouse[br + mr][bc + 1]:
+            case ".", ".":
                 return True
 
-            case ["[", "]"]:
+            case "[", "]":
                 return can_move_vertically(warehouse, br + mr, bc, mr)
 
-            case [".", "["]:
+            case ".", "[":
                 return can_move_vertically(warehouse, br + mr, bc + 1, mr)
 
-            case ["]", "."]:
+            case "]", ".":
                 return can_move_vertically(warehouse, br + mr, bc - 1, mr)
 
-            case ["]", "["]:
+            case "]", "[":
                 return can_move_vertically(
                     warehouse, br + mr, bc - 1, mr
                 ) and can_move_vertically(warehouse, br + mr, bc + 1, mr)
@@ -126,21 +132,22 @@ def can_move_boxes_horizontally(warehouse, rr, rc, mc):
     movable_boxes = []
 
     def can_move_horizontally(warehouse, rr, rc, mc):
-        if warehouse[rr][rc] == "#":
-            return False
+        match warehouse[rr][rc]:
+            case "#":
+                return False
 
-        if warehouse[rr][rc] == ".":
-            return True
+            case ".":
+                return True
 
-        if mc == -1 and warehouse[rr][rc] == "]":
-            movable_boxes.extend([((rr, rc), "]"), ((rr, rc - 1), "[")])
+            case "]" if mc == -1:
+                movable_boxes.extend([((rr, rc), "]"), ((rr, rc - 1), "[")])
 
-            return can_move_horizontally(warehouse, rr, rc - 2, mc)
+                return can_move_horizontally(warehouse, rr, rc - 2, mc)
 
-        if mc == 1 and warehouse[rr][rc] == "[":
-            movable_boxes.extend([((rr, rc), "["), ((rr, rc + 1), "]")])
+            case "[" if mc == 1:
+                movable_boxes.extend([((rr, rc), "["), ((rr, rc + 1), "]")])
 
-            return can_move_horizontally(warehouse, rr, rc + 2, mc)
+                return can_move_horizontally(warehouse, rr, rc + 2, mc)
 
     return movable_boxes if can_move_horizontally(warehouse, rr, rc + mc, mc) else False
 
@@ -195,14 +202,6 @@ for move in moves:
 
             robot_row, robot_col = robot_next_row, robot_next_col
 
-part_2 = 0
-
-for row in range(len(wider_warehouse)):
-    for col in range(len(wider_warehouse[0])):
-        if wider_warehouse[row][col] == "[":
-            part_2 += 100 * row + col
+part_2 = score(wider_warehouse, "[")
 
 print(part_2)
-
-assert part_1 == 1479679
-assert part_2 == 1509780
