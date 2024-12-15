@@ -9,18 +9,21 @@ warehouse, moves = data.strip().split("\n\n")
 warehouse = matrix(warehouse.strip(), separator="")
 moves = list("".join(moves.strip().split("\n")))
 
-warehouse_copy = [[c for c in row] for row in warehouse]
-
+wider_warehouse = []
 
 for row in range(len(warehouse)):
-    for col in range(len(warehouse[0])):
-        if warehouse[row][col] == "@":
-            robot_row = row
-            robot_col = col
-            break
+    wider_warehouse.append(
+        list(
+            "".join(
+                [
+                    {"#": "##", "O": "[]", "@": "@.", ".": ".."}[c]
+                    for c in warehouse[row]
+                ]
+            )
+        )
+    )
 
-
-moving_map = {
+move_map = {
     "^": [-1, 0],
     ">": [0, 1],
     "v": [1, 0],
@@ -28,12 +31,19 @@ moving_map = {
 }
 
 
-for move in moves:
-    move_row = moving_map[move][0]
-    move_col = moving_map[move][1]
+def find_robot(warehouse):
+    for row in range(len(warehouse)):
+        for col in range(len(warehouse[0])):
+            if warehouse[row][col] == "@":
+                return row, col
 
-    new_robot_row = robot_row + move_row
-    new_robot_col = robot_col + move_col
+
+robot_row, robot_col = find_robot(warehouse)
+
+for move in moves:
+    mr, mc = move_map[move]
+
+    new_robot_row, new_robot_col = robot_row + mr, robot_col + mc
 
     if warehouse[new_robot_row][new_robot_col] == "#":
         continue
@@ -48,8 +58,8 @@ for move in moves:
         count = 0
 
         while True:
-            rr = new_robot_row + count * move_row
-            rc = new_robot_col + count * move_col
+            rr = new_robot_row + count * mr
+            rc = new_robot_col + count * mc
 
             if warehouse[rr][rc] == "#":
                 count = -1
@@ -63,12 +73,13 @@ for move in moves:
             continue
 
         warehouse[robot_row][robot_col] = "."
+        warehouse[new_robot_row][new_robot_col] = "@"
+
         robot_row = new_robot_row
         robot_col = new_robot_col
-        warehouse[robot_row][robot_col] = "@"
 
         for c in range(1, count + 1):
-            warehouse[new_robot_row + c * move_row][new_robot_col + c * move_col] = "O"
+            warehouse[new_robot_row + c * mr][new_robot_col + c * mc] = "O"
 
 
 part_1 = 0
@@ -81,153 +92,108 @@ for row in range(len(warehouse)):
 print(part_1)
 
 
-warehouse = []
+def can_move_boxes_vertically(warehouse, br, bc, mr):
+    movable_boxes = []
 
-for row in range(len(warehouse_copy)):
-    new_row = list(
-        "".join(
-            [
-                {"#": "##", "O": "[]", "@": "@.", ".": ".."}[c]
-                for c in warehouse_copy[row]
-            ]
-        )
-    )
+    def can_move_vertically(warehouse, br, bc, mr):
+        movable_boxes.extend([((br, bc), "["), ((br, bc + 1), "]")])
 
-    warehouse.append(new_row)
+        match [warehouse[br + mr][bc], warehouse[br + mr][bc + 1]]:
+            case [".", "."]:
+                return True
 
-for row in range(len(warehouse)):
-    for col in range(len(warehouse[0])):
-        if warehouse[row][col] == "@":
-            robot_row = row
-            robot_col = col
-            break
+            case ["[", "]"]:
+                return can_move_vertically(warehouse, br + mr, bc, mr)
 
+            case [".", "["]:
+                return can_move_vertically(warehouse, br + mr, bc + 1, mr)
 
-def can_push_boxes_vertically(warehouse, br, bc, mr):
-    boxes = []
+            case ["]", "."]:
+                return can_move_vertically(warehouse, br + mr, bc - 1, mr)
 
-    def rec(warehouse, br, bc, mr):
-        boxes.extend([((br, bc), "["), ((br, bc + 1), "]")])
+            case ["]", "["]:
+                return can_move_vertically(
+                    warehouse, br + mr, bc - 1, mr
+                ) and can_move_vertically(warehouse, br + mr, bc + 1, mr)
 
-        if warehouse[br + mr][bc] == "." and warehouse[br + mr][bc + 1] == ".":
-            return True
+            case _:
+                return False
 
-        if warehouse[br + mr][bc] == "[" and warehouse[br + mr][bc + 1] == "]":
-            can_push = rec(warehouse, br + mr, bc, mr)
-
-            if can_push:
-                boxes.extend([((br + mr, bc), "["), ((br + mr, bc + 1), "]")])
-
-            return can_push
-
-        if warehouse[br + mr][bc] == "." and warehouse[br + mr][bc + 1] == "[":
-            can_push = rec(warehouse, br + mr, bc + 1, mr)
-
-            if can_push:
-                boxes.extend([((br + mr, bc + 1), "["), ((br + mr, bc + 2), "]")])
-
-            return can_push
-
-        if warehouse[br + mr][bc] == "]" and warehouse[br + mr][bc + 1] == ".":
-            can_push = rec(warehouse, br + mr, bc - 1, mr)
-
-            if can_push:
-                boxes.extend([((br + mr, bc - 1), "["), ((br + mr, bc), "]")])
-
-            return can_push
-
-        if warehouse[br + mr][bc] == "]" and warehouse[br + mr][bc + 1] == "[":
-            can_push = rec(warehouse, br + mr, bc - 1, mr) and rec(
-                warehouse, br + mr, bc + 1, mr
-            )
-
-            if can_push:
-                boxes.extend(
-                    [
-                        ((br + mr, bc - 1), "["),
-                        ((br + mr, bc), "]"),
-                        ((br + mr, bc + 1), "["),
-                        ((br + mr, bc + 2), "]"),
-                    ]
-                )
-
-            return can_push
-
-        return False
-
-    if rec(warehouse, br, bc, mr):
-        return boxes
-    else:
-        return False
+    return movable_boxes if can_move_vertically(warehouse, br, bc, mr) else False
 
 
-def can_push_boxes(warehouse, rr, rc, mr, mc):
+def can_move_boxes_horizontally(warehouse, rr, rc, mc):
+    count = 0
+
+    while warehouse[rr + (count + 1) * mr][rc + (count + 1) * mc] in ["[", "]"]:
+        count += 1
+
+    if count > 0 and warehouse[rr + (count + 1) * mr][rc + (count + 1) * mc] == ".":
+        return [
+            ((rr, rc + c * mc), warehouse[rr][rc + c * mc]) for c in range(1, count + 1)
+        ]
+
+    return False
+
+
+def can_move_boxes(warehouse, robot_row, robot_col, mr, mc):
     if mr == 0:
-        # push horizontally
-
-        count = 0
-
-        while warehouse[rr + (count + 1) * mr][rc + (count + 1) * mc] not in ["#", "."]:
-            count += 1
-
-        if count == 0:
-            return False
-
-        if warehouse[rr + (count + 1) * mr][rc + (count + 1) * mc] == "#":
-            return False
-
-        boxes = []
-
-        for c in range(1, count + 1):
-            boxes.append(((rr, rc + c * mc), warehouse[rr][rc + c * mc]))
-
-        return sorted(boxes, key=operator.itemgetter(0))
+        return can_move_boxes_horizontally(warehouse, robot_row, robot_col, mc)
 
     if mc == 0:
-        # push vertically
+        box_col = (
+            robot_col + mc
+            if warehouse[robot_row + mr][robot_col + mc] == "["
+            else robot_col + mc - 1
+        )
+        box_row = robot_row + mr
 
-        bc = rc + mc if warehouse[rr + mr][rc + mc] == "[" else rc + mc - 1
-        br = rr + mr
-
-        return can_push_boxes_vertically(warehouse, br, bc, mr)
-
-
-def push_boxes(warehouse, rr, rc, mr, mc, old):
-    for (r, c), _ in old:
-        warehouse[r][c] = "."
-
-    for (r, c), ch in old:
-        warehouse[r + mr][c + mc] = ch
+        return can_move_boxes_vertically(warehouse, box_row, box_col, mr)
 
 
-for move_i, move in enumerate(moves, 1):
-    move_row = moving_map[move][0]
-    move_col = moving_map[move][1]
+def move_boxes(warehouse, mr, mc, old_positions):
+    for (box_row, box_col), _ in old_positions:
+        warehouse[box_row][box_col] = "."
 
-    if warehouse[robot_row + move_row][robot_col + move_col] == ".":
-        warehouse[robot_row][robot_col] = "."
+    for (box_row, box_col), char in old_positions:
+        warehouse[box_row + mr][box_col + mc] = char
 
-        robot_row = robot_row + move_row
-        robot_col = robot_col + move_col
 
-        warehouse[robot_row][robot_col] = "@"
-    elif warehouse[robot_row + move_row][robot_col + move_col] == "#":
+robot_row, robot_col = find_robot(wider_warehouse)
+
+for move in moves:
+    mr, mc = move_map[move]
+
+    robot_next_row, robot_next_col = robot_row + mr, robot_col + mc
+
+    if wider_warehouse[robot_next_row][robot_next_col] == ".":
+        wider_warehouse[robot_row][robot_col] = "."
+        wider_warehouse[robot_next_row][robot_next_col] = "@"
+
+        robot_row, robot_col = robot_next_row, robot_next_col
+
+    elif wider_warehouse[robot_next_row][robot_next_col] == "#":
         continue
-    elif warehouse[robot_row + move_row][robot_col + move_col] in ["[", "]"]:
-        if coords := can_push_boxes(
-            warehouse, robot_row, robot_col, move_row, move_col
+
+    elif wider_warehouse[robot_next_row][robot_next_col] in ["[", "]"]:
+        if box_positions := can_move_boxes(
+            wider_warehouse, robot_row, robot_col, mr, mc
         ):
-            push_boxes(warehouse, robot_row, robot_col, move_row, move_col, coords)
-            warehouse[robot_row + move_row][robot_col + move_col] = "@"
-            warehouse[robot_row][robot_col] = "."
-            robot_row = robot_row + move_row
-            robot_col = robot_col + move_col
+            move_boxes(wider_warehouse, mr, mc, box_positions)
+
+            wider_warehouse[robot_row][robot_col] = "."
+            wider_warehouse[robot_next_row][robot_next_col] = "@"
+
+            robot_row, robot_col = robot_next_row, robot_next_col
 
 part_2 = 0
 
-for row in range(len(warehouse)):
-    for col in range(len(warehouse[0])):
-        if warehouse[row][col] == "[":
+for row in range(len(wider_warehouse)):
+    for col in range(len(wider_warehouse[0])):
+        if wider_warehouse[row][col] == "[":
             part_2 += 100 * row + col
 
 print(part_2)
+
+assert part_1 == 1479679
+assert part_2 == 1509780
