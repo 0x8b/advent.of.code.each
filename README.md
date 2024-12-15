@@ -1,6 +1,6 @@
 # Advent of Code 2015-2024
 
-## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 28/50
+## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 30/50
 
 |Day|Puzzle|Progress|Solutions|Notes|
 |:---:|:--|:---:|---|:--|
@@ -18,6 +18,7 @@
 |12|[Garden Groups](https://adventofcode.com/2024/day/12)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/12.py)||
 |13|[Claw Contraption](https://adventofcode.com/2024/day/13)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/13.py)||
 |14|[Restroom Redoubt](https://adventofcode.com/2024/day/14)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/14.py)||
+|15|[Warehouse Woes](https://adventofcode.com/2024/day/15)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/15.py)||
 
 &nbsp;
 
