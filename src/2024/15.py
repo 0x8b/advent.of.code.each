@@ -123,17 +123,26 @@ def can_move_boxes_vertically(warehouse, br, bc, mr):
 
 
 def can_move_boxes_horizontally(warehouse, rr, rc, mc):
-    count = 0
+    movable_boxes = []
 
-    while warehouse[rr + (count + 1) * mr][rc + (count + 1) * mc] in ["[", "]"]:
-        count += 1
+    def can_move_horizontally(warehouse, rr, rc, mc):
+        if warehouse[rr][rc] == "#":
+            return False
 
-    if count > 0 and warehouse[rr + (count + 1) * mr][rc + (count + 1) * mc] == ".":
-        return [
-            ((rr, rc + c * mc), warehouse[rr][rc + c * mc]) for c in range(1, count + 1)
-        ]
+        if warehouse[rr][rc] == ".":
+            return True
 
-    return False
+        if mc == -1 and warehouse[rr][rc] == "]":
+            movable_boxes.extend([((rr, rc), "]"), ((rr, rc - 1), "[")])
+
+            return can_move_horizontally(warehouse, rr, rc - 2, mc)
+
+        if mc == 1 and warehouse[rr][rc] == "[":
+            movable_boxes.extend([((rr, rc), "["), ((rr, rc + 1), "]")])
+
+            return can_move_horizontally(warehouse, rr, rc + 2, mc)
+
+    return movable_boxes if can_move_horizontally(warehouse, rr, rc + mc, mc) else False
 
 
 def can_move_boxes(warehouse, robot_row, robot_col, mr, mc):
