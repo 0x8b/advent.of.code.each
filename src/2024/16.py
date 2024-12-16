@@ -79,26 +79,34 @@ graph = Graph()
 
 graph.add_weighted_edges_from(edges)
 
-part_1 = shortest_path_length(
-    graph,
-    (reindeer_row, reindeer_col, "east"),
-    (end_tile_row, end_tile_col, "east"),
-    weight="weight",
-)
 
-print(part_1)
+for end_tile_direction in ["east", "north"]:
+    try:
+        print(f"FOR '{end_tile_direction}':")
 
-nodes = {
-    (row, col)
-    for path in all_shortest_paths(
-        graph,
-        (reindeer_row, reindeer_col, "east"),
-        (end_tile_row, end_tile_col, "east"),
-        weight="weight",
-    )
-    for row, col, _ in path
-}
+        part_1 = shortest_path_length(
+            graph,
+            (reindeer_row, reindeer_col, "east"),
+            (end_tile_row, end_tile_col, end_tile_direction),
+            weight="weight",
+        )
 
-part_2 = len(nodes)
+        print(part_1)
 
-print(part_2)
+        nodes = {
+            (row, col)
+            for path in all_shortest_paths(
+                graph,
+                (reindeer_row, reindeer_col, "east"),
+                (end_tile_row, end_tile_col, end_tile_direction),
+                weight="weight",
+            )
+            for row, col, _ in path
+        }
+
+        part_2 = len(nodes)
+
+        print(part_2, end="\n\n")
+
+    except Exception:
+        print("FAILED!", end="\n\n")
