@@ -19,6 +19,7 @@
 |13|[Claw Contraption](https://adventofcode.com/2024/day/13)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/13.py)||
 |14|[Restroom Redoubt](https://adventofcode.com/2024/day/14)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/14.py)||
 |15|[Warehouse Woes](https://adventofcode.com/2024/day/15)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/15.py)||
+|16|[Reindeer Maze](https://adventofcode.com/2024/day/16)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/16.py)||
 
 &nbsp;
 
