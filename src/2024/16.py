@@ -36,16 +36,17 @@ for row in range(len(maze)):
             continue
 
         for direction in ["north", "south", "west", "east"]:
-            if direction == "north" and maze[row + 1][col] == "#":
-                continue
+            if row != reindeer_row and col != reindeer_col:
+                if direction == "north" and maze[row + 1][col] == "#":
+                    continue
+
+                if direction == "east" and maze[row][col - 1] == "#":
+                    continue
 
             if direction == "south" and maze[row - 1][col] == "#":
                 continue
 
             if direction == "west" and maze[row][col + 1] == "#":
-                continue
-
-            if direction == "east" and maze[row][col - 1] == "#":
                 continue
 
             for dr, dc in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
@@ -73,9 +74,6 @@ for row in range(len(maze)):
                         1 if direction == neighbor_direction else 1001,
                     )
                 )
-
-edges.append(((139, 1, "east"), (138, 1, "north"), 1001))
-edges.append(((139, 1, "east"), (139, 2, "east"), 1))
 
 graph = Graph()
 
