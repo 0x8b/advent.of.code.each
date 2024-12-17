@@ -1,6 +1,6 @@
 # Advent of Code 2015-2024
 
-## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 32/50
+## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 33/50
 
 |Day|Puzzle|Progress|Solutions|Notes|
 |:---:|:--|:---:|---|:--|
@@ -20,7 +20,7 @@
 |14|[Restroom Redoubt](https://adventofcode.com/2024/day/14)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/14.py)||
 |15|[Warehouse Woes](https://adventofcode.com/2024/day/15)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/15.py)||
 |16|[Reindeer Maze](https://adventofcode.com/2024/day/16)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/16.py)||
-|17|[Chronospatial Computer](https://adventofcode.com/2024/day/17)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/17.py)||
+|17|[Chronospatial Computer](https://adventofcode.com/2024/day/17)|🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/17.py)||
 
 &nbsp;
 
