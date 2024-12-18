@@ -10,7 +10,7 @@ rows, cols = 71, 71
 grid = [["." for x in range(cols)] for y in range(rows)]
 
 
-def shortest_path_length(grid):
+def get_shortest_path(grid):
     edges = []
     rows, cols = len(grid), len(grid[0])
 
@@ -25,9 +25,7 @@ def shortest_path_length(grid):
                     ):
                         edges.append(((row, col), (row + dr, col + dc)))
 
-    return networkx.shortest_path_length(
-        networkx.Graph(edges), (0, 0), (rows - 1, cols - 1)
-    )
+    return networkx.shortest_path(networkx.Graph(edges), (0, 0), (rows - 1, cols - 1))
 
 
 bytes = list(batched(ints(data), 2))
@@ -35,13 +33,18 @@ bytes = list(batched(ints(data), 2))
 for col, row in bytes[:1024]:
     grid[row][col] = "#"
 
-print(shortest_path_length(grid))  # part_1
+shortest_path = get_shortest_path(grid)
+
+print(len(shortest_path) - 1)  # part_1
 
 for col, row in bytes[1024:]:
     grid[row][col] = "#"
 
+    if not (row, col) in shortest_path:
+        continue
+
     try:
-        shortest_path_length(grid)
+        shortest_path = get_shortest_path(grid)
     except networkx.NetworkXNoPath:
         print(f"{col},{row}")  # part_2
         break
