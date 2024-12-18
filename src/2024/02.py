@@ -1,7 +1,9 @@
 import pathlib
 
+from utils import *
+
 data = pathlib.Path("../../data/2024/02.txt").read_text(encoding="utf-8")
-reports = [list([int(n) for n in line.split()]) for line in data.strip().split("\n")]
+reports = [ints(line) for line in data.strip().split("\n")]
 
 
 def prepare_sequence(seq, skip_index=None):

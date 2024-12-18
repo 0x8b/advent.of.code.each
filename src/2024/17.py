@@ -1,6 +1,5 @@
 import pathlib
-import itertools
-import math
+
 from utils import *
 
 data = pathlib.Path("../../data/2024/17.txt").read_text(encoding="utf-8")
