@@ -12,19 +12,25 @@ desired_designs = [line.strip() for line in desired_designs.strip().split("\n")]
 
 @cache
 def count(pattern, patterns, design):
-    if design == "":
+    if design == pattern:
         return 1
 
-    if pattern != "" and not design.startswith(pattern):
+    if not design.startswith(pattern):
         return 0
 
-    return sum([count(p, patterns, design[len(pattern) :]) for p in patterns])
+    if design.startswith(pattern):
+        return sum(
+            [
+                count(next_pattern, patterns, design[len(pattern) :])
+                for next_pattern in patterns
+            ]
+        )
 
 
 part_1 = 0
 part_2 = 0
 
-for i, design in enumerate(desired_designs, 1):
+for design in desired_designs:
     if (n := count("", patterns, design)) > 0:
         part_1 += 1
         part_2 += n
