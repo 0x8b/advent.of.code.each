@@ -21,8 +21,9 @@ def count(pattern, patterns, design):
     if design.startswith(pattern):
         return sum(
             [
-                count(next_pattern, patterns, design[len(pattern) :])
+                count(next_pattern, patterns, next_design)
                 for next_pattern in patterns
+                if (next_design := design[len(pattern) :]).startswith(next_pattern)
             ]
         )
 
