@@ -15,17 +15,17 @@ def count(pattern, patterns, design):
     if design == pattern:
         return 1
 
-    if not design.startswith(pattern):
-        return 0
-
     if design.startswith(pattern):
-        return sum(
-            [
-                count(next_pattern, patterns, next_design)
-                for next_pattern in patterns
-                if (next_design := design[len(pattern) :]).startswith(next_pattern)
-            ]
-        )
+        next_design = design[len(pattern) :]
+
+        n = 0
+        for next_pattern in patterns:
+            if next_design.startswith(next_pattern):
+                n += count(next_pattern, patterns, next_design)
+
+        return n
+
+    return 0
 
 
 part_1 = 0
