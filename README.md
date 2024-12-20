@@ -23,6 +23,7 @@
 |17|[Chronospatial Computer](https://adventofcode.com/2024/day/17)|🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/17.py)||
 |18|[RAM Run](https://adventofcode.com/2024/day/18)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/18.py)||
 |19|[Linen Layout](https://adventofcode.com/2024/day/19)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/19.py)||
+|20|[Race Condition](https://adventofcode.com/2024/day/20)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/20.py)||
 
 &nbsp;
 
@@ -52,7 +53,7 @@
 |20|[Pulse Propagation](https://adventofcode.com/2023/day/20)||||
 |21|[Step Counter](https://adventofcode.com/2023/day/21)||||
 |22|[Sand Slabs](https://adventofcode.com/2023/day/22)||||
-|23|[A Long Walk](https://adventofcode.com/2023/day/23)||||
+|23|[A Long Walk](https://adventofcode.com/2023/day/23)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/23.py)||
 |24|[Never Tell Me The Odds](https://adventofcode.com/2023/day/24)||||
 |25|[Snowverload](https://adventofcode.com/2023/day/25)||||
 
