@@ -171,6 +171,7 @@ def collect_data_for_readme():
             "title": f"[{title}](https://adventofcode.com/{year}/day/{int(day)})",
             "solutions": [],
             "solutions_formatted": "",
+            "input": "",
             "progress": 0,
             "note": notes.get(f"{year}/{day}", ""),
         }
@@ -207,6 +208,20 @@ def collect_data_for_readme():
             events[year][day]["progress"],
             sum(("part_1" in source_code, "part_2" in source_code)),
         )
+
+    for solution in [
+        p
+        for p in Path("data").rglob("*")
+        if p.suffix in {".txt"} and "01" <= p.stem <= "25"
+    ]:
+        [year, day] = re.findall(
+            r"data\/(\d{4})\/(\d\d).txt", str(solution)
+        ).pop()
+
+        if f"{year}/{day}" not in available_days:
+            continue
+
+        events[year][day]["input"] = f"https://github.com/0x8b/advent.of.code.each/blob/main/data/{year}/{day}.txt"
 
     emojis = dict(
         zip(
