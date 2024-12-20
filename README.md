@@ -1,6 +1,6 @@
 # Advent of Code 2015-2024
 
-## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 37/50
+## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 38/50
 
 |Day|Puzzle|Progress|Solutions|Notes|
 |:---:|:--|:---:|---|:--|
@@ -23,7 +23,7 @@
 |17|[Chronospatial Computer](https://adventofcode.com/2024/day/17)|🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/17.py)||
 |18|[RAM Run](https://adventofcode.com/2024/day/18)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/18.py)||
 |19|[Linen Layout](https://adventofcode.com/2024/day/19)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/19.py)||
-|20|[Race Condition](https://adventofcode.com/2024/day/20)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/20.py)||
+|20|[Race Condition](https://adventofcode.com/2024/day/20)|🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/20.py)||
 
 &nbsp;
 
