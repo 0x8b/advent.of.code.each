@@ -214,14 +214,14 @@ def collect_data_for_readme():
         for p in Path("data").rglob("*")
         if p.suffix in {".txt"} and "01" <= p.stem <= "25"
     ]:
-        [year, day] = re.findall(
-            r"data\/(\d{4})\/(\d\d).txt", str(solution)
-        ).pop()
+        [year, day] = re.findall(r"data\/(\d{4})\/(\d\d).txt", str(solution)).pop()
 
         if f"{year}/{day}" not in available_days:
             continue
 
-        events[year][day]["input"] = f"https://github.com/0x8b/advent.of.code.each/blob/main/data/{year}/{day}.txt"
+        events[year][day][
+            "input"
+        ] = f"https://github.com/0x8b/advent.of.code.each/blob/main/data/{year}/{day}.txt"
 
     emojis = dict(
         zip(

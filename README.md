@@ -187,11 +187,11 @@
 
 &nbsp;
 
-## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 0/50
+## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 2/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
-|1|[Chronal Calibration](https://adventofcode.com/2018/day/1)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/01.txt)||
+|1|[Chronal Calibration](https://adventofcode.com/2018/day/1)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/01.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/01.txt)||
 |2|[Inventory Management System](https://adventofcode.com/2018/day/2)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/02.txt)||
 |3|[No Matter How You Slice It](https://adventofcode.com/2018/day/3)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/03.txt)||
 |4|[Repose Record](https://adventofcode.com/2018/day/4)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/04.txt)||
