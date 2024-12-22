@@ -1,6 +1,6 @@
 # Advent of Code 2015-2024
 
-## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 39/50
+## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 40/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -25,7 +25,7 @@
 |19|[Linen Layout](https://adventofcode.com/2024/day/19)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/19.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2024/19.txt)||
 |20|[Race Condition](https://adventofcode.com/2024/day/20)|🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/20.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2024/20.txt)||
 |21|[Keypad Conundrum](https://adventofcode.com/2024/day/21)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/21.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2024/21.txt)||
-|22|[Monkey Market](https://adventofcode.com/2024/day/22)|🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/22.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2024/22.txt)||
+|22|[Monkey Market](https://adventofcode.com/2024/day/22)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/22.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2024/22.txt)||
 
 &nbsp;
 
