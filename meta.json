@@ -251,7 +251,7 @@
     "2024/24": "Crossed Wires"
   },
   "notes": {
-    "2020/12": "[code golf](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12-golf.py)",
+    "2020/12": "[code golf](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12-golf.rb)",
     "2020/18": "[trick](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/18-trick.rb)"
   }
 }
