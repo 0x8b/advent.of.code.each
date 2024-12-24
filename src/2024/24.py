@@ -47,10 +47,6 @@ for node in topological_order:
                 results[node] = results[x] or results[y]
             case x, "XOR", y:
                 results[node] = results[x] ^ results[y]
-            case _:
-                print("REALLY BAD:", outputs[node])
-    else:
-        print("HMM")
 
 part_1 = int(
     "".join(
