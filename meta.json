@@ -250,5 +250,8 @@
     "2024/23": "LAN Party",
     "2024/24": "Crossed Wires"
   },
-  "notes": {}
+  "notes": {
+    "2020/12": "[code golf](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12-golf.py)",
+    "2020/18": "[trick](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/18-trick.rb)"
+  }
 }

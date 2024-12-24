@@ -127,35 +127,35 @@
 
 &nbsp;
 
-## [Advent of Code 2020](https://adventofcode.com/2020) 🎅 2/50
+## [Advent of Code 2020](https://adventofcode.com/2020) 🎅 47/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
-|1|[Report Repair](https://adventofcode.com/2020/day/1)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/01.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/01.txt)||
-|2|[Password Philosophy](https://adventofcode.com/2020/day/2)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/02.txt)||
-|3|[Toboggan Trajectory](https://adventofcode.com/2020/day/3)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/03.txt)||
-|4|[Passport Processing](https://adventofcode.com/2020/day/4)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/04.txt)||
-|5|[Binary Boarding](https://adventofcode.com/2020/day/5)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/05.txt)||
-|6|[Custom Customs](https://adventofcode.com/2020/day/6)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/06.txt)||
-|7|[Handy Haversacks](https://adventofcode.com/2020/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/07.txt)||
-|8|[Handheld Halting](https://adventofcode.com/2020/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/08.txt)||
-|9|[Encoding Error](https://adventofcode.com/2020/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/09.txt)||
-|10|[Adapter Array](https://adventofcode.com/2020/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/10.txt)||
-|11|[Seating System](https://adventofcode.com/2020/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/11.txt)||
-|12|[Rain Risk](https://adventofcode.com/2020/day/12)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/12.txt)||
-|13|[Shuttle Search](https://adventofcode.com/2020/day/13)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/13.txt)||
-|14|[Docking Data](https://adventofcode.com/2020/day/14)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/14.txt)||
-|15|[Rambunctious Recitation](https://adventofcode.com/2020/day/15)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/15.txt)||
-|16|[Ticket Translation](https://adventofcode.com/2020/day/16)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/16.txt)||
-|17|[Conway Cubes](https://adventofcode.com/2020/day/17)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/17.txt)||
-|18|[Operation Order](https://adventofcode.com/2020/day/18)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/18.txt)||
-|19|[Monster Messages](https://adventofcode.com/2020/day/19)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/19.txt)||
-|20|[Jurassic Jigsaw](https://adventofcode.com/2020/day/20)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/20.txt)||
-|21|[Allergen Assessment](https://adventofcode.com/2020/day/21)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/21.txt)||
-|22|[Crab Combat](https://adventofcode.com/2020/day/22)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/22.txt)||
+|1|[Report Repair](https://adventofcode.com/2020/day/1)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/01.py), [Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/01.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/01.txt)||
+|2|[Password Philosophy](https://adventofcode.com/2020/day/2)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/02.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/02.txt)||
+|3|[Toboggan Trajectory](https://adventofcode.com/2020/day/3)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/03.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/03.txt)||
+|4|[Passport Processing](https://adventofcode.com/2020/day/4)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/04.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/04.txt)||
+|5|[Binary Boarding](https://adventofcode.com/2020/day/5)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/05.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/05.txt)||
+|6|[Custom Customs](https://adventofcode.com/2020/day/6)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/06.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/06.txt)||
+|7|[Handy Haversacks](https://adventofcode.com/2020/day/7)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/07.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/07.txt)||
+|8|[Handheld Halting](https://adventofcode.com/2020/day/8)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/08.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/08.txt)||
+|9|[Encoding Error](https://adventofcode.com/2020/day/9)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/09.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/09.txt)||
+|10|[Adapter Array](https://adventofcode.com/2020/day/10)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/10.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/10.txt)||
+|11|[Seating System](https://adventofcode.com/2020/day/11)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/11.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/11.txt)||
+|12|[Rain Risk](https://adventofcode.com/2020/day/12)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/12.txt)|[code golf](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12-golf.py)|
+|13|[Shuttle Search](https://adventofcode.com/2020/day/13)|🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/13.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/13.txt)||
+|14|[Docking Data](https://adventofcode.com/2020/day/14)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/14.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/14.txt)||
+|15|[Rambunctious Recitation](https://adventofcode.com/2020/day/15)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/15.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/15.txt)||
+|16|[Ticket Translation](https://adventofcode.com/2020/day/16)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/16.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/16.txt)||
+|17|[Conway Cubes](https://adventofcode.com/2020/day/17)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/17.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/17.txt)||
+|18|[Operation Order](https://adventofcode.com/2020/day/18)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/18.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/18.txt)|[trick](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/18-trick.rb)|
+|19|[Monster Messages](https://adventofcode.com/2020/day/19)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/19.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/19.txt)||
+|20|[Jurassic Jigsaw](https://adventofcode.com/2020/day/20)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/20.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/20.txt)||
+|21|[Allergen Assessment](https://adventofcode.com/2020/day/21)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/21.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/21.txt)||
+|22|[Crab Combat](https://adventofcode.com/2020/day/22)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/22.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/22.txt)||
 |23|[Crab Cups](https://adventofcode.com/2020/day/23)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/23.txt)||
-|24|[Lobby Layout](https://adventofcode.com/2020/day/24)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/24.txt)||
-|25|[Combo Breaker](https://adventofcode.com/2020/day/25)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/25.txt)||
+|24|[Lobby Layout](https://adventofcode.com/2020/day/24)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/24.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/24.txt)||
+|25|[Combo Breaker](https://adventofcode.com/2020/day/25)|🎅🎅|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/25.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2020/25.txt)||
 
 &nbsp;
 

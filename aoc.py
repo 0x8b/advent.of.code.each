@@ -181,6 +181,9 @@ def collect_data_for_readme():
         for p in Path("src").rglob("*")
         if p.suffix in {".py", ".rb"} and "01" <= p.stem <= "25"
     ]:
+        if not re.compile(r"src/20\d\d\/[012]\d\.").match(str(solution)):
+            continue
+
         [year, day, extension] = re.findall(
             r"src\/(\d{4})\/(\d\d).(.*)", str(solution)
         ).pop()
