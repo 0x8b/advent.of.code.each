@@ -17,12 +17,7 @@ connections = list(
     )
 )
 
-print(inputs)
-print(connections)
-
 outputs = dict((connection[3], connection[:3]) for connection in connections)
-
-print(outputs)
 
 ts = TopologicalSorter()
 
@@ -31,8 +26,6 @@ for predecessor_0, op, predecessor_1, node in connections:
     ts.add(node, predecessor_1)
 
 topological_order = list(ts.static_order())
-
-print(topological_order)
 
 results = dict()
 
