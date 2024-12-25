@@ -248,7 +248,8 @@
     "2024/21": "Keypad Conundrum",
     "2024/22": "Monkey Market",
     "2024/23": "LAN Party",
-    "2024/24": "Crossed Wires"
+    "2024/24": "Crossed Wires",
+    "2024/25": "Code Chronicle"
   },
   "notes": {
     "2020/12": "[code golf](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12-golf.rb)",

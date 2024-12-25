@@ -1,6 +1,6 @@
 # Advent of Code 2015-2024
 
-## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 43/50
+## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 44/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -28,6 +28,7 @@
 |22|[Monkey Market](https://adventofcode.com/2024/day/22)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/22.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2024/22.txt)||
 |23|[LAN Party](https://adventofcode.com/2024/day/23)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/23.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2024/23.txt)||
 |24|[Crossed Wires](https://adventofcode.com/2024/day/24)|🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/24.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2024/24.txt)||
+|25|[Code Chronicle](https://adventofcode.com/2024/day/25)|🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2024/25.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2024/25.txt)||
 
 &nbsp;
 
