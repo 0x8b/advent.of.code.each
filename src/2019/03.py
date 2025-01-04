@@ -1,7 +1,6 @@
 import pathlib
 from collections import defaultdict
 
-
 data = pathlib.Path("../../data/2019/03.txt").read_text(encoding="utf-8")
 first_wire, second_wire = data.strip().split("\n")
 
