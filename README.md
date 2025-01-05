@@ -256,12 +256,12 @@
 
 &nbsp;
 
-## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 2/50
+## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 4/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
 |1|[No Time for a Taxicab](https://adventofcode.com/2016/day/1)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/01.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/01.txt)||
-|2|[Bathroom Security](https://adventofcode.com/2016/day/2)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/02.txt)||
+|2|[Bathroom Security](https://adventofcode.com/2016/day/2)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/02.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/02.txt)||
 |3|[Squares With Three Sides](https://adventofcode.com/2016/day/3)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/03.txt)||
 |4|[Security Through Obscurity](https://adventofcode.com/2016/day/4)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/04.txt)||
 |5|[How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/05.txt)||
