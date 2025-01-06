@@ -256,16 +256,16 @@
 
 &nbsp;
 
-## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 6/50
+## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 8/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
 |1|[No Time for a Taxicab](https://adventofcode.com/2016/day/1)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/01.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/01.txt)||
 |2|[Bathroom Security](https://adventofcode.com/2016/day/2)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/02.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/02.txt)||
 |3|[Squares With Three Sides](https://adventofcode.com/2016/day/3)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/03.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/03.txt)||
-|4|[Security Through Obscurity](https://adventofcode.com/2016/day/4)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/04.txt)||
-|5|[How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/05.txt)||
-|6|[Signals and Noise](https://adventofcode.com/2016/day/6)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/06.txt)||
+|4|[Security Through Obscurity](https://adventofcode.com/2016/day/4)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/04.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/04.txt)||
+|5|[How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/05.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/05.txt)||
+|6|[Signals and Noise](https://adventofcode.com/2016/day/6)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/06.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/06.txt)||
 |7|[Internet Protocol Version 7](https://adventofcode.com/2016/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/07.txt)||
 |8|[Two-Factor Authentication](https://adventofcode.com/2016/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/08.txt)||
 |9|[Explosives in Cyberspace](https://adventofcode.com/2016/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/09.txt)||
