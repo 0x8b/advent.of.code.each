@@ -14,3 +14,7 @@ def transpose(matrix):
     )
 
     return [list(row) for row in zip(*matrix)]
+
+
+def print_matrix(matrix, separator=""):
+    print("\n".join(separator.join(str(c) for c in row) for row in matrix))
