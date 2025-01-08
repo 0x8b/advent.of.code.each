@@ -224,11 +224,11 @@
 
 &nbsp;
 
-## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 0/50
+## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 2/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
-|1|[Inverse Captcha](https://adventofcode.com/2017/day/1)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/01.txt)||
+|1|[Inverse Captcha](https://adventofcode.com/2017/day/1)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/01.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/01.txt)||
 |2|[Corruption Checksum](https://adventofcode.com/2017/day/2)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/02.txt)||
 |3|[Spiral Memory](https://adventofcode.com/2017/day/3)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/03.txt)||
 |4|[High-Entropy Passphrases](https://adventofcode.com/2017/day/4)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/04.txt)||
