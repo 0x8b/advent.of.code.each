@@ -288,7 +288,7 @@
 
 &nbsp;
 
-## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 20/50
+## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 22/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -299,7 +299,7 @@
 |5|[Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/05.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/05.txt)||
 |6|[Probably a Fire Hazard](https://adventofcode.com/2015/day/6)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/06.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/06.txt)||
 |7|[Some Assembly Required](https://adventofcode.com/2015/day/7)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/07.txt)||
-|8|[Matchsticks](https://adventofcode.com/2015/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/08.txt)||
+|8|[Matchsticks](https://adventofcode.com/2015/day/8)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/08.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/08.txt)||
 |9|[All in a Single Night](https://adventofcode.com/2015/day/9)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/09.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/09.txt)||
 |10|[Elves Look, Elves Say](https://adventofcode.com/2015/day/10)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/10.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/10.txt)||
 |11|[Corporate Policy](https://adventofcode.com/2015/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/11.txt)||
