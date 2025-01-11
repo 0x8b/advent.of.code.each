@@ -30,7 +30,7 @@ def successor(s):
         return "a" * (len(s) + 1)
 
 
-def next_valid_password(password):
+def password_generator(password):
     while True:
         password = successor(password)
 
@@ -41,11 +41,11 @@ def next_valid_password(password):
             and any(triple in password for triple in triples)
             and re.search(r"(.)\1.*?(.)\2", password)
         ):
-            return password
+            yield password
 
 
-part_1 = next_valid_password(password)
-print(part_1)
+for i, password in enumerate(password_generator(password), 1):
+    print(password)  # part_1, part_2
 
-part_2 = next_valid_password(part_1)
-print(part_2)
+    if i == 2:
+        break
