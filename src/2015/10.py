@@ -11,7 +11,7 @@ for i, _ in enumerate(range(50), 1):
     sequence = "".join(f"{len(list(g))}{k}" for k, g in groupby(sequence))
 
     if i == 40:
-        print(len(sequence))
+        print(len(sequence))  # part_1
 
     if i == 50:
-        print(len(sequence))
+        print(len(sequence))  # part_2
