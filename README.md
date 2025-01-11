@@ -301,7 +301,7 @@
 |7|[Some Assembly Required](https://adventofcode.com/2015/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/07.txt)||
 |8|[Matchsticks](https://adventofcode.com/2015/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/08.txt)||
 |9|[All in a Single Night](https://adventofcode.com/2015/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/09.txt)||
-|10|[Elves Look, Elves Say](https://adventofcode.com/2015/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/10.txt)||
+|10|[Elves Look, Elves Say](https://adventofcode.com/2015/day/10)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/10.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/10.txt)||
 |11|[Corporate Policy](https://adventofcode.com/2015/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/11.txt)||
 |12|[JSAbacusFramework.io](https://adventofcode.com/2015/day/12)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/12.txt)||
 |13|[Knights of the Dinner Table](https://adventofcode.com/2015/day/13)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/13.txt)||
