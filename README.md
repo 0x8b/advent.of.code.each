@@ -288,7 +288,7 @@
 
 &nbsp;
 
-## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 28/50
+## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 30/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -306,7 +306,7 @@
 |12|[JSAbacusFramework.io](https://adventofcode.com/2015/day/12)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/12.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/12.txt)||
 |13|[Knights of the Dinner Table](https://adventofcode.com/2015/day/13)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/13.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/13.txt)||
 |14|[Reindeer Olympics](https://adventofcode.com/2015/day/14)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/14.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/14.txt)||
-|15|[Science for Hungry People](https://adventofcode.com/2015/day/15)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/15.txt)||
+|15|[Science for Hungry People](https://adventofcode.com/2015/day/15)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/15.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/15.txt)||
 |16|[Aunt Sue](https://adventofcode.com/2015/day/16)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/16.txt)||
 |17|[No Such Thing as Too Much](https://adventofcode.com/2015/day/17)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/17.txt)||
 |18|[Like a GIF For Your Yard](https://adventofcode.com/2015/day/18)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/18.txt)||
