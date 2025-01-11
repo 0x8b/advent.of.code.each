@@ -64,7 +64,7 @@
 
 &nbsp;
 
-## [Advent of Code 2022](https://adventofcode.com/2022) 🍪 12/50
+## [Advent of Code 2022](https://adventofcode.com/2022) 🍪 14/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -74,7 +74,7 @@
 |4|[Camp Cleanup](https://adventofcode.com/2022/day/4)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/04.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/04.txt)||
 |5|[Supply Stacks](https://adventofcode.com/2022/day/5)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/05.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/05.txt)||
 |6|[Tuning Trouble](https://adventofcode.com/2022/day/6)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/06.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/06.txt)||
-|7|[No Space Left On Device](https://adventofcode.com/2022/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/07.txt)||
+|7|[No Space Left On Device](https://adventofcode.com/2022/day/7)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/07.txt)||
 |8|[Treetop Tree House](https://adventofcode.com/2022/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/08.txt)||
 |9|[Rope Bridge](https://adventofcode.com/2022/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/09.txt)||
 |10|[Cathode-Ray Tube](https://adventofcode.com/2022/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/10.txt)||
