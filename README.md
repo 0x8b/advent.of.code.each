@@ -288,7 +288,7 @@
 
 &nbsp;
 
-## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 24/50
+## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 26/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -304,7 +304,7 @@
 |10|[Elves Look, Elves Say](https://adventofcode.com/2015/day/10)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/10.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/10.txt)||
 |11|[Corporate Policy](https://adventofcode.com/2015/day/11)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/11.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/11.txt)||
 |12|[JSAbacusFramework.io](https://adventofcode.com/2015/day/12)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/12.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/12.txt)||
-|13|[Knights of the Dinner Table](https://adventofcode.com/2015/day/13)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/13.txt)||
+|13|[Knights of the Dinner Table](https://adventofcode.com/2015/day/13)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2015/13.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/13.txt)||
 |14|[Reindeer Olympics](https://adventofcode.com/2015/day/14)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/14.txt)||
 |15|[Science for Hungry People](https://adventofcode.com/2015/day/15)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/15.txt)||
 |16|[Aunt Sue](https://adventofcode.com/2015/day/16)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/16.txt)||
