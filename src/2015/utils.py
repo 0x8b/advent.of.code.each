@@ -8,7 +8,7 @@ def ints(line):
 
 def matrix(data, *, separator=",", try_parse=False):
     if isinstance(data, str):
-        data = data.split("\n")
+        data = data.strip().split("\n")
 
     assert isinstance(data, list)
 
