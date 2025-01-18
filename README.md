@@ -256,7 +256,7 @@
 
 &nbsp;
 
-## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 16/50
+## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 18/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -268,7 +268,7 @@
 |6|[Signals and Noise](https://adventofcode.com/2016/day/6)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/06.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/06.txt)||
 |7|[Internet Protocol Version 7](https://adventofcode.com/2016/day/7)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/07.txt)||
 |8|[Two-Factor Authentication](https://adventofcode.com/2016/day/8)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/08.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/08.txt)||
-|9|[Explosives in Cyberspace](https://adventofcode.com/2016/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/09.txt)||
+|9|[Explosives in Cyberspace](https://adventofcode.com/2016/day/9)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/09.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/09.txt)||
 |10|[Balance Bots](https://adventofcode.com/2016/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/10.txt)||
 |11|[Radioisotope Thermoelectric Generators](https://adventofcode.com/2016/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/11.txt)||
 |12|[Leonardo's Monorail](https://adventofcode.com/2016/day/12)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/12.txt)||
