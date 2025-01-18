@@ -224,7 +224,7 @@
 
 &nbsp;
 
-## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 10/50
+## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 12/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -233,7 +233,7 @@
 |3|[Spiral Memory](https://adventofcode.com/2017/day/3)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/03.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/03.txt)||
 |4|[High-Entropy Passphrases](https://adventofcode.com/2017/day/4)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/04.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/04.txt)||
 |5|[A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/05.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/05.txt)||
-|6|[Memory Reallocation](https://adventofcode.com/2017/day/6)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/06.txt)||
+|6|[Memory Reallocation](https://adventofcode.com/2017/day/6)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/06.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/06.txt)||
 |7|[Recursive Circus](https://adventofcode.com/2017/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/07.txt)||
 |8|[I Heard You Like Registers](https://adventofcode.com/2017/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/08.txt)||
 |9|[Stream Processing](https://adventofcode.com/2017/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/09.txt)||
@@ -256,7 +256,7 @@
 
 &nbsp;
 
-## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 18/50
+## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 20/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -269,7 +269,7 @@
 |7|[Internet Protocol Version 7](https://adventofcode.com/2016/day/7)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/07.txt)||
 |8|[Two-Factor Authentication](https://adventofcode.com/2016/day/8)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/08.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/08.txt)||
 |9|[Explosives in Cyberspace](https://adventofcode.com/2016/day/9)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/09.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/09.txt)||
-|10|[Balance Bots](https://adventofcode.com/2016/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/10.txt)||
+|10|[Balance Bots](https://adventofcode.com/2016/day/10)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/10.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/10.txt)||
 |11|[Radioisotope Thermoelectric Generators](https://adventofcode.com/2016/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/11.txt)||
 |12|[Leonardo's Monorail](https://adventofcode.com/2016/day/12)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/12.txt)||
 |13|[A Maze of Twisty Little Cubicles](https://adventofcode.com/2016/day/13)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/13.txt)||
