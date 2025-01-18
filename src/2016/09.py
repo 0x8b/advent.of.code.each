@@ -42,7 +42,6 @@ def decompress(compressed):
     decompressed_size = 0
 
     for chunk in partition(compressed):
-        print(chunk)
         match chunk:
             case [int(size), int(repeat), str(text)]:
                 decompressed_size += repeat * decompress(text)
