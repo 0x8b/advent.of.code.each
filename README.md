@@ -224,7 +224,7 @@
 
 &nbsp;
 
-## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 12/50
+## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 14/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -234,7 +234,7 @@
 |4|[High-Entropy Passphrases](https://adventofcode.com/2017/day/4)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/04.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/04.txt)||
 |5|[A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/05.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/05.txt)||
 |6|[Memory Reallocation](https://adventofcode.com/2017/day/6)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/06.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/06.txt)||
-|7|[Recursive Circus](https://adventofcode.com/2017/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/07.txt)||
+|7|[Recursive Circus](https://adventofcode.com/2017/day/7)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/07.txt)||
 |8|[I Heard You Like Registers](https://adventofcode.com/2017/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/08.txt)||
 |9|[Stream Processing](https://adventofcode.com/2017/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/09.txt)||
 |10|[Knot Hash](https://adventofcode.com/2017/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/10.txt)||
