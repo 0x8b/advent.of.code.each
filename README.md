@@ -64,7 +64,7 @@
 
 &nbsp;
 
-## [Advent of Code 2022](https://adventofcode.com/2022) 🍪 16/50
+## [Advent of Code 2022](https://adventofcode.com/2022) 🍪 18/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -76,7 +76,7 @@
 |6|[Tuning Trouble](https://adventofcode.com/2022/day/6)|🍪🍪|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/06.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/06.txt)||
 |7|[No Space Left On Device](https://adventofcode.com/2022/day/7)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/07.txt)||
 |8|[Treetop Tree House](https://adventofcode.com/2022/day/8)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/08.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/08.txt)||
-|9|[Rope Bridge](https://adventofcode.com/2022/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/09.txt)||
+|9|[Rope Bridge](https://adventofcode.com/2022/day/9)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2022/09.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/09.txt)||
 |10|[Cathode-Ray Tube](https://adventofcode.com/2022/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/10.txt)||
 |11|[Monkey in the Middle](https://adventofcode.com/2022/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/11.txt)||
 |12|[Hill Climbing Algorithm](https://adventofcode.com/2022/day/12)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2022/12.txt)||
@@ -256,7 +256,7 @@
 
 &nbsp;
 
-## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 20/50
+## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 22/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -271,7 +271,7 @@
 |9|[Explosives in Cyberspace](https://adventofcode.com/2016/day/9)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/09.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/09.txt)||
 |10|[Balance Bots](https://adventofcode.com/2016/day/10)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/10.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/10.txt)||
 |11|[Radioisotope Thermoelectric Generators](https://adventofcode.com/2016/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/11.txt)||
-|12|[Leonardo's Monorail](https://adventofcode.com/2016/day/12)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/12.txt)||
+|12|[Leonardo's Monorail](https://adventofcode.com/2016/day/12)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/12.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/12.txt)||
 |13|[A Maze of Twisty Little Cubicles](https://adventofcode.com/2016/day/13)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/13.txt)||
 |14|[One-Time Pad](https://adventofcode.com/2016/day/14)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/14.txt)||
 |15|[Timing is Everything](https://adventofcode.com/2016/day/15)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/15.txt)||
