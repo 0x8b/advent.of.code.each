@@ -224,7 +224,7 @@
 
 &nbsp;
 
-## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 16/50
+## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 18/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -239,7 +239,7 @@
 |9|[Stream Processing](https://adventofcode.com/2017/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/09.txt)||
 |10|[Knot Hash](https://adventofcode.com/2017/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/10.txt)||
 |11|[Hex Ed](https://adventofcode.com/2017/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/11.txt)||
-|12|[Digital Plumber](https://adventofcode.com/2017/day/12)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/12.txt)||
+|12|[Digital Plumber](https://adventofcode.com/2017/day/12)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/12.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/12.txt)||
 |13|[Packet Scanners](https://adventofcode.com/2017/day/13)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/13.txt)||
 |14|[Disk Defragmentation](https://adventofcode.com/2017/day/14)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/14.txt)||
 |15|[Dueling Generators](https://adventofcode.com/2017/day/15)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/15.txt)||
