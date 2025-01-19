@@ -1,7 +1,6 @@
 import pathlib
 from collections import defaultdict
 
-
 data = pathlib.Path("../../data/2016/10.txt").read_text(encoding="utf-8")
 lines = data.strip().split("\n")
 
