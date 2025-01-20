@@ -224,7 +224,7 @@
 
 &nbsp;
 
-## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 22/50
+## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 24/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -248,7 +248,7 @@
 |18|[Duet](https://adventofcode.com/2017/day/18)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/18.txt)||
 |19|[A Series of Tubes](https://adventofcode.com/2017/day/19)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/19.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/19.txt)||
 |20|[Particle Swarm](https://adventofcode.com/2017/day/20)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/20.txt)||
-|21|[Fractal Art](https://adventofcode.com/2017/day/21)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/21.txt)||
+|21|[Fractal Art](https://adventofcode.com/2017/day/21)|🍪🍪|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2017/21.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/21.txt)||
 |22|[Sporifica Virus](https://adventofcode.com/2017/day/22)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/22.txt)||
 |23|[Coprocessor Conflagration](https://adventofcode.com/2017/day/23)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/23.txt)||
 |24|[Electromagnetic Moat](https://adventofcode.com/2017/day/24)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/24.txt)||
