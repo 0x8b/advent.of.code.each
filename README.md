@@ -256,7 +256,7 @@
 
 &nbsp;
 
-## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 24/50
+## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 26/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -277,7 +277,7 @@
 |15|[Timing is Everything](https://adventofcode.com/2016/day/15)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/15.txt)||
 |16|[Dragon Checksum](https://adventofcode.com/2016/day/16)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/16.txt)||
 |17|[Two Steps Forward](https://adventofcode.com/2016/day/17)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/17.txt)||
-|18|[Like a Rogue](https://adventofcode.com/2016/day/18)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/18.txt)||
+|18|[Like a Rogue](https://adventofcode.com/2016/day/18)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/18.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/18.txt)||
 |19|[An Elephant Named Joseph](https://adventofcode.com/2016/day/19)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/19.txt)||
 |20|[Firewall Rules](https://adventofcode.com/2016/day/20)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/20.txt)||
 |21|[Scrambled Letters and Hash](https://adventofcode.com/2016/day/21)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/21.txt)||
