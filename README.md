@@ -256,7 +256,7 @@
 
 &nbsp;
 
-## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 22/50
+## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 24/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -272,7 +272,7 @@
 |10|[Balance Bots](https://adventofcode.com/2016/day/10)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/10.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/10.txt)||
 |11|[Radioisotope Thermoelectric Generators](https://adventofcode.com/2016/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/11.txt)||
 |12|[Leonardo's Monorail](https://adventofcode.com/2016/day/12)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/12.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/12.txt)||
-|13|[A Maze of Twisty Little Cubicles](https://adventofcode.com/2016/day/13)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/13.txt)||
+|13|[A Maze of Twisty Little Cubicles](https://adventofcode.com/2016/day/13)|🦌🦌|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2016/13.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/13.txt)||
 |14|[One-Time Pad](https://adventofcode.com/2016/day/14)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/14.txt)||
 |15|[Timing is Everything](https://adventofcode.com/2016/day/15)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/15.txt)||
 |16|[Dragon Checksum](https://adventofcode.com/2016/day/16)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2016/16.txt)||
