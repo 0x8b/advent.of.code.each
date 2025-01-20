@@ -1,5 +1,4 @@
 import pathlib
-from copy import deepcopy
 from itertools import chain
 
 from utils import *
@@ -10,22 +9,22 @@ lines = data.strip().split("\n")
 rules = dict(tuple(line.split(" => ")) for line in lines)
 
 
-def rotate(grid):
-    rotated_grid = [[None] * len(grid) for _ in range(len(grid[0]))]
-
-    for row in range(len(grid)):
-        for col in range(len(grid[0])):
-            rotated_grid[col][len(grid) - 1 - row] = grid[row][col]
-
-    return rotated_grid
-
-
 def flip(grid):
     return [list(reversed(row)) for row in grid]
 
 
+def rotate(grid, rotations=1):
+    rotated = flip(transpose(grid))
+
+    return rotated if rotations == 1 else rotate(rotated, rotations - 1)
+
+
 def serialize(grid):
     return "/".join("".join(row) for row in grid)
+
+
+def deserialize(serialized_grid):
+    return matrix(serialized_grid.split("/"), separator="")
 
 
 extended_rules = dict()
@@ -35,13 +34,13 @@ for key, value in rules.items():
 
     extended_rules[serialize(g)] = value
     extended_rules[serialize(rotate(g))] = value
-    extended_rules[serialize(rotate(rotate(g)))] = value
-    extended_rules[serialize(rotate(rotate(rotate(g))))] = value
+    extended_rules[serialize(rotate(g, 2))] = value
+    extended_rules[serialize(rotate(g, 3))] = value
 
     extended_rules[serialize(flip(g))] = value
     extended_rules[serialize(rotate(flip(g)))] = value
-    extended_rules[serialize(rotate(rotate(flip(g))))] = value
-    extended_rules[serialize(rotate(rotate(rotate(flip(g)))))] = value
+    extended_rules[serialize(rotate(flip(g), 2))] = value
+    extended_rules[serialize(rotate(flip(g), 3))] = value
 
 
 for iterations in [5, 18]:
@@ -61,7 +60,7 @@ for iterations in [5, 18]:
                         for yy in range(2)
                     )
 
-                    gg = matrix(extended_rules[g].split("/"), separator="")
+                    gg = deserialize(extended_rules[g])
 
                     for xx in range(3):
                         for yy in range(3):
@@ -80,7 +79,7 @@ for iterations in [5, 18]:
                         for yy in range(3)
                     )
 
-                    gg = matrix(extended_rules[g].split("/"), separator="")
+                    gg = deserialize(extended_rules[g])
 
                     for xx in range(4):
                         for yy in range(4):
