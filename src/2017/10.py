@@ -50,7 +50,7 @@ def knot_hash(string):
     dense_hash = "".join(
         [
             hex(reduce(lambda a, b: a ^ b, seq))[2:].zfill(2)
-            for seq in batched(numbers, 16)
+            for seq in batched(sparse_hash, 16)
         ]
     )
 
