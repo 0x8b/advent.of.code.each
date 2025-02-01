@@ -192,7 +192,7 @@
 
 &nbsp;
 
-## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 14/50
+## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 16/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -200,7 +200,7 @@
 |2|[Inventory Management System](https://adventofcode.com/2018/day/2)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/02.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/02.txt)||
 |3|[No Matter How You Slice It](https://adventofcode.com/2018/day/3)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/03.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/03.txt)||
 |4|[Repose Record](https://adventofcode.com/2018/day/4)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/04.txt)||
-|5|[Alchemical Reduction](https://adventofcode.com/2018/day/5)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/05.txt)||
+|5|[Alchemical Reduction](https://adventofcode.com/2018/day/5)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/05.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/05.txt)||
 |6|[Chronal Coordinates](https://adventofcode.com/2018/day/6)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/06.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/06.txt)||
 |7|[The Sum of Its Parts](https://adventofcode.com/2018/day/7)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/07.txt)||
 |8|[Memory Maneuver](https://adventofcode.com/2018/day/8)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/08.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/08.txt)||
