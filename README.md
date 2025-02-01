@@ -1,4 +1,5 @@
-# Advent of Code 2015-2024
+# Advent of Code 2015-2024 (293 of 500 stars)
+
 
 ## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 44/50
 

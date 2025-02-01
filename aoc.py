@@ -166,6 +166,9 @@ def collect_data_for_readme():
 
     events = defaultdict(lambda: defaultdict(lambda: dict()))
 
+    collected_stars = 0
+    available_stars = 0
+
     for year, day, title in days:
         events[year][day] = {
             "title": f"[{title}](https://adventofcode.com/{year}/day/{int(day)})",
@@ -175,6 +178,8 @@ def collect_data_for_readme():
             "progress": 0,
             "note": notes.get(f"{year}/{day}", ""),
         }
+
+        available_stars += 2
 
     for solution in [
         p
@@ -241,12 +246,16 @@ def collect_data_for_readme():
             stars[year] += events[year][day]["progress"]
             solved[year] += 1 if events[year][day]["progress"] == 2 else 0
 
+            collected_stars += events[year][day]["progress"]
+
     return {
         "range": f"{min(events.keys())}-{max(events.keys())}",
         "events": events,
         "emojis": emojis,
         "stars": stars,
         "solved": solved,
+        "collected_stars": collected_stars,
+        "available_stars": available_stars,
     }
 
 
