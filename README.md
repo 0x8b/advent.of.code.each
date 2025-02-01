@@ -192,7 +192,7 @@
 
 &nbsp;
 
-## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 8/50
+## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 10/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -202,7 +202,7 @@
 |4|[Repose Record](https://adventofcode.com/2018/day/4)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/04.txt)||
 |5|[Alchemical Reduction](https://adventofcode.com/2018/day/5)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/05.txt)||
 |6|[Chronal Coordinates](https://adventofcode.com/2018/day/6)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/06.txt)||
-|7|[The Sum of Its Parts](https://adventofcode.com/2018/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/07.txt)||
+|7|[The Sum of Its Parts](https://adventofcode.com/2018/day/7)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/07.txt)||
 |8|[Memory Maneuver](https://adventofcode.com/2018/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/08.txt)||
 |9|[Marble Mania](https://adventofcode.com/2018/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/09.txt)||
 |10|[The Stars Align](https://adventofcode.com/2018/day/10)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/10.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/10.txt)||
