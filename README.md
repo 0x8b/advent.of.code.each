@@ -160,7 +160,7 @@
 
 &nbsp;
 
-## [Advent of Code 2019](https://adventofcode.com/2019) 🎄 8/50
+## [Advent of Code 2019](https://adventofcode.com/2019) 🎄 10/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -171,7 +171,7 @@
 |5|[Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/05.txt)||
 |6|[Universal Orbit Map](https://adventofcode.com/2019/day/6)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/06.txt)||
 |7|[Amplification Circuit](https://adventofcode.com/2019/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/07.txt)||
-|8|[Space Image Format](https://adventofcode.com/2019/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/08.txt)||
+|8|[Space Image Format](https://adventofcode.com/2019/day/8)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2019/08.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/08.txt)||
 |9|[Sensor Boost](https://adventofcode.com/2019/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/09.txt)||
 |10|[Monitoring Station](https://adventofcode.com/2019/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/10.txt)||
 |11|[Space Police](https://adventofcode.com/2019/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/11.txt)||
