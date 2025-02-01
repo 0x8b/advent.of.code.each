@@ -192,7 +192,7 @@
 
 &nbsp;
 
-## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 18/50
+## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 20/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -206,7 +206,7 @@
 |8|[Memory Maneuver](https://adventofcode.com/2018/day/8)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/08.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/08.txt)||
 |9|[Marble Mania](https://adventofcode.com/2018/day/9)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/09.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/09.txt)|Zawsze należy zastanowić się nad optymalną strukturą danych. Tutaj doskonale sprawdziła się lista dwukierunkowa. Doskonały przykład, aby dostrzec różnicę.|
 |10|[The Stars Align](https://adventofcode.com/2018/day/10)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/10.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/10.txt)||
-|11|[Chronal Charge](https://adventofcode.com/2018/day/11)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/11.txt)||
+|11|[Chronal Charge](https://adventofcode.com/2018/day/11)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2018/11.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/11.txt)||
 |12|[Subterranean Sustainability](https://adventofcode.com/2018/day/12)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/12.txt)||
 |13|[Mine Cart Madness](https://adventofcode.com/2018/day/13)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/13.txt)||
 |14|[Chocolate Charts](https://adventofcode.com/2018/day/14)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2018/14.txt)||
