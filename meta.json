@@ -253,6 +253,7 @@
   },
   "notes": {
     "2020/12": "[code golf](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12-golf.rb)",
-    "2020/18": "[trick](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/18-trick.rb)"
+    "2020/18": "[trick](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/18-trick.rb)",
+    "2018/09": "Zawsze należy zastanowić się nad optymalną strukturą danych. Tutaj doskonale sprawdziła się lista dwukierunkowa. Doskonały przykład, aby dostrzec różnicę."
   }
 }
