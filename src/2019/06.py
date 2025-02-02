@@ -1,7 +1,6 @@
 import pathlib
 
 import networkx
-
 from utils import *
 
 data = pathlib.Path("../../data/2019/06.txt").read_text(encoding="utf-8")

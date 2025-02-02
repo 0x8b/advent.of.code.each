@@ -1,4 +1,4 @@
-# Advent of Code 2015-2024 (295 of 500 stars)
+# Advent of Code 2015-2024 (297 of 500 stars)
 
 
 ## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 44/50
@@ -161,7 +161,7 @@
 
 &nbsp;
 
-## [Advent of Code 2019](https://adventofcode.com/2019) 🎄 12/50
+## [Advent of Code 2019](https://adventofcode.com/2019) 🎄 14/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -169,7 +169,7 @@
 |2|[1202 Program Alarm](https://adventofcode.com/2019/day/2)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2019/02.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/02.txt)||
 |3|[Crossed Wires](https://adventofcode.com/2019/day/3)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2019/03.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/03.txt)||
 |4|[Secure Container](https://adventofcode.com/2019/day/4)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2019/04.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/04.txt)||
-|5|[Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/05.txt)||
+|5|[Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2019/05.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/05.txt)||
 |6|[Universal Orbit Map](https://adventofcode.com/2019/day/6)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2019/06.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/06.txt)||
 |7|[Amplification Circuit](https://adventofcode.com/2019/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/07.txt)||
 |8|[Space Image Format](https://adventofcode.com/2019/day/8)|🎄🎄|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2019/08.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/08.txt)||
