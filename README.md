@@ -1,4 +1,4 @@
-# Advent of Code 2015-2024 (297 of 500 stars)
+# Advent of Code 2015-2024 (298 of 500 stars)
 
 
 ## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 44/50
@@ -33,7 +33,7 @@
 
 &nbsp;
 
-## [Advent of Code 2023](https://adventofcode.com/2023) 🎁 8/50
+## [Advent of Code 2023](https://adventofcode.com/2023) 🎁 9/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -43,7 +43,7 @@
 |4|[Scratchcards](https://adventofcode.com/2023/day/4)|🎁🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/04.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2023/04.txt)||
 |5|[If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)||[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/05.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2023/05.txt)||
 |6|[Wait For It](https://adventofcode.com/2023/day/6)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2023/06.txt)||
-|7|[Camel Cards](https://adventofcode.com/2023/day/7)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2023/07.txt)||
+|7|[Camel Cards](https://adventofcode.com/2023/day/7)|🎁|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2023/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2023/07.txt)||
 |8|[Haunted Wasteland](https://adventofcode.com/2023/day/8)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2023/08.txt)||
 |9|[Mirage Maintenance](https://adventofcode.com/2023/day/9)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2023/09.txt)||
 |10|[Pipe Maze](https://adventofcode.com/2023/day/10)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2023/10.txt)||
