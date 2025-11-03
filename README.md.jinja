@@ -1,13 +1,13 @@
-# Advent of Code {{ range }} ({{collected_stars}} of {{available_stars}} stars)
+# Advent of Code {{ range }} ({{ collected_stars }} of {{ available_stars }} stars)
 
 {% for year, days in events.items() %}
-## [Advent of Code {{ year }}](https://adventofcode.com/{{ year }}) {{ emojis[year] }} {{ stars[year] }}/50
+{% set max_stars = available_stars_per_year.get(year|int, 50) %}
+## [Advent of Code {{ year }}](https://adventofcode.com/{{ year }}) {{ emojis[year] }} {{ stars[year] }}/{{ max_stars }}
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
 {% for day, details in days.items() %}
-{{- "|" + day.lstrip("0") + "|" + details["title"] + "|" + emojis[year] * details["progress"] + "|" + details["solutions_formatted"] + "|[👁️ input](" + details["input"] + ")|" + details["note"] + "|"}}
+{{- "|" + day.lstrip("0") + "|" + details["title"] + "|" + (emojis[year] * details["progress"]) + "|" + details["solutions_formatted"] + "|[👁️ input](" + details["input"] + ")|" + details["note"] + "|"}}
 {% endfor %}
 &nbsp;
 {% endfor %}
-

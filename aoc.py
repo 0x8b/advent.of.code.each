@@ -21,6 +21,11 @@ from jinja2 import Environment, FileSystemLoader
 _ = load_dotenv(find_dotenv())
 
 
+AVAILABLE_STARS_PER_YEAR = {
+    2025: 24,
+}
+
+
 def download_title(year, day):
     meta_file = pathlib.Path("meta.json")
 
@@ -161,11 +166,9 @@ def collect_data_for_readme():
     )
 
     available_days = set(meta["days"].keys())
-
     notes = meta["notes"]
 
     events = defaultdict(lambda: defaultdict(lambda: dict()))
-
     collected_stars = 0
     available_stars = 0
 
@@ -211,7 +214,6 @@ def collect_data_for_readme():
         )
 
         source_code = solution.read_text(encoding="utf-8")
-
         events[year][day]["progress"] = max(
             events[year][day]["progress"],
             sum(("part_1" in source_code, "part_2" in source_code)),
@@ -245,7 +247,6 @@ def collect_data_for_readme():
         for day in events[year]:
             stars[year] += events[year][day]["progress"]
             solved[year] += 1 if events[year][day]["progress"] == 2 else 0
-
             collected_stars += events[year][day]["progress"]
 
     return {
@@ -256,6 +257,7 @@ def collect_data_for_readme():
         "solved": solved,
         "collected_stars": collected_stars,
         "available_stars": available_stars,
+        "available_stars_per_year": AVAILABLE_STARS_PER_YEAR,
     }
 
 
