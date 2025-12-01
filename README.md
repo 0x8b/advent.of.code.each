@@ -1,4 +1,14 @@
-# Advent of Code 2015-2024 (298 of 500 stars)
+# Advent of Code 2015-2025 (300 of 502 stars)
+
+
+
+## [Advent of Code 2025](https://adventofcode.com/2025) 🎅 2/24
+
+|Day|Puzzle|Progress|Solutions|Input|Notes|
+|:---:|:--|:---:|---|---|:--|
+|1|[Secret Entrance](https://adventofcode.com/2025/day/1)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/01.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/01.txt)||
+
+&nbsp;
 
 
 ## [Advent of Code 2024](https://adventofcode.com/2024) 🎄 44/50
@@ -33,6 +43,7 @@
 
 &nbsp;
 
+
 ## [Advent of Code 2023](https://adventofcode.com/2023) 🎁 9/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
@@ -64,6 +75,7 @@
 |25|[Snowverload](https://adventofcode.com/2023/day/25)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2023/25.txt)||
 
 &nbsp;
+
 
 ## [Advent of Code 2022](https://adventofcode.com/2022) 🍪 18/50
 
@@ -97,6 +109,7 @@
 
 &nbsp;
 
+
 ## [Advent of Code 2021](https://adventofcode.com/2021) 🦌 45/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
@@ -128,6 +141,7 @@
 |25|[Sea Cucumber](https://adventofcode.com/2021/day/25)|🦌|[Ruby](https://github.com/0x8b/advent.of.code.each/blob/main/src/2021/25.rb)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2021/25.txt)||
 
 &nbsp;
+
 
 ## [Advent of Code 2020](https://adventofcode.com/2020) 🎅 47/50
 
@@ -161,6 +175,7 @@
 
 &nbsp;
 
+
 ## [Advent of Code 2019](https://adventofcode.com/2019) 🎄 14/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
@@ -192,6 +207,7 @@
 |25|[Cryostasis](https://adventofcode.com/2019/day/25)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2019/25.txt)||
 
 &nbsp;
+
 
 ## [Advent of Code 2018](https://adventofcode.com/2018) 🎁 20/50
 
@@ -225,6 +241,7 @@
 
 &nbsp;
 
+
 ## [Advent of Code 2017](https://adventofcode.com/2017) 🍪 36/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
@@ -256,6 +273,7 @@
 |25|[The Halting Problem](https://adventofcode.com/2017/day/25)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2017/25.txt)||
 
 &nbsp;
+
 
 ## [Advent of Code 2016](https://adventofcode.com/2016) 🦌 28/50
 
@@ -289,6 +307,7 @@
 
 &nbsp;
 
+
 ## [Advent of Code 2015](https://adventofcode.com/2015) 🎅 37/50
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
@@ -320,4 +339,3 @@
 |25|[Let It Snow](https://adventofcode.com/2015/day/25)|||[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2015/25.txt)||
 
 &nbsp;
-
