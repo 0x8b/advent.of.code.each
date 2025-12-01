@@ -107,6 +107,9 @@ def copy_solution_template(year, day):
     if target.is_file() and len(target.read_text()):
         return
 
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.touch(exist_ok=True)
+
     target.write_text(
         template.replace("YYYY", str(year)).replace("DD", str(day).zfill(2)),
         encoding="utf-8",

@@ -249,11 +249,12 @@
     "2024/22": "Monkey Market",
     "2024/23": "LAN Party",
     "2024/24": "Crossed Wires",
-    "2024/25": "Code Chronicle"
+    "2024/25": "Code Chronicle",
+    "2025/01": "Secret Entrance"
   },
   "notes": {
     "2020/12": "[code golf](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12-golf.rb)",
     "2020/18": "[trick](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/18-trick.rb)",
-    "2018/09": "Zawsze należy zastanowić się nad optymalną strukturą danych. Tutaj doskonale sprawdziła się lista dwukierunkowa. Doskonały przykład, aby dostrzec różnicę."
+    "2018/09": "Zawsze nale\u017cy zastanowi\u0107 si\u0119 nad optymaln\u0105 struktur\u0105 danych. Tutaj doskonale sprawdzi\u0142a si\u0119 lista dwukierunkowa. Doskona\u0142y przyk\u0142ad, aby dostrzec r\u00f3\u017cnic\u0119."
   }
 }
