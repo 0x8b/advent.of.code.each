@@ -1,12 +1,13 @@
-# Advent of Code 2015-2025 (300 of 502 stars)
+# Advent of Code 2015-2025 (304 of 504 stars)
 
 
 
-## [Advent of Code 2025](https://adventofcode.com/2025) 🎅 2/24
+## [Advent of Code 2025](https://adventofcode.com/2025) 🎅 4/24
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
 |1|[Secret Entrance](https://adventofcode.com/2025/day/1)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/01.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/01.txt)||
+|2|[Gift Shop](https://adventofcode.com/2025/day/2)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/02.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/02.txt)||
 
 &nbsp;
 
