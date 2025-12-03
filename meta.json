@@ -251,7 +251,8 @@
     "2024/24": "Crossed Wires",
     "2024/25": "Code Chronicle",
     "2025/01": "Secret Entrance",
-    "2025/02": "Gift Shop"
+    "2025/02": "Gift Shop",
+    "2025/03": "Lobby"
   },
   "notes": {
     "2020/12": "[code golf](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12-golf.rb)",
