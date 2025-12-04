@@ -1,14 +1,15 @@
-# Advent of Code 2015-2025 (306 of 506 stars)
+# Advent of Code 2015-2025 (307 of 508 stars)
 
 
 
-## [Advent of Code 2025](https://adventofcode.com/2025) 🎅 6/24
+## [Advent of Code 2025](https://adventofcode.com/2025) 🎅 7/24
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
 |1|[Secret Entrance](https://adventofcode.com/2025/day/1)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/01.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/01.txt)||
 |2|[Gift Shop](https://adventofcode.com/2025/day/2)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/02.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/02.txt)||
 |3|[Lobby](https://adventofcode.com/2025/day/3)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/03.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/03.txt)||
+|4|[Printing Department](https://adventofcode.com/2025/day/4)|🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/04.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/04.txt)||
 
 &nbsp;
 
