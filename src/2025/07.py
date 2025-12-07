@@ -16,11 +16,15 @@ for y in range(2, len(lines)):
     splitters = [i for i, c in enumerate(lines[y]) if c == "^"]
 
     for splitter_index in splitters:
-        if beams[splitter_index] == 1:
+        if beams[splitter_index] > 0:
+            beams[splitter_index + 1] += beams[splitter_index]
+            beams[splitter_index - 1] += beams[splitter_index]
             beams[splitter_index] = 0
-            beams[splitter_index + 1] = 1
-            beams[splitter_index - 1] = 1
 
             part_1 += 1
 
 print(part_1)
+
+part_2 = sum(beams)
+
+print(part_2)
