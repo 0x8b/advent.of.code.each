@@ -219,7 +219,7 @@ def collect_data_for_readme():
         source_code = solution.read_text(encoding="utf-8")
         events[year][day]["progress"] = max(
             events[year][day]["progress"],
-            sum(("part_1" in source_code, "part_2" in source_code)),
+            sum(("part_1" in source_code or "PART 1" in source_code, "part_2" in source_code or "PART 2" in source_code)),
         )
 
     for solution in [
