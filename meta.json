@@ -257,7 +257,8 @@
     "2025/05": "Cafeteria",
     "2025/06": "Trash Compactor",
     "2025/07": "Laboratories",
-    "2025/08": "Playground"
+    "2025/08": "Playground",
+    "2025/09": "Movie Theater"
   },
   "notes": {
     "2020/12": "[code golf](https://github.com/0x8b/advent.of.code.each/blob/main/src/2020/12-golf.rb)",

@@ -1,8 +1,8 @@
-# Advent of Code 2015-2025 (316 of 516 stars)
+# Advent of Code 2015-2025 (317 of 518 stars)
 
 
 
-## [Advent of Code 2025](https://adventofcode.com/2025) 🎅 16/24
+## [Advent of Code 2025](https://adventofcode.com/2025) 🎅 17/24
 
 |Day|Puzzle|Progress|Solutions|Input|Notes|
 |:---:|:--|:---:|---|---|:--|
@@ -14,6 +14,7 @@
 |6|[Trash Compactor](https://adventofcode.com/2025/day/6)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/06.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/06.txt)||
 |7|[Laboratories](https://adventofcode.com/2025/day/7)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/07.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/07.txt)||
 |8|[Playground](https://adventofcode.com/2025/day/8)|🎅🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/08.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/08.txt)||
+|9|[Movie Theater](https://adventofcode.com/2025/day/9)|🎅|[Python](https://github.com/0x8b/advent.of.code.each/blob/main/src/2025/09.py)|[👁️ input](https://github.com/0x8b/advent.of.code.each/blob/main/data/2025/09.txt)||
 
 &nbsp;
 
